@@ -61,8 +61,8 @@ rubyhome-landing/
 
 ## 👨‍💻 Author
 
-**Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
+
+- GitHub: [@OlgaGulyakevich](https://github.com/OlgaGulyakevich)
 
 ## 📄 License
 
