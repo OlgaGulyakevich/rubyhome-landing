@@ -1,198 +1,389 @@
 /**
- * CSS Variables (Custom Properties)
- * Central place for all design tokens and theme variables
+ * RubyHome Design System - CSS Variables
+ * Version: 1.0.0
+ * Last Updated: 2025-10-20
+ * 
+ * Based on comprehensive design system extracted from Figma
+ * All values are pixel-perfect and match the design specifications
  */
 
 :root {
   /* ============================================
-     COLOR PALETTE
+     COLOR PALETTE - Primary Orange
      ============================================ */
   
-  /* Primary Colors */
-  --color-primary: #2C3E50;
-  --color-primary-light: #34495E;
-  --color-primary-dark: #1A252F;
+  --color-primary-50: #FFF5F2;
+  --color-primary-100: #FFE8E0;
+  --color-primary-200: #FFD1C2;
+  --color-primary-300: #FFB19A;
+  --color-primary-400: #FE9172;
+  --color-primary-500: #FE753F;  /* Main primary color */
+  --color-primary-600: #E85A2A;
+  --color-primary-700: #C9451D;
+  --color-primary-800: #A33616;
+  --color-primary-900: #7D2810;
   
-  /* Secondary Colors */
-  --color-secondary: #E74C3C;
-  --color-secondary-light: #EC7063;
-  --color-secondary-dark: #C0392B;
-  
-  /* Accent Colors */
-  --color-accent: #F39C12;
-  --color-accent-light: #F5B041;
-  --color-accent-dark: #D68910;
-  
-  /* Neutral Colors */
-  --color-white: #FFFFFF;
-  --color-black: #000000;
-  --color-gray-50: #F8F9FA;
-  --color-gray-100: #F1F3F5;
-  --color-gray-200: #E9ECEF;
-  --color-gray-300: #DEE2E6;
-  --color-gray-400: #CED4DA;
-  --color-gray-500: #ADB5BD;
-  --color-gray-600: #6C757D;
-  --color-gray-700: #495057;
-  --color-gray-800: #343A40;
-  --color-gray-900: #212529;
-  
-  /* Semantic Colors */
-  --color-success: #27AE60;
-  --color-warning: #F39C12;
-  --color-error: #E74C3C;
-  --color-info: #3498DB;
-  
-  /* Background Colors */
-  --color-bg-primary: var(--color-white);
-  --color-bg-secondary: var(--color-gray-50);
-  --color-bg-dark: var(--color-primary);
-  
-  /* Text Colors */
-  --color-text-primary: var(--color-gray-900);
-  --color-text-secondary: var(--color-gray-600);
-  --color-text-muted: var(--color-gray-500);
-  --color-text-inverse: var(--color-white);
+  /* Shorthand */
+  --color-primary: var(--color-primary-500);
+  --color-primary-light: var(--color-primary-400);
+  --color-primary-dark: var(--color-primary-600);
   
   /* ============================================
-     TYPOGRAPHY
+     COLOR PALETTE - Secondary Blue
      ============================================ */
   
-  /* Font Families */
-  --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  --font-secondary: Georgia, 'Times New Roman', serif;
-  --font-mono: 'Courier New', Courier, monospace;
+  --color-secondary-50: #EEF4FF;
+  --color-secondary-100: #DCE9FF;
+  --color-secondary-200: #B8D4FF;
+  --color-secondary-300: #8AB8FF;
+  --color-secondary-400: #5C9AFF;
+  --color-secondary-500: #2E6EFF;  /* Main secondary color */
+  --color-secondary-600: #1A55E6;
+  --color-secondary-700: #0E3FCC;
+  --color-secondary-800: #0530A3;
+  --color-secondary-900: #002479;
   
-  /* Font Sizes */
-  --font-size-xs: 0.75rem;     /* 12px */
-  --font-size-sm: 0.875rem;    /* 14px */
-  --font-size-base: 1rem;      /* 16px */
-  --font-size-lg: 1.125rem;    /* 18px */
-  --font-size-xl: 1.25rem;     /* 20px */
-  --font-size-2xl: 1.5rem;     /* 24px */
-  --font-size-3xl: 1.875rem;   /* 30px */
-  --font-size-4xl: 2.25rem;    /* 36px */
-  --font-size-5xl: 3rem;       /* 48px */
-  --font-size-6xl: 3.75rem;    /* 60px */
+  /* Shorthand */
+  --color-secondary: var(--color-secondary-500);
+  --color-secondary-light: var(--color-secondary-400);
+  --color-secondary-dark: var(--color-secondary-600);
   
-  /* Font Weights */
+  /* ============================================
+     COLOR PALETTE - Accent Red (Logo)
+     ============================================ */
+  
+  --color-accent-50: #FFF0F5;
+  --color-accent-100: #FFD9E8;
+  --color-accent-200: #FFB3D1;
+  --color-accent-300: #FF8DBA;
+  --color-accent-400: #FF67A3;
+  --color-accent-500: #BF3448;  /* Main accent color */
+  --color-accent-600: #A52A3D;
+  --color-accent-700: #8B2033;
+  --color-accent-800: #711628;
+  --color-accent-900: #570C1E;
+  
+  /* Shorthand */
+  --color-accent: var(--color-accent-500);
+  --color-accent-light: var(--color-accent-400);
+  --color-accent-dark: var(--color-accent-600);
+  
+  /* ============================================
+     COLOR PALETTE - Neutral Grayscale
+     ============================================ */
+  
+  --color-neutral-50: #FFFFFF;   /* White */
+  --color-neutral-100: #F9F9F9;
+  --color-neutral-200: #EDEDED;
+  --color-neutral-300: #C4C4C4;
+  --color-neutral-400: #999999;
+  --color-neutral-500: #666666;
+  --color-neutral-600: #4D4D4D;
+  --color-neutral-700: #333333;
+  --color-neutral-800: #1A1A1A;
+  --color-neutral-900: #030A1B;  /* Almost black */
+  
+  /* Shorthand */
+  --color-white: var(--color-neutral-50);
+  --color-black: var(--color-neutral-900);
+  --color-gray-light: var(--color-neutral-100);
+  --color-gray: var(--color-neutral-300);
+  --color-gray-dark: var(--color-neutral-700);
+  
+  /* ============================================
+     SEMANTIC COLORS
+     ============================================ */
+  
+  /* Success */
+  --color-success-light: #D4EDDA;
+  --color-success: #28A745;
+  --color-success-dark: #1E7E34;
+  
+  /* Warning */
+  --color-warning-light: #FFF3CD;
+  --color-warning: #FFC107;
+  --color-warning-dark: #D39E00;
+  
+  /* Error */
+  --color-error-light: #FFE5E9;
+  --color-error: #BF3448;
+  --color-error-dark: #8B2033;
+  
+  /* Info */
+  --color-info-light: #D1ECF1;
+  --color-info: #17A2B8;
+  --color-info-dark: #117A8B;
+  
+  /* ============================================
+     BACKGROUND COLORS
+     ============================================ */
+  
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F9F9F9;
+  --color-bg-tertiary: #EDEDED;
+  --color-bg-surface: #FFFFFF;
+  --color-bg-overlay: rgba(3, 10, 27, 0.6);
+  
+  /* ============================================
+     TEXT COLORS
+     ============================================ */
+  
+  --color-text-primary: #030A1B;
+  --color-text-secondary: rgba(3, 10, 27, 0.7);
+  --color-text-tertiary: rgba(3, 10, 27, 0.5);
+  --color-text-disabled: rgba(3, 10, 27, 0.4);
+  --color-text-inverse: #FFFFFF;
+  
+  /* ============================================
+     TYPOGRAPHY - Font Families
+     ============================================ */
+  
+  --font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-secondary: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Fira Code', 'Monaco', 'Courier New', monospace;
+  
+  /* ============================================
+     TYPOGRAPHY - Font Sizes
+     ============================================ */
+  
+  --font-size-xs: 10px;    /* 0.625rem */
+  --font-size-sm: 12px;    /* 0.75rem */
+  --font-size-base: 14px;  /* 0.875rem */
+  --font-size-md: 16px;    /* 1rem */
+  --font-size-lg: 18px;    /* 1.125rem */
+  --font-size-xl: 20px;    /* 1.25rem */
+  --font-size-2xl: 22px;   /* 1.375rem */
+  --font-size-3xl: 28px;   /* 1.75rem */
+  --font-size-4xl: 32px;   /* 2rem */
+  --font-size-5xl: 44px;   /* 2.75rem */
+  --font-size-6xl: 61px;   /* 3.8125rem */
+  --font-size-7xl: 72px;   /* 4.5rem */
+  
+  /* ============================================
+     TYPOGRAPHY - Font Weights
+     ============================================ */
+  
+  --font-weight-thin: 100;
+  --font-weight-extralight: 200;
   --font-weight-light: 300;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
+  --font-weight-black: 900;
   
-  /* Line Heights */
-  --line-height-tight: 1.25;
+  /* ============================================
+     TYPOGRAPHY - Line Heights
+     ============================================ */
+  
+  --line-height-none: 1;
+  --line-height-tight: 1.2;
+  --line-height-snug: 1.3636;
   --line-height-normal: 1.5;
-  --line-height-relaxed: 1.75;
+  --line-height-relaxed: 1.625;
   --line-height-loose: 2;
   
-  /* Letter Spacing */
+  /* ============================================
+     TYPOGRAPHY - Letter Spacing
+     ============================================ */
+  
+  --letter-spacing-tighter: -0.05em;
   --letter-spacing-tight: -0.025em;
   --letter-spacing-normal: 0;
   --letter-spacing-wide: 0.025em;
   --letter-spacing-wider: 0.05em;
-  --letter-spacing-widest: 0.1em;
+  --letter-spacing-widest: 0.08em;
   
   /* ============================================
-     SPACING SYSTEM
+     SPACING SYSTEM (4px base unit)
      ============================================ */
   
-  --space-0: 0;
-  --space-1: 0.25rem;   /* 4px */
-  --space-2: 0.5rem;    /* 8px */
-  --space-3: 0.75rem;   /* 12px */
-  --space-4: 1rem;      /* 16px */
-  --space-5: 1.25rem;   /* 20px */
-  --space-6: 1.5rem;    /* 24px */
-  --space-8: 2rem;      /* 32px */
-  --space-10: 2.5rem;   /* 40px */
-  --space-12: 3rem;     /* 48px */
-  --space-16: 4rem;     /* 64px */
-  --space-20: 5rem;     /* 80px */
-  --space-24: 6rem;     /* 96px */
-  --space-32: 8rem;     /* 128px */
+  --space-0: 0px;
+  --space-px: 1px;
+  --space-0-5: 2px;
+  --space-1: 4px;
+  --space-1-5: 6px;
+  --space-2: 8px;
+  --space-2-5: 10px;
+  --space-3: 12px;
+  --space-3-5: 14px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-9: 36px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-14: 56px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-28: 112px;
+  --space-32: 128px;
   
   /* ============================================
-     BREAKPOINTS
+     BORDER RADIUS
      ============================================ */
   
-  --breakpoint-sm: 640px;   /* Small devices (landscape phones) */
-  --breakpoint-md: 768px;   /* Medium devices (tablets) */
-  --breakpoint-lg: 1024px;  /* Large devices (desktops) */
-  --breakpoint-xl: 1280px;  /* Extra large devices (large desktops) */
-  --breakpoint-2xl: 1536px; /* 2X Extra large devices */
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-default: 5px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
+  --radius-full: 9999px;
   
-  /* ============================================
-     LAYOUT
-     ============================================ */
-  
-  --container-max-width: 1200px;
-  --container-padding: var(--space-4);
+  /* Component-specific */
+  --radius-button: 5px;
+  --radius-input: 12px;
+  --radius-card: 10px;
+  --radius-modal: 16px;
   
   /* ============================================
      BORDERS
      ============================================ */
   
-  --border-width-thin: 1px;
-  --border-width-medium: 2px;
-  --border-width-thick: 4px;
+  --border-width-0: 0px;
+  --border-width-1: 1px;
+  --border-width-2: 2px;
+  --border-width-4: 4px;
+  --border-width-8: 8px;
   
-  --border-radius-none: 0;
-  --border-radius-sm: 0.25rem;   /* 4px */
-  --border-radius-md: 0.5rem;    /* 8px */
-  --border-radius-lg: 0.75rem;   /* 12px */
-  --border-radius-xl: 1rem;      /* 16px */
-  --border-radius-2xl: 1.5rem;   /* 24px */
-  --border-radius-full: 9999px;
-  
-  --border-color: var(--color-gray-300);
+  --border-color-default: #EDEDED;
+  --border-color-muted: rgba(254, 117, 63, 0.1);
+  --border-color-accent: #FE753F;
   
   /* ============================================
      SHADOWS
      ============================================ */
   
+  --shadow-none: none;
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-default: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 70px 0 rgba(0, 0, 0, 0.07);  /* Main card shadow */
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
   --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  --shadow-focus: 0 0 0 3px rgba(46, 110, 255, 0.1);
+  
+  /* Hover state */
+  --shadow-lg-hover: 0 12px 80px 0 rgba(0, 0, 0, 0.1);
   
   /* ============================================
-     TRANSITIONS
+     LAYOUT - Containers
      ============================================ */
   
-  --transition-duration-fast: 150ms;
-  --transition-duration-base: 200ms;
-  --transition-duration-slow: 300ms;
-  --transition-duration-slower: 500ms;
+  --container-xs: 375px;
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1440px;
   
-  --transition-timing-ease: ease;
-  --transition-timing-ease-in: ease-in;
-  --transition-timing-ease-out: ease-out;
-  --transition-timing-ease-in-out: ease-in-out;
-  --transition-timing-linear: linear;
+  /* ============================================
+     LAYOUT - Breakpoints
+     ============================================ */
   
-  --transition-all: all var(--transition-duration-base) var(--transition-timing-ease);
-  --transition-colors: color var(--transition-duration-base) var(--transition-timing-ease),
-    background-color var(--transition-duration-base) var(--transition-timing-ease),
-    border-color var(--transition-duration-base) var(--transition-timing-ease);
-  --transition-transform: transform var(--transition-duration-base) var(--transition-timing-ease);
-  --transition-opacity: opacity var(--transition-duration-base) var(--transition-timing-ease);
+  --breakpoint-xs: 375px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1440px;
+  
+  /* ============================================
+     LAYOUT - Grid
+     ============================================ */
+  
+  --grid-columns: 12;
+  --grid-gap: 24px;
+  --grid-margin: 80px;
+  
+  /* ============================================
+     ANIMATIONS - Durations
+     ============================================ */
+  
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+  --duration-slower: 750ms;
+  
+  /* ============================================
+     ANIMATIONS - Easings
+     ============================================ */
+  
+  --easing-linear: linear;
+  --easing-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --easing-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --easing-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* ============================================
+     ANIMATIONS - Transitions (Shortcuts)
+     ============================================ */
+  
+  --transition-all: all 0.3s ease;
+  --transition-colors: background-color 0.3s ease, color 0.3s ease;
+  --transition-transform: transform 0.3s ease;
+  --transition-opacity: opacity 0.3s ease;
+  
+  /* ============================================
+     COMPONENTS - Button
+     ============================================ */
+  
+  --button-padding-sm: 10px 20px;
+  --button-padding-md: 15px 30px;
+  --button-padding-lg: 18px 36px;
+  
+  --button-height-sm: 40px;
+  --button-height-md: 48px;
+  --button-height-lg: 56px;
+  
+  /* ============================================
+     COMPONENTS - Input
+     ============================================ */
+  
+  --input-padding-sm: 12px 16px;
+  --input-padding-md: 16px 20px;
+  --input-padding-lg: 20px 24px;
+  
+  --input-height-sm: 44px;
+  --input-height-md: 56px;
+  --input-height-lg: 64px;
+  
+  /* ============================================
+     COMPONENTS - Navbar
+     ============================================ */
+  
+  --navbar-height: 80px;
+  --navbar-padding: 0 80px;
+  --navbar-logo-height: 40px;
+  
+  /* ============================================
+     ICONOGRAPHY
+     ============================================ */
+  
+  --icon-size-xs: 12px;
+  --icon-size-sm: 16px;
+  --icon-size-md: 20px;
+  --icon-size-lg: 24px;
+  --icon-size-xl: 32px;
+  
+  --icon-stroke-width: 1.5px;
   
   /* ============================================
      Z-INDEX SCALE
      ============================================ */
   
-  --z-index-dropdown: 1000;
-  --z-index-sticky: 1020;
-  --z-index-fixed: 1030;
-  --z-index-modal-backdrop: 1040;
+  --z-index-dropdown: 100;
+  --z-index-sticky: 200;
+  --z-index-fixed: 300;
+  --z-index-modal-backdrop: 1000;
   --z-index-modal: 1050;
-  --z-index-popover: 1060;
-  --z-index-tooltip: 1070;
+  --z-index-popover: 1100;
+  --z-index-tooltip: 1200;
 }
