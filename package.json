@@ -1,0 +1,33 @@
+{
+  "name": "rubyhome-landing",
+  "version": "1.0.0",
+  "description": "Premium real estate landing page with modern build setup",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "format": "prettier --write \"**/*.{html,css,js}\"",
+    "lint:css": "stylelint \"**/*.css\" --fix"
+  },
+  "keywords": [
+    "real-estate",
+    "landing-page",
+    "vite",
+    "bem",
+    "responsive"
+  ],
+  "author": "RubyHome",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.4.8",
+    "vite-plugin-html": "^3.2.2",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "cssnano": "^7.0.6",
+    "prettier": "^3.3.3",
+    "stylelint": "^16.9.0",
+    "stylelint-config-standard": "^36.0.1"
+  }
+}
+

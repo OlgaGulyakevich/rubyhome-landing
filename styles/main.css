@@ -1,1 +1,22 @@
-/* Main Styles */
+/* ============================================
+   MAIN.CSS - Entry Point
+   Imports all component styles in correct order
+   ============================================ */
+
+/* 1. Base Styles - Foundation */
+@import './variables.css';
+@import './normalize.css';
+@import './fonts.css';
+@import './global.css';
+
+/* 2. Components - In page order */
+@import './components/button.css';
+@import './components/header.css';
+@import './components/hero.css';
+@import './components/partners.css';
+@import './components/properties.css';
+@import './components/advantages.css';
+@import './components/reviews.css';
+@import './components/cta.css';
+@import './components/footer.css';
+@import './components/modal.css';
