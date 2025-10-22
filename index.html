@@ -21,9 +21,6 @@
     <meta property="og:description" content="Find your dream home with RubyHome.">
     
     <!-- Styles -->
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/variables.css">
-    <link rel="stylesheet" href="styles/global.css">
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
@@ -46,7 +43,10 @@
     <main role="main">
         <section class="hero" id="home">
             <picture class="hero__picture">
-                <img src="assets/img/bg-hero.jpg" alt="Modern building" class="hero__image">
+                <source srcset="assets/img/bg-hero.jpg?format=webp&w=1920" type="image/webp" media="(min-width: 1024px)">
+                <source srcset="assets/img/bg-hero.jpg?format=webp&w=768" type="image/webp" media="(min-width: 768px)">
+                <source srcset="assets/img/bg-hero.jpg?format=webp&w=640" type="image/webp">
+                <img src="assets/img/bg-hero.jpg?format=jpeg&w=1920" alt="Modern building" class="hero__image" width="1920" height="1080">
             </picture>
             <div class="hero__container">
                 <div class="hero__content">
@@ -75,7 +75,12 @@
                 <h2 class="properties__title">Popular Properties</h2>
                 <div class="properties__grid">
                     <article class="property-card">
-                        <div class="property-card__image-wrapper"><img src="assets/img/property-1.jpg" alt="Capital Hill Residence" class="property-card__image" width="400" height="300"></div>
+                        <div class="property-card__image-wrapper">
+                            <picture>
+                                <source srcset="assets/img/property-1.jpg?format=webp&w=400&h=300&fit=cover" type="image/webp">
+                                <img src="assets/img/property-1.jpg?format=jpeg&w=400&h=300&fit=cover" alt="Capital Hill Residence" class="property-card__image" width="400" height="300" loading="lazy">
+                            </picture>
+                        </div>
                         <div class="property-card__content">
                             <h3 class="property-card__title">Capital Hill Residence</h3>
                             <p class="property-card__location">New Lincoln</p>
@@ -91,7 +96,12 @@
                         </div>
                     </article>
                     <article class="property-card">
-                        <div class="property-card__image-wrapper"><img src="assets/img/property-2.jpg" alt="Corsair Real Estate" class="property-card__image" width="400" height="300"></div>
+                        <div class="property-card__image-wrapper">
+                            <picture>
+                                <source srcset="assets/img/property-2.jpg?format=webp&w=400&h=300&fit=cover" type="image/webp">
+                                <img src="assets/img/property-2.jpg?format=jpeg&w=400&h=300&fit=cover" alt="Corsair Real Estate" class="property-card__image" width="400" height="300" loading="lazy">
+                            </picture>
+                        </div>
                         <div class="property-card__content">
                             <h3 class="property-card__title">Corsair Real Estate</h3>
                             <p class="property-card__location">New Lincoln</p>
@@ -107,7 +117,12 @@
                         </div>
                     </article>
                     <article class="property-card">
-                        <div class="property-card__image-wrapper"><img src="assets/img/property-3.jpg" alt="Picket Fence Realty" class="property-card__image" width="400" height="300"></div>
+                        <div class="property-card__image-wrapper">
+                            <picture>
+                                <source srcset="assets/img/property-3.jpg?format=webp&w=400&h=300&fit=cover" type="image/webp">
+                                <img src="assets/img/property-3.jpg?format=jpeg&w=400&h=300&fit=cover" alt="Picket Fence Realty" class="property-card__image" width="400" height="300" loading="lazy">
+                            </picture>
+                        </div>
                         <div class="property-card__content">
                             <h3 class="property-card__title">Picket Fence Realty</h3>
                             <p class="property-card__location">New Lincoln</p>
@@ -123,7 +138,12 @@
                         </div>
                     </article>
                     <article class="property-card">
-                        <div class="property-card__image-wrapper"><img src="assets/img/property-4.jpg" alt="Strive Partners Realty" class="property-card__image" width="400" height="300"></div>
+                        <div class="property-card__image-wrapper">
+                            <picture>
+                                <source srcset="assets/img/property-4.jpg?format=webp&w=400&h=300&fit=cover" type="image/webp">
+                                <img src="assets/img/property-4.jpg?format=jpeg&w=400&h=300&fit=cover" alt="Strive Partners Realty" class="property-card__image" width="400" height="300" loading="lazy">
+                            </picture>
+                        </div>
                         <div class="property-card__content">
                             <h3 class="property-card__title">Strive Partners Realty</h3>
                             <p class="property-card__location">New Lincoln</p>
@@ -139,7 +159,12 @@
                         </div>
                     </article>
                     <article class="property-card">
-                        <div class="property-card__image-wrapper"><img src="assets/img/property-5.jpg" alt="Banyon Tree Realty" class="property-card__image" width="400" height="300"></div>
+                        <div class="property-card__image-wrapper">
+                            <picture>
+                                <source srcset="assets/img/property-5.jpg?format=webp&w=400&h=300&fit=cover" type="image/webp">
+                                <img src="assets/img/property-5.jpg?format=jpeg&w=400&h=300&fit=cover" alt="Banyon Tree Realty" class="property-card__image" width="400" height="300" loading="lazy">
+                            </picture>
+                        </div>
                         <div class="property-card__content">
                             <h3 class="property-card__title">Banyon Tree Realty</h3>
                             <p class="property-card__location">New Lincoln</p>
@@ -155,7 +180,12 @@
                         </div>
                     </article>
                     <article class="property-card">
-                        <div class="property-card__image-wrapper"><img src="assets/img/property-6.jpg" alt="Sequoia Real Estate" class="property-card__image" width="400" height="300"></div>
+                        <div class="property-card__image-wrapper">
+                            <picture>
+                                <source srcset="assets/img/property-6.jpg?format=webp&w=400&h=300&fit=cover" type="image/webp">
+                                <img src="assets/img/property-6.jpg?format=jpeg&w=400&h=300&fit=cover" alt="Sequoia Real Estate" class="property-card__image" width="400" height="300" loading="lazy">
+                            </picture>
+                        </div>
                         <div class="property-card__content">
                             <h3 class="property-card__title">Sequoia Real Estate</h3>
                             <p class="property-card__location">New Lincoln</p>
@@ -199,7 +229,10 @@
                         </article>
                     </div>
                     <div class="advantages__column advantages__column--center">
-                        <img src="assets/img/bg-advantages.jpg" alt="Modern building" class="advantages__image" width="400" height="600">
+                        <picture>
+                            <source srcset="assets/img/bg-advantages.jpg?format=webp&w=600&h=900&fit=cover" type="image/webp">
+                            <img src="assets/img/bg-advantages.jpg?format=jpeg&w=600&h=900&fit=cover" alt="Modern building" class="advantages__image" width="400" height="600" loading="lazy">
+                        </picture>
                     </div>
                     <div class="advantages__column advantages__column--right">
                         <article class="advantage-card">
@@ -230,8 +263,8 @@
                 </div>
                 <div class="reviews__slider swiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><article class="review-card"><div class="review-card__avatar-wrapper"><img src="assets/img/avatar-1.jpg" alt="Justin Lee" class="review-card__avatar" width="80" height="80"></div><h3 class="review-card__name">Justin Lee</h3><p class="review-card__position">Products Designer at Ito</p><p class="review-card__text">A good real estate agent doesn’t disappear once the closing IN signed.Buying a bigger home doesn’t necessarily mean spendi more money.Been there. Done that. Sold. Bought Bringing It All Together.</p></article></div>
-                        <div class="swiper-slide"><article class="review-card"><div class="review-card__avatar-wrapper"><img src="assets/img/avatar-2.jpg" alt="Angel Cathe" class="review-card__avatar" width="80" height="80"></div><h3 class="review-card__name">Angel Cathe</h3><p class="review-card__position">CEO at StartupHub</p><p class="review-card__text">It good real estate agent doesn't disappear once the closing it good buying a higher home it own inertamente viario it own dope hac Duis bought bringing it all together there.</p></article></div>
+                        <div class="swiper-slide"><article class="review-card"><div class="review-card__avatar-wrapper"><img src="assets/img/avatar-1.jpg?format=webp&w=80&h=80&fit=cover" alt="Justin Lee" class="review-card__avatar" width="80" height="80" loading="lazy"></div><h3 class="review-card__name">Justin Lee</h3><p class="review-card__position">Products Designer at Ito</p><p class="review-card__text">A good real estate agent doesn’t disappear once the closing IN signed.Buying a bigger home doesn’t necessarily mean spendi more money.Been there. Done that. Sold. Bought Bringing It All Together.</p></article></div>
+                        <div class="swiper-slide"><article class="review-card"><div class="review-card__avatar-wrapper"><img src="assets/img/avatar-2.jpg?format=webp&w=80&h=80&fit=cover" alt="Angel Cathe" class="review-card__avatar" width="80" height="80" loading="lazy"></div><h3 class="review-card__name">Angel Cathe</h3><p class="review-card__position">CEO at StartupHub</p><p class="review-card__text">It good real estate agent doesn't disappear once the closing it good buying a higher home it own inertamente viario it own dope hac Duis bought bringing it all together there.</p></article></div>
                         <div class="swiper-slide"><article class="review-card"><div class="review-card__avatar-wrapper"><img src="assets/img/avatar-3.jpg" alt="Sarah Johnson" class="review-card__avatar" width="80" height="80"></div><h3 class="review-card__name">Sarah Johnson</h3><p class="review-card__position">Marketing Director at Creative Agency</p><p class="review-card__text">RubyHome made our home buying experience effortless. Their team was professional, knowledgeable, and always available to answer our questions. Highly recommended!</p></article></div>
                         <div class="swiper-slide"><article class="review-card"><div class="review-card__avatar-wrapper"><img src="assets/img/avatar-4.jpg" alt="Michael Chen" class="review-card__avatar" width="80" height="80"></div><h3 class="review-card__name">Michael Chen</h3><p class="review-card__position">Entrepreneur at Tech Startup</p><p class="review-card__text">The best real estate experience I've ever had. RubyHome found us the perfect property and guided us through every step. Couldn't be happier with our new home!</p></article></div>
                         <div class="swiper-slide"><article class="review-card"><div class="review-card__avatar-wrapper"><img src="assets/img/avatar-5.jpg" alt="Emily Rodriguez" class="review-card__avatar" width="80" height="80"></div><h3 class="review-card__name">Emily Rodriguez</h3><p class="review-card__position">Designer at Design Studio</p><p class="review-card__text">Exceptional service from start to finish. The RubyHome team understood exactly what we were looking for and delivered beyond our expectations. Five stars!</p></article></div>

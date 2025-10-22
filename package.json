@@ -20,14 +20,14 @@
   "author": "RubyHome",
   "license": "MIT",
   "devDependencies": {
-    "vite": "^5.4.8",
-    "vite-plugin-html": "^3.2.2",
     "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.47",
     "cssnano": "^7.0.6",
+    "postcss": "^8.4.47",
     "prettier": "^3.3.3",
     "stylelint": "^16.9.0",
-    "stylelint-config-standard": "^36.0.1"
+    "stylelint-config-standard": "^36.0.1",
+    "vite": "^5.4.8",
+    "vite-imagetools": "^9.0.0",
+    "vite-plugin-html": "^3.2.2"
   }
 }
-

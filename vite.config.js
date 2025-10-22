@@ -1,10 +1,11 @@
 import { defineConfig } from 'vite';
 import { createHtmlPlugin } from 'vite-plugin-html';
+import { imagetools } from 'vite-imagetools';
 import { resolve } from 'path';
 
 /**
  * Vite configuration for RubyHome landing page
- * Handles multi-page setup, asset optimization, and production build settings
+ * Handles multi-page setup, asset optimization, image optimization, and production build settings
  * 
  * @returns {import('vite').UserConfig} Vite configuration object
  */
@@ -74,9 +75,20 @@ export default defineConfig({
           description: 'Find your dream home with expert guidance.'
         }
       }
+    }),
+    
+    // Image optimization with vite-imagetools
+    // Supports format conversion, resizing, and quality optimization
+    // Usage in HTML: <img src="image.jpg?format=webp&w=800">
+    imagetools({
+      defaultDirectives: (url) => {
+        // Default optimization for all images
+        return new URLSearchParams({
+          format: 'webp',
+          quality: '85'
+        });
+      }
     })
-    // Note: Image optimization can be added later with vite-plugin-imagemin
-    // or handled manually with tools like imagemin-cli
   ]
 });
 
