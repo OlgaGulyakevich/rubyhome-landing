@@ -1,389 +1,222 @@
 /**
  * RubyHome Design System - CSS Variables
- * Version: 1.0.0
- * Last Updated: 2025-10-20
- * 
- * Based on comprehensive design system extracted from Figma
- * All values are pixel-perfect and match the design specifications
+ * Version: 2.0.0 - Pixel Perfect from Figma
+ * Last Updated: 2025-10-22
+ *
+ * Based on Figma design tokens
+ * Design Width: 1600px | Content Width: 1146px
  */
 
 :root {
   /* ============================================
-     COLOR PALETTE - Primary Orange
+     COLORS - Based on Figma Design Tokens
      ============================================ */
-  
-  --color-primary-50: #FFF5F2;
-  --color-primary-100: #FFE8E0;
-  --color-primary-200: #FFD1C2;
-  --color-primary-300: #FFB19A;
-  --color-primary-400: #FE9172;
-  --color-primary-500: #FE753F;  /* Main primary color */
-  --color-primary-600: #E85A2A;
-  --color-primary-700: #C9451D;
-  --color-primary-800: #A33616;
-  --color-primary-900: #7D2810;
-  
-  /* Shorthand */
-  --color-primary: var(--color-primary-500);
-  --color-primary-light: var(--color-primary-400);
-  --color-primary-dark: var(--color-primary-600);
-  
-  /* ============================================
-     COLOR PALETTE - Secondary Blue
-     ============================================ */
-  
-  --color-secondary-50: #EEF4FF;
-  --color-secondary-100: #DCE9FF;
-  --color-secondary-200: #B8D4FF;
-  --color-secondary-300: #8AB8FF;
-  --color-secondary-400: #5C9AFF;
-  --color-secondary-500: #2E6EFF;  /* Main secondary color */
-  --color-secondary-600: #1A55E6;
-  --color-secondary-700: #0E3FCC;
-  --color-secondary-800: #0530A3;
-  --color-secondary-900: #002479;
-  
-  /* Shorthand */
-  --color-secondary: var(--color-secondary-500);
-  --color-secondary-light: var(--color-secondary-400);
-  --color-secondary-dark: var(--color-secondary-600);
-  
-  /* ============================================
-     COLOR PALETTE - Accent Red (Logo)
-     ============================================ */
-  
-  --color-accent-50: #FFF0F5;
-  --color-accent-100: #FFD9E8;
-  --color-accent-200: #FFB3D1;
-  --color-accent-300: #FF8DBA;
-  --color-accent-400: #FF67A3;
-  --color-accent-500: #BF3448;  /* Main accent color */
-  --color-accent-600: #A52A3D;
-  --color-accent-700: #8B2033;
-  --color-accent-800: #711628;
-  --color-accent-900: #570C1E;
-  
-  /* Shorthand */
-  --color-accent: var(--color-accent-500);
-  --color-accent-light: var(--color-accent-400);
-  --color-accent-dark: var(--color-accent-600);
-  
-  /* ============================================
-     COLOR PALETTE - Neutral Grayscale
-     ============================================ */
-  
-  --color-neutral-50: #FFFFFF;   /* White */
-  --color-neutral-100: #F9F9F9;
-  --color-neutral-200: #EDEDED;
-  --color-neutral-300: #C4C4C4;
-  --color-neutral-400: #999999;
-  --color-neutral-500: #666666;
-  --color-neutral-600: #4D4D4D;
-  --color-neutral-700: #333333;
-  --color-neutral-800: #1A1A1A;
-  --color-neutral-900: #030A1B;  /* Almost black */
-  
-  /* Shorthand */
-  --color-white: var(--color-neutral-50);
-  --color-black: var(--color-neutral-900);
-  --color-gray-light: var(--color-neutral-100);
-  --color-gray: var(--color-neutral-300);
-  --color-gray-dark: var(--color-neutral-700);
-  
-  /* ============================================
-     SEMANTIC COLORS
-     ============================================ */
-  
-  /* Success */
-  --color-success-light: #D4EDDA;
-  --color-success: #28A745;
-  --color-success-dark: #1E7E34;
-  
-  /* Warning */
-  --color-warning-light: #FFF3CD;
-  --color-warning: #FFC107;
-  --color-warning-dark: #D39E00;
-  
-  /* Error */
-  --color-error-light: #FFE5E9;
-  --color-error: #BF3448;
-  --color-error-dark: #8B2033;
-  
-  /* Info */
-  --color-info-light: #D1ECF1;
-  --color-info: #17A2B8;
-  --color-info-dark: #117A8B;
-  
-  /* ============================================
-     BACKGROUND COLORS
-     ============================================ */
-  
-  --color-bg-primary: #FFFFFF;
-  --color-bg-secondary: #F9F9F9;
-  --color-bg-tertiary: #EDEDED;
-  --color-bg-surface: #FFFFFF;
-  --color-bg-overlay: rgba(3, 10, 27, 0.6);
-  
-  /* ============================================
-     TEXT COLORS
-     ============================================ */
-  
+
+  /* Primary Color - Blue (Buttons, Interactive Elements) */
+  --color-primary: #2E6EFF;
+  --color-primary-hover: #1A55E6;
+  --color-primary-active: #0E3FCC;
+
+  /* Secondary Color - Orange (Accents, Prices, Active Nav) */
+  --color-secondary: #FE753F;
+  --color-secondary-hover: #E85A2A;
+
+  /* Accent Color - Purple (CTA Sections) */
+  --color-accent: #433E89;
+
+  /* Logo Color - Red */
+  --color-logo: #BF3448;
+
+  /* Text Colors */
   --color-text-primary: #030A1B;
   --color-text-secondary: rgba(3, 10, 27, 0.7);
   --color-text-tertiary: rgba(3, 10, 27, 0.5);
-  --color-text-disabled: rgba(3, 10, 27, 0.4);
   --color-text-inverse: #FFFFFF;
-  
+
+  /* Background Colors */
+  --color-bg-white: #FFFFFF;
+  --color-bg-light: #F9F9F9;
+  --color-bg-gray: #EDEDED;
+
+  /* Neutral Colors */
+  --color-neutral-gray: #C4C4C4;
+
+  /* Overlay Colors */
+  --color-overlay-white-10: rgba(255, 255, 255, 0.1);
+  --color-overlay-primary-10: rgba(254, 117, 63, 0.1);
+
   /* ============================================
-     TYPOGRAPHY - Font Families
+     TYPOGRAPHY
      ============================================ */
-  
+
+  /* Font Families */
   --font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-secondary: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'Fira Code', 'Monaco', 'Courier New', monospace;
-  
-  /* ============================================
-     TYPOGRAPHY - Font Sizes
-     ============================================ */
-  
-  --font-size-xs: 10px;    /* 0.625rem */
-  --font-size-sm: 12px;    /* 0.75rem */
-  --font-size-base: 14px;  /* 0.875rem */
-  --font-size-md: 16px;    /* 1rem */
-  --font-size-lg: 18px;    /* 1.125rem */
-  --font-size-xl: 20px;    /* 1.25rem */
-  --font-size-2xl: 22px;   /* 1.375rem */
-  --font-size-3xl: 28px;   /* 1.75rem */
-  --font-size-4xl: 32px;   /* 2rem */
-  --font-size-5xl: 44px;   /* 2.75rem */
-  --font-size-6xl: 61px;   /* 3.8125rem */
-  --font-size-7xl: 72px;   /* 4.5rem */
-  
-  /* ============================================
-     TYPOGRAPHY - Font Weights
-     ============================================ */
-  
-  --font-weight-thin: 100;
-  --font-weight-extralight: 200;
-  --font-weight-light: 300;
-  --font-weight-normal: 400;
+
+  /* Font Sizes - From Figma */
+  --font-size-xs: 14px;     /* Caption, small text */
+  --font-size-sm: 16px;     /* Body, navigation, buttons */
+  --font-size-base: 18px;   /* Subtitles, hero description */
+  --font-size-lg: 22px;     /* H3, card titles */
+  --font-size-xl: 44px;     /* H2, section titles */
+  --font-size-2xl: 61px;    /* H1, hero title */
+
+  /* Font Weights */
+  --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-  --font-weight-extrabold: 800;
-  --font-weight-black: 900;
-  
-  /* ============================================
-     TYPOGRAPHY - Line Heights
-     ============================================ */
-  
-  --line-height-none: 1;
-  --line-height-tight: 1.2;
-  --line-height-snug: 1.3636;
-  --line-height-normal: 1.5;
-  --line-height-relaxed: 1.625;
-  --line-height-loose: 2;
-  
-  /* ============================================
-     TYPOGRAPHY - Letter Spacing
-     ============================================ */
-  
-  --letter-spacing-tighter: -0.05em;
-  --letter-spacing-tight: -0.025em;
+
+  /* Line Heights */
+  --line-height-tight: 1.2;    /* Hero titles */
+  --line-height-snug: 1.36;    /* Section titles */
+  --line-height-normal: 1.5;   /* Body text */
+
+  /* Letter Spacing */
   --letter-spacing-normal: 0;
-  --letter-spacing-wide: 0.025em;
-  --letter-spacing-wider: 0.05em;
-  --letter-spacing-widest: 0.08em;
-  
+  --letter-spacing-wide: 0.08em;  /* Uppercase text */
+
   /* ============================================
-     SPACING SYSTEM (4px base unit)
+     SPACING SYSTEM - From Figma
      ============================================ */
-  
-  --space-0: 0px;
-  --space-px: 1px;
-  --space-0-5: 2px;
-  --space-1: 4px;
-  --space-1-5: 6px;
-  --space-2: 8px;
-  --space-2-5: 10px;
-  --space-3: 12px;
-  --space-3-5: 14px;
-  --space-4: 16px;
-  --space-5: 20px;
-  --space-6: 24px;
-  --space-7: 28px;
-  --space-8: 32px;
-  --space-9: 36px;
-  --space-10: 40px;
-  --space-12: 48px;
-  --space-14: 56px;
-  --space-16: 64px;
-  --space-20: 80px;
-  --space-24: 96px;
-  --space-28: 112px;
-  --space-32: 128px;
-  
+
+  --space-xs: 5px;
+  --space-sm: 8px;
+  --space-md: 10px;
+  --space-lg: 12px;
+  --space-xl: 15px;
+  --space-2xl: 20px;
+  --space-3xl: 30px;
+
+  /* Section Spacing (Vertical Rhythm) */
+  --section-spacing-sm: 70px;    /* Desktop */
+  --section-spacing-md: 100px;   /* Desktop */
+  --section-spacing-lg: 140px;   /* Desktop */
+
+  --section-spacing-sm-mobile: 40px;   /* Mobile */
+  --section-spacing-md-mobile: 60px;   /* Mobile */
+  --section-spacing-lg-mobile: 80px;   /* Mobile */
+
   /* ============================================
      BORDER RADIUS
      ============================================ */
-  
-  --radius-none: 0px;
-  --radius-sm: 2px;
-  --radius-default: 5px;
-  --radius-md: 8px;
-  --radius-lg: 10px;
-  --radius-xl: 12px;
-  --radius-2xl: 16px;
-  --radius-3xl: 24px;
-  --radius-full: 9999px;
-  
-  /* Component-specific */
-  --radius-button: 5px;
-  --radius-input: 12px;
-  --radius-card: 10px;
-  --radius-modal: 16px;
-  
-  /* ============================================
-     BORDERS
-     ============================================ */
-  
-  --border-width-0: 0px;
-  --border-width-1: 1px;
-  --border-width-2: 2px;
-  --border-width-4: 4px;
-  --border-width-8: 8px;
-  
-  --border-color-default: #EDEDED;
-  --border-color-muted: rgba(254, 117, 63, 0.1);
-  --border-color-accent: #FE753F;
-  
+
+  --radius-sm: 5px;    /* Badges, icon backgrounds, buttons */
+  --radius-md: 8px;    /* Subscribe button */
+  --radius-lg: 10px;   /* Cards, images */
+  --radius-xl: 12px;   /* Forms, inputs */
+  --radius-full: 9999px;  /* Circular elements */
+
   /* ============================================
      SHADOWS
      ============================================ */
-  
-  --shadow-none: none;
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-default: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 8px 70px 0 rgba(0, 0, 0, 0.07);  /* Main card shadow */
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+
+  --shadow-card: 0px 8px 70px 0px rgba(0, 0, 0, 0.07);
   --shadow-focus: 0 0 0 3px rgba(46, 110, 255, 0.1);
-  
-  /* Hover state */
-  --shadow-lg-hover: 0 12px 80px 0 rgba(0, 0, 0, 0.1);
-  
+
   /* ============================================
-     LAYOUT - Containers
+     OPACITY
      ============================================ */
-  
-  --container-xs: 375px;
-  --container-sm: 640px;
-  --container-md: 768px;
-  --container-lg: 1024px;
-  --container-xl: 1280px;
-  --container-2xl: 1440px;
-  
+
+  --opacity-10: 0.1;
+  --opacity-50: 0.5;
+  --opacity-60: 0.6;
+  --opacity-70: 0.7;
+  --opacity-90: 0.9;
+
   /* ============================================
-     LAYOUT - Breakpoints
+     LAYOUT
      ============================================ */
-  
+
+  /* Container Widths */
+  --container-design-width: 1600px;   /* Full design width */
+  --container-content-width: 1146px;  /* Content max-width */
+
+  /* Breakpoints */
   --breakpoint-xs: 375px;
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;
-  --breakpoint-xl: 1280px;
-  --breakpoint-2xl: 1440px;
-  
-  /* ============================================
-     LAYOUT - Grid
-     ============================================ */
-  
-  --grid-columns: 12;
-  --grid-gap: 24px;
-  --grid-margin: 80px;
-  
-  /* ============================================
-     ANIMATIONS - Durations
-     ============================================ */
-  
-  --duration-fast: 150ms;
-  --duration-normal: 300ms;
-  --duration-slow: 500ms;
-  --duration-slower: 750ms;
-  
-  /* ============================================
-     ANIMATIONS - Easings
-     ============================================ */
-  
-  --easing-linear: linear;
-  --easing-ease-in: cubic-bezier(0.4, 0, 1, 1);
-  --easing-ease-out: cubic-bezier(0, 0, 0.2, 1);
-  --easing-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-  
-  /* ============================================
-     ANIMATIONS - Transitions (Shortcuts)
-     ============================================ */
-  
-  --transition-all: all 0.3s ease;
-  --transition-colors: background-color 0.3s ease, color 0.3s ease;
-  --transition-transform: transform 0.3s ease;
-  --transition-opacity: opacity 0.3s ease;
-  
+  --breakpoint-xl: 1440px;
+  --breakpoint-2xl: 1600px;
+
   /* ============================================
      COMPONENTS - Button
      ============================================ */
-  
-  --button-padding-sm: 10px 20px;
-  --button-padding-md: 15px 30px;
-  --button-padding-lg: 18px 36px;
-  
-  --button-height-sm: 40px;
-  --button-height-md: 48px;
-  --button-height-lg: 56px;
-  
+
+  /* Primary Button */
+  --button-primary-bg: var(--color-primary);
+  --button-primary-text: var(--color-text-inverse);
+  --button-primary-padding: 15px 30px;
+  --button-primary-radius: var(--radius-sm);
+  --button-primary-font-size: var(--font-size-sm);
+  --button-primary-font-weight: var(--font-weight-medium);
+
+  /* Secondary Button */
+  --button-secondary-bg: var(--color-primary);
+  --button-secondary-text: var(--color-text-inverse);
+  --button-secondary-padding: 10px 20px;
+  --button-secondary-radius: var(--radius-sm);
+
+  /* Subscribe Button */
+  --button-subscribe-radius: var(--radius-md);
+
   /* ============================================
      COMPONENTS - Input
      ============================================ */
-  
-  --input-padding-sm: 12px 16px;
-  --input-padding-md: 16px 20px;
-  --input-padding-lg: 20px 24px;
-  
-  --input-height-sm: 44px;
-  --input-height-md: 56px;
-  --input-height-lg: 64px;
-  
+
+  --input-bg: var(--color-bg-white);
+  --input-radius: var(--radius-xl);
+  --input-placeholder-opacity: var(--opacity-50);
+
   /* ============================================
-     COMPONENTS - Navbar
+     COMPONENTS - Card
      ============================================ */
-  
-  --navbar-height: 80px;
-  --navbar-padding: 0 80px;
-  --navbar-logo-height: 40px;
-  
+
+  --card-bg: var(--color-bg-white);
+  --card-radius: var(--radius-lg);
+  --card-shadow: var(--shadow-card);
+  --card-image-radius: 10px 10px 0 0;
+
   /* ============================================
-     ICONOGRAPHY
+     COMPONENTS - Badge
      ============================================ */
-  
-  --icon-size-xs: 12px;
-  --icon-size-sm: 16px;
-  --icon-size-md: 20px;
-  --icon-size-lg: 24px;
-  --icon-size-xl: 32px;
-  
-  --icon-stroke-width: 1.5px;
-  
+
+  --badge-bg: var(--color-primary);
+  --badge-text: var(--color-text-inverse);
+  --badge-padding: 10px 20px;
+  --badge-radius: var(--radius-sm);
+
+  /* ============================================
+     COMPONENTS - Icon Background
+     ============================================ */
+
+  --icon-bg: var(--color-overlay-primary-10);
+  --icon-radius: var(--radius-sm);
+
+  /* ============================================
+     COMPONENTS - Review Card
+     ============================================ */
+
+  --review-card-bg: var(--color-bg-white);
+  --review-card-border: 2px solid var(--color-overlay-primary-10);
+  --review-card-radius: var(--radius-lg);
+
+  /* ============================================
+     ANIMATIONS
+     ============================================ */
+
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow: 500ms ease;
+
   /* ============================================
      Z-INDEX SCALE
      ============================================ */
-  
+
   --z-index-dropdown: 100;
   --z-index-sticky: 200;
   --z-index-fixed: 300;
   --z-index-modal-backdrop: 1000;
   --z-index-modal: 1050;
-  --z-index-popover: 1100;
   --z-index-tooltip: 1200;
 }
