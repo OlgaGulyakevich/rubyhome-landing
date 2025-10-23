@@ -1,10 +1,11 @@
 /**
  * RubyHome Design System - CSS Variables
- * Version: 2.0.0 - Pixel Perfect from Figma
- * Last Updated: 2025-10-22
+ * Version: 3.0.0 - Production Ready with Complete Mobile Support
+ * Last Updated: 2025-10-23
  *
- * Based on Figma design tokens
+ * Based on Figma design tokens + comprehensive analysis
  * Design Width: 1600px | Content Width: 1146px
+ * Strategy: Mobile-first with fluid responsive scaling
  */
 
 :root {
@@ -13,53 +14,96 @@
      ============================================ */
 
   /* Primary Color - Blue (Buttons, Interactive Elements) */
-  --color-primary: #2E6EFF;
-  --color-primary-hover: #1A55E6;
-  --color-primary-active: #0E3FCC;
+  --color-primary: #2e6eff;
+  --color-primary-hover: #1a55e6;
+  --color-primary-active: #0e3fcc;
+  --color-primary-light: rgba(46, 110, 255, 0.1);
 
   /* Secondary Color - Orange (Accents, Prices, Active Nav) */
-  --color-secondary: #FE753F;
-  --color-secondary-hover: #E85A2A;
+  --color-secondary: #fe753f;
+  --color-secondary-hover: #e85a2a;
+  --color-secondary-active: #d64b1e;
 
   /* Accent Color - Purple (CTA Sections) */
-  --color-accent: #433E89;
+  --color-accent: #433e89;
+  --color-accent-hover: #352f6d;
+  --color-accent-active: #2a2557;
 
   /* Logo Color - Red */
-  --color-logo: #BF3448;
+  --color-logo: #bf3448;
+
+  /* Semantic Colors */
+  --color-success: #10b981;
+  --color-success-light: rgba(16, 185, 129, 0.1);
+  --color-warning: #f59e0b;
+  --color-warning-light: rgba(245, 158, 11, 0.1);
+  --color-error: #ef4444;
+  --color-error-light: rgba(239, 68, 68, 0.1);
+  --color-info: #3b82f6;
+  --color-info-light: rgba(59, 130, 246, 0.1);
 
   /* Text Colors */
-  --color-text-primary: #030A1B;
+  --color-text-primary: #030a1b;
   --color-text-secondary: rgba(3, 10, 27, 0.7);
   --color-text-tertiary: rgba(3, 10, 27, 0.5);
-  --color-text-inverse: #FFFFFF;
+  --color-text-disabled: rgba(3, 10, 27, 0.3);
+  --color-text-inverse: #ffffff;
 
   /* Background Colors */
-  --color-bg-white: #FFFFFF;
-  --color-bg-light: #F9F9F9;
-  --color-bg-gray: #EDEDED;
+  --color-bg-white: #ffffff;
+  --color-bg-light: #f9f9f9;
+  --color-bg-gray: #ededed;
+  --color-bg-dark: #030a1b;
 
   /* Neutral Colors */
-  --color-neutral-gray: #C4C4C4;
+  --color-neutral-gray: #c4c4c4;
+  --color-neutral-gray-light: #e5e5e5;
+  --color-neutral-gray-dark: #a3a3a3;
+
+  /* Border Colors */
+  --color-border-default: #ededed;
+  --color-border-light: #f3f4f6;
+  --color-border-muted: #e5e7eb;
+  --color-border-focus: var(--color-primary);
+  --color-border-error: var(--color-error);
 
   /* Overlay Colors */
   --color-overlay-white-10: rgba(255, 255, 255, 0.1);
+  --color-overlay-white-20: rgba(255, 255, 255, 0.2);
+  --color-overlay-white-80: rgba(255, 255, 255, 0.8);
+  --color-overlay-black-50: rgba(0, 0, 0, 0.5);
+  --color-overlay-black-60: rgba(0, 0, 0, 0.6);
   --color-overlay-primary-10: rgba(254, 117, 63, 0.1);
 
   /* ============================================
-     TYPOGRAPHY
+     TYPOGRAPHY - BASE
      ============================================ */
 
   /* Font Families */
-  --font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-secondary: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, sans-serif;
+  --font-secondary: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, sans-serif;
 
-  /* Font Sizes - From Figma */
-  --font-size-xs: 14px;     /* Caption, small text */
-  --font-size-sm: 16px;     /* Body, navigation, buttons */
-  --font-size-base: 18px;   /* Subtitles, hero description */
-  --font-size-lg: 22px;     /* H3, card titles */
-  --font-size-xl: 44px;     /* H2, section titles */
-  --font-size-2xl: 61px;    /* H1, hero title */
+  /* Desktop Font Sizes (1024px+) - From Figma */
+  --font-size-xs: 14px; /* Caption, small text */
+  --font-size-sm: 16px; /* Body, navigation, buttons */
+  --font-size-base: 18px; /* Subtitles, hero description */
+  --font-size-lg: 22px; /* H3, card titles */
+  --font-size-xl: 44px; /* H2, section titles */
+  --font-size-2xl: 61px; /* H1, hero title */
+
+  /* Mobile Font Sizes (320px - 767px) */
+  --font-size-xs-mobile: 12px;
+  --font-size-sm-mobile: 14px;
+  --font-size-base-mobile: 16px;
+  --font-size-lg-mobile: 18px;
+  --font-size-xl-mobile: 28px; /* H2 on mobile */
+  --font-size-2xl-mobile: 36px; /* H1 on mobile */
+
+  /* Tablet Font Sizes (768px - 1023px) */
+  --font-size-xl-tablet: 36px;
+  --font-size-2xl-tablet: 48px;
 
   /* Font Weights */
   --font-weight-regular: 400;
@@ -67,16 +111,38 @@
   --font-weight-semibold: 600;
 
   /* Line Heights */
-  --line-height-tight: 1.2;    /* Hero titles */
-  --line-height-snug: 1.36;    /* Section titles */
-  --line-height-normal: 1.5;   /* Body text */
+  --line-height-tight: 1.2; /* Hero titles */
+  --line-height-snug: 1.36; /* Section titles */
+  --line-height-normal: 1.5; /* Body text */
+  --line-height-relaxed: 1.625; /* Long-form content */
 
   /* Letter Spacing */
+  --letter-spacing-tight: -0.02em;
   --letter-spacing-normal: 0;
-  --letter-spacing-wide: 0.08em;  /* Uppercase text */
+  --letter-spacing-wide: 0.08em; /* Uppercase text */
 
   /* ============================================
-     SPACING SYSTEM - From Figma
+     TYPOGRAPHY - FLUID (CSS Clamp)
+     Automatically scales between mobile and desktop
+     ============================================ */
+
+  /* Fluid Typography for seamless responsive scaling */
+  --fluid-font-2xl: clamp(36px, 4vw + 1rem, 61px); /* H1: 36px mobile → 61px desktop */
+  --fluid-font-xl: clamp(28px, 3vw + 1rem, 44px); /* H2: 28px mobile → 44px desktop */
+  --fluid-font-lg: clamp(18px, 1.5vw + 1rem, 22px); /* H3: 18px mobile → 22px desktop */
+  --fluid-font-base: clamp(16px, 1vw + 0.5rem, 18px); /* Body: 16px mobile → 18px desktop */
+
+  /* Fluid Section Spacing */
+  --fluid-section-spacing: clamp(
+    40px,
+    8vw,
+    140px
+  ); /* Section: 40px mobile → 140px desktop */
+  --fluid-section-spacing-md: clamp(60px, 6vw, 100px);
+  --fluid-section-spacing-sm: clamp(40px, 5vw, 70px);
+
+  /* ============================================
+     SPACING SYSTEM - Mobile-first
      ============================================ */
 
   --space-xs: 5px;
@@ -86,52 +152,119 @@
   --space-xl: 15px;
   --space-2xl: 20px;
   --space-3xl: 30px;
+  --space-4xl: 40px;
+  --space-5xl: 60px;
+  --space-6xl: 80px;
 
-  /* Section Spacing (Vertical Rhythm) */
-  --section-spacing-sm: 70px;    /* Desktop */
-  --section-spacing-md: 100px;   /* Desktop */
-  --section-spacing-lg: 140px;   /* Desktop */
+  /* Section Spacing - Desktop (1024px+) */
+  --section-spacing-sm: 70px;
+  --section-spacing-md: 100px;
+  --section-spacing-lg: 140px;
 
-  --section-spacing-sm-mobile: 40px;   /* Mobile */
-  --section-spacing-md-mobile: 60px;   /* Mobile */
-  --section-spacing-lg-mobile: 80px;   /* Mobile */
+  /* Section Spacing - Mobile (320px - 767px) */
+  --section-spacing-sm-mobile: 40px;
+  --section-spacing-md-mobile: 60px;
+  --section-spacing-lg-mobile: 80px;
+
+  /* Section Spacing - Tablet (768px - 1023px) */
+  --section-spacing-sm-tablet: 50px;
+  --section-spacing-md-tablet: 80px;
+  --section-spacing-lg-tablet: 110px;
+
+  /* Component Internal Spacing */
+  --spacing-component-xs: 8px;
+  --spacing-component-sm: 12px;
+  --spacing-component-md: 16px;
+  --spacing-component-lg: 24px;
+  --spacing-component-xl: 32px;
 
   /* ============================================
      BORDER RADIUS
      ============================================ */
 
-  --radius-sm: 5px;    /* Badges, icon backgrounds, buttons */
-  --radius-md: 8px;    /* Subscribe button */
-  --radius-lg: 10px;   /* Cards, images */
-  --radius-xl: 12px;   /* Forms, inputs */
-  --radius-full: 9999px;  /* Circular elements */
+  --radius-sm: 5px; /* Badges, icon backgrounds, buttons */
+  --radius-md: 8px; /* Subscribe button */
+  --radius-lg: 10px; /* Cards, images */
+  --radius-xl: 12px; /* Forms, inputs */
+  --radius-2xl: 16px; /* Large modals */
+  --radius-full: 9999px; /* Circular elements */
 
   /* ============================================
-     SHADOWS
+     BORDERS
      ============================================ */
 
+  --border-width-thin: 1px;
+  --border-width-medium: 2px;
+  --border-width-thick: 4px;
+
+  --border-style-solid: solid;
+  --border-style-dashed: dashed;
+
+  /* Border Combinations */
+  --border-default: 1px solid var(--color-border-default);
+  --border-light: 1px solid var(--color-border-light);
+  --border-focus: 2px solid var(--color-border-focus);
+  --border-error: 1px solid var(--color-border-error);
+
+  /* ============================================
+     SHADOWS - Extended
+     ============================================ */
+
+  /* Card Shadows */
   --shadow-card: 0px 8px 70px 0px rgba(0, 0, 0, 0.07);
+  --shadow-card-hover: 0px 12px 80px 0px rgba(0, 0, 0, 0.12);
+  --shadow-card-sm: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+
+  /* Interactive Shadows */
+  --shadow-button-hover: 0 4px 12px rgba(46, 110, 255, 0.3);
   --shadow-focus: 0 0 0 3px rgba(46, 110, 255, 0.1);
+  --shadow-focus-error: 0 0 0 3px rgba(239, 68, 68, 0.1);
+
+  /* Modal Shadows */
+  --shadow-modal: 0px 20px 80px rgba(0, 0, 0, 0.15);
+  --shadow-dropdown: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+  /* Elevation System (Material Design inspired) */
+  --shadow-elevation-1: 0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
+  --shadow-elevation-2: 0 3px 6px rgba(0, 0, 0, 0.15),
+    0 2px 4px rgba(0, 0, 0, 0.12);
+  --shadow-elevation-3: 0 10px 20px rgba(0, 0, 0, 0.15),
+    0 3px 6px rgba(0, 0, 0, 0.1);
+  --shadow-elevation-4: 0 15px 25px rgba(0, 0, 0, 0.15),
+    0 5px 10px rgba(0, 0, 0, 0.05);
 
   /* ============================================
      OPACITY
      ============================================ */
 
   --opacity-10: 0.1;
+  --opacity-20: 0.2;
+  --opacity-30: 0.3;
+  --opacity-40: 0.4;
   --opacity-50: 0.5;
   --opacity-60: 0.6;
   --opacity-70: 0.7;
+  --opacity-80: 0.8;
   --opacity-90: 0.9;
+  --opacity-disabled: 0.5;
 
   /* ============================================
-     LAYOUT
+     LAYOUT - Extended
      ============================================ */
 
   /* Container Widths */
-  --container-design-width: 1600px;   /* Full design width */
-  --container-content-width: 1146px;  /* Content max-width */
+  --container-design-width: 1600px; /* Full design width */
+  --container-content-width: 1146px; /* Content max-width */
+  --container-narrow: 800px; /* For forms, modals */
+  --container-wide: 1400px; /* For full-width sections */
 
-  /* Breakpoints */
+  /* Container Padding */
+  --container-padding-mobile: 20px;
+  --container-padding-tablet: 40px;
+  --container-padding-desktop: 60px;
+
+  /* Breakpoints (for reference in media queries) */
   --breakpoint-xs: 375px;
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
@@ -139,17 +272,45 @@
   --breakpoint-xl: 1440px;
   --breakpoint-2xl: 1600px;
 
+  /* Grid System */
+  --grid-columns-mobile: 1;
+  --grid-columns-tablet: 2;
+  --grid-columns-desktop: 3;
+  --grid-gap-mobile: 20px;
+  --grid-gap-tablet: 24px;
+  --grid-gap-desktop: 30px;
+
+  /* Section Heights */
+  --hero-min-height-mobile: 480px;
+  --hero-min-height-tablet: 560px;
+  --hero-min-height-desktop: 600px;
+
   /* ============================================
-     COMPONENTS - Button
+     COMPONENTS - BUTTON (Extended)
      ============================================ */
 
   /* Primary Button */
   --button-primary-bg: var(--color-primary);
   --button-primary-text: var(--color-text-inverse);
   --button-primary-padding: 15px 30px;
+  --button-primary-padding-mobile: 12px 24px;
   --button-primary-radius: var(--radius-sm);
   --button-primary-font-size: var(--font-size-sm);
   --button-primary-font-weight: var(--font-weight-medium);
+  --button-primary-min-height: 48px; /* Accessibility - touch target */
+
+  /* Button Hover States */
+  --button-primary-bg-hover: var(--color-primary-hover);
+  --button-primary-shadow-hover: var(--shadow-button-hover);
+  --button-primary-transform-hover: translateY(-2px);
+
+  /* Button Active States */
+  --button-primary-bg-active: var(--color-primary-active);
+  --button-primary-transform-active: translateY(0);
+
+  /* Button Disabled States */
+  --button-disabled-opacity: var(--opacity-disabled);
+  --button-disabled-cursor: not-allowed;
 
   /* Secondary Button */
   --button-secondary-bg: var(--color-primary);
@@ -157,66 +318,313 @@
   --button-secondary-padding: 10px 20px;
   --button-secondary-radius: var(--radius-sm);
 
+  /* Outline Button */
+  --button-outline-bg: transparent;
+  --button-outline-text: var(--color-primary);
+  --button-outline-border: 2px solid var(--color-primary);
+  --button-outline-bg-hover: var(--color-primary-light);
+
   /* Subscribe Button */
   --button-subscribe-radius: var(--radius-md);
 
   /* ============================================
-     COMPONENTS - Input
+     COMPONENTS - INPUT (Extended)
      ============================================ */
 
+  /* Input Base */
   --input-bg: var(--color-bg-white);
+  --input-border: var(--border-default);
+  --input-border-focus: var(--border-focus);
+  --input-border-error: var(--border-error);
   --input-radius: var(--radius-xl);
+  --input-padding: 16px;
+  --input-padding-mobile: 14px;
+  --input-font-size: var(--font-size-sm);
+  --input-min-height: 48px; /* Accessibility */
+
+  /* Input Placeholder */
+  --input-placeholder-color: var(--color-text-tertiary);
   --input-placeholder-opacity: var(--opacity-50);
 
+  /* Input States */
+  --input-bg-disabled: var(--color-bg-light);
+  --input-bg-focus: var(--color-bg-white);
+  --input-bg-error: var(--color-error-light);
+  --input-text-disabled: var(--color-text-disabled);
+
+  /* Input Focus Shadow */
+  --input-shadow-focus: var(--shadow-focus);
+  --input-shadow-error: var(--shadow-focus-error);
+
   /* ============================================
-     COMPONENTS - Card
+     COMPONENTS - MODAL (NEW - Critical)
      ============================================ */
 
+  /* Modal Backdrop */
+  --modal-backdrop-bg: var(--color-overlay-black-50);
+  --modal-backdrop-blur: blur(4px); /* From PDF analysis */
+  --modal-backdrop-z-index: var(--z-index-modal-backdrop);
+
+  /* Modal Content */
+  --modal-content-bg: var(--color-bg-white);
+  --modal-content-radius: var(--radius-xl);
+  --modal-content-shadow: var(--shadow-modal);
+  --modal-content-padding: 40px;
+  --modal-content-padding-mobile: 24px;
+  --modal-content-max-width: 520px;
+  --modal-content-z-index: var(--z-index-modal);
+
+  /* Modal Header */
+  --modal-header-margin-bottom: 24px;
+  --modal-title-font-size: var(--font-size-xl-mobile);
+  --modal-title-font-weight: var(--font-weight-semibold);
+
+  /* Modal Close Button */
+  --modal-close-size: 24px;
+  --modal-close-color: var(--color-text-tertiary);
+  --modal-close-hover-color: var(--color-text-primary);
+  --modal-close-bg-hover: var(--color-bg-light);
+  --modal-close-radius: var(--radius-sm);
+
+  /* Modal Form Elements */
+  --modal-input-margin-bottom: 20px;
+  --modal-label-margin-bottom: 8px;
+  --modal-label-font-size: var(--font-size-xs);
+  --modal-label-font-weight: var(--font-weight-medium);
+  --modal-label-color: var(--color-text-primary);
+
+  /* Radio Button Group (from PDF modal) */
+  --radio-group-gap: 12px;
+  --radio-button-padding: 12px 24px;
+  --radio-button-bg: var(--color-bg-white);
+  --radio-button-bg-active: var(--color-primary);
+  --radio-button-text: var(--color-text-primary);
+  --radio-button-text-active: var(--color-text-inverse);
+  --radio-button-border: 1px solid var(--color-border-default);
+  --radio-button-border-active: 1px solid var(--color-primary);
+  --radio-button-radius: var(--radius-sm);
+
+  /* Checkbox (from PDF modal) */
+  --checkbox-size: 20px;
+  --checkbox-border: 2px solid var(--color-border-default);
+  --checkbox-border-checked: 2px solid var(--color-primary);
+  --checkbox-bg-checked: var(--color-primary);
+  --checkbox-radius: 4px;
+  --checkbox-checkmark-color: var(--color-text-inverse);
+
+  /* Error Message */
+  --error-message-color: var(--color-error);
+  --error-message-font-size: var(--font-size-xs);
+  --error-message-margin-top: 4px;
+
+  /* Success Message */
+  --success-message-color: var(--color-success);
+  --success-message-bg: var(--color-success-light);
+  --success-message-padding: 16px;
+  --success-message-radius: var(--radius-md);
+
+  /* ============================================
+     COMPONENTS - NAVIGATION (NEW)
+     ============================================ */
+
+  /* Header/Nav Container */
+  --nav-height: 80px;
+  --nav-height-mobile: 64px;
+  --nav-bg: var(--color-bg-white);
+  --nav-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --nav-padding-horizontal: var(--space-2xl);
+  --nav-z-index: var(--z-index-sticky);
+
+  /* Nav Links */
+  --nav-link-color: var(--color-text-primary);
+  --nav-link-hover-color: var(--color-secondary);
+  --nav-link-active-color: var(--color-secondary);
+  --nav-link-font-size: var(--font-size-sm);
+  --nav-link-font-weight: var(--font-weight-medium);
+  --nav-link-padding: 8px 16px;
+  --nav-link-gap: 24px;
+
+  /* Active Indicator (orange underline from PDF) */
+  --nav-link-active-indicator-height: 2px;
+  --nav-link-active-indicator-color: var(--color-secondary);
+  --nav-link-active-indicator-width: 100%;
+
+  /* Mobile Menu (Burger Menu) */
+  --mobile-menu-bg: var(--color-bg-white);
+  --mobile-menu-shadow: var(--shadow-elevation-3);
+  --mobile-menu-padding: 24px;
+  --mobile-menu-item-padding: 16px 0;
+  --mobile-menu-width: 280px;
+  --mobile-menu-z-index: var(--z-index-dropdown);
+
+  /* Burger Icon */
+  --burger-icon-width: 24px;
+  --burger-icon-height: 2px;
+  --burger-icon-gap: 6px;
+  --burger-icon-color: var(--color-text-primary);
+
+  /* ============================================
+     COMPONENTS - HERO SECTION (NEW)
+     ============================================ */
+
+  --hero-min-height: 600px;
+  --hero-min-height-mobile: 480px;
+  --hero-min-height-tablet: 560px;
+  --hero-padding-vertical: 80px;
+  --hero-padding-vertical-mobile: 40px;
+  --hero-padding-vertical-tablet: 60px;
+
+  /* Hero Overlay Gradient (for readability over background image) */
+  --hero-overlay-gradient: linear-gradient(
+    90deg,
+    rgba(3, 10, 27, 0.8) 0%,
+    rgba(3, 10, 27, 0.4) 50%,
+    rgba(3, 10, 27, 0.1) 100%
+  );
+
+  /* Hero Content */
+  --hero-title-max-width: 600px;
+  --hero-title-margin-bottom: 24px;
+  --hero-description-max-width: 520px;
+  --hero-description-margin-bottom: 32px;
+  --hero-content-gap: 24px;
+
+  /* ============================================
+     COMPONENTS - CARD (Extended)
+     ============================================ */
+
+  /* Base Card */
   --card-bg: var(--color-bg-white);
   --card-radius: var(--radius-lg);
   --card-shadow: var(--shadow-card);
+  --card-padding: 20px;
+  --card-padding-mobile: 16px;
+  --card-gap: 12px;
+
+  /* Card Image */
   --card-image-radius: 10px 10px 0 0;
+  --card-image-height: 240px;
+  --card-image-height-mobile: 200px;
+
+  /* Card Hover */
+  --card-hover-transform: translateY(-4px);
+  --card-hover-shadow: var(--shadow-card-hover);
 
   /* ============================================
-     COMPONENTS - Badge
+     COMPONENTS - BADGE
      ============================================ */
 
   --badge-bg: var(--color-primary);
   --badge-text: var(--color-text-inverse);
   --badge-padding: 10px 20px;
+  --badge-padding-sm: 6px 12px;
   --badge-radius: var(--radius-sm);
+  --badge-font-size: var(--font-size-xs);
+  --badge-font-weight: var(--font-weight-medium);
 
   /* ============================================
-     COMPONENTS - Icon Background
+     COMPONENTS - ICON BACKGROUND
      ============================================ */
 
   --icon-bg: var(--color-overlay-primary-10);
   --icon-radius: var(--radius-sm);
+  --icon-size: 48px;
+  --icon-size-sm: 32px;
+  --icon-size-lg: 64px;
+  --icon-padding: 12px;
 
   /* ============================================
-     COMPONENTS - Review Card
+     COMPONENTS - REVIEW CARD (Extended)
      ============================================ */
 
+  /* Review Card (unique border from design-system.json) */
   --review-card-bg: var(--color-bg-white);
   --review-card-border: 2px solid var(--color-overlay-primary-10);
   --review-card-radius: var(--radius-lg);
+  --review-card-padding: 30px;
+  --review-card-padding-mobile: 20px;
+  --review-card-min-height: 300px;
+  --review-card-gap: 16px;
+
+  /* Review Avatar */
+  --review-avatar-size: 64px;
+  --review-avatar-size-mobile: 48px;
+  --review-avatar-border: 3px solid var(--color-bg-white);
+  --review-avatar-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --review-avatar-radius: var(--radius-full);
+
+  /* Review Author */
+  --review-author-name-font-size: var(--font-size-base);
+  --review-author-name-font-weight: var(--font-weight-semibold);
+  --review-author-name-margin-bottom: 4px;
+  --review-author-position-font-size: var(--font-size-xs);
+  --review-author-position-color: var(--color-text-tertiary);
+
+  /* Review Text */
+  --review-text-font-size: var(--font-size-xs);
+  --review-text-line-height: var(--line-height-normal);
+  --review-text-color: var(--color-text-secondary);
+  --review-text-margin-top: 16px;
+
+  /* Slider Dots Navigation */
+  --slider-dot-size: 12px;
+  --slider-dot-size-mobile: 10px;
+  --slider-dot-bg: var(--color-neutral-gray);
+  --slider-dot-bg-active: var(--color-primary);
+  --slider-dot-gap: 8px;
+  --slider-dots-margin-top: 32px;
+  --slider-dot-transition: var(--transition-normal);
 
   /* ============================================
-     ANIMATIONS
+     ANIMATIONS - Extended
      ============================================ */
 
+  /* Transition Durations */
   --transition-fast: 150ms ease;
   --transition-normal: 300ms ease;
   --transition-slow: 500ms ease;
+  --transition-slower: 750ms ease;
+
+  /* Easing Functions */
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* Common Transform Values */
+  --transform-hover-lift: translateY(-2px);
+  --transform-hover-scale: scale(1.02);
+  --transform-active: translateY(0);
 
   /* ============================================
      Z-INDEX SCALE
      ============================================ */
 
+  --z-index-base: 0;
   --z-index-dropdown: 100;
   --z-index-sticky: 200;
   --z-index-fixed: 300;
   --z-index-modal-backdrop: 1000;
   --z-index-modal: 1050;
+  --z-index-popover: 1100;
   --z-index-tooltip: 1200;
+
+  /* ============================================
+     ACCESSIBILITY
+     ============================================ */
+
+  /* Focus Indicators */
+  --focus-outline-width: 2px;
+  --focus-outline-offset: 2px;
+  --focus-outline-color: var(--color-primary);
+  --focus-outline-style: solid;
+
+  /* Touch Targets (WCAG 2.1 Level AAA) */
+  --min-touch-target: 44px;
+  --recommended-touch-target: 48px;
+
+  /* Skip Links */
+  --skip-link-bg: var(--color-primary);
+  --skip-link-text: var(--color-text-inverse);
+  --skip-link-padding: 12px 24px;
 }

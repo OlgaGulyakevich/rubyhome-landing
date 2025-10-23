@@ -1,25 +1,47 @@
 /**
  * Global Styles
  * Base styles for the entire application
- * Version: 2.0.0 - Updated with Figma design tokens
+ * Version: 3.0.0 - Updated with fluid typography and mobile-first approach
  */
 
 /* ============================================
-   BASE TYPOGRAPHY
+   BASE RESET & BOX SIZING
+   ============================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ============================================
+   BASE TYPOGRAPHY - Mobile First
    ============================================ */
 
 body {
   font-family: var(--font-primary);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-sm-mobile); /* 14px mobile */
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-normal);
   color: var(--color-text-primary);
   background-color: var(--color-bg-white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
 }
 
-/* Headings */
+/* Tablet and up */
+@media (min-width: 768px) {
+  body {
+    font-size: var(--font-size-sm); /* 16px tablet+ */
+  }
+}
+
+/* ============================================
+   HEADINGS - Fluid Typography with CSS Clamp
+   ============================================ */
+
 h1,
 h2,
 h3,
@@ -31,31 +53,62 @@ h6 {
   color: var(--color-text-primary);
 }
 
+/* H1 - Hero Title - Automatically scales 36px → 61px */
 h1 {
-  font-size: var(--font-size-2xl);
+  font-size: var(--fluid-font-2xl); /* clamp(36px, 4vw + 1rem, 61px) */
   line-height: var(--line-height-tight);
 }
 
+/* H2 - Section Titles - Automatically scales 28px → 44px */
 h2 {
-  font-size: var(--font-size-xl);
+  font-size: var(--fluid-font-xl); /* clamp(28px, 3vw + 1rem, 44px) */
   line-height: var(--line-height-snug);
 }
 
+/* H3 - Card Titles - Automatically scales 18px → 22px */
 h3 {
-  font-size: var(--font-size-lg);
+  font-size: var(--fluid-font-lg); /* clamp(18px, 1.5vw + 1rem, 22px) */
   line-height: var(--line-height-normal);
 }
 
-/* Paragraphs */
-p {
-  margin: 0;
+/* H4, H5, H6 - Static sizes */
+h4 {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
 }
 
-/* Links */
+h5 {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+}
+
+h6 {
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-normal);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+/* ============================================
+   PARAGRAPHS
+   ============================================ */
+
+p {
+  margin: 0 0 1em 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================
+   LINKS
+   ============================================ */
+
 a {
   color: var(--color-primary);
   text-decoration: none;
-  transition: var(--transition-normal);
+  transition: color var(--transition-normal);
 }
 
 a:hover {
@@ -63,11 +116,19 @@ a:hover {
 }
 
 a:focus {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
+  outline: var(--focus-outline-width) var(--focus-outline-style)
+    var(--focus-outline-color);
+  outline-offset: var(--focus-outline-offset);
 }
 
-/* Lists */
+a:active {
+  color: var(--color-primary-active);
+}
+
+/* ============================================
+   LISTS
+   ============================================ */
+
 ul,
 ol {
   margin: 0;
@@ -76,18 +137,40 @@ ol {
 }
 
 /* ============================================
-   LAYOUT CONTAINERS
+   LAYOUT CONTAINERS - Responsive
    ============================================ */
 
 .container {
   width: 100%;
   max-width: var(--container-content-width);
   margin: 0 auto;
-  padding: 0 var(--space-2xl);
+  padding: 0 var(--container-padding-mobile); /* 20px mobile */
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--container-padding-tablet); /* 40px tablet */
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 var(--container-padding-desktop); /* 60px desktop */
+  }
 }
 
 .container--fluid {
   max-width: 100%;
+}
+
+.container--narrow {
+  max-width: var(--container-narrow);
+}
+
+.container--wide {
+  max-width: var(--container-wide);
 }
 
 /* ============================================
@@ -171,27 +254,58 @@ ol {
   font-weight: var(--font-weight-semibold) !important;
 }
 
+/* Text Color */
+.u-text-primary {
+  color: var(--color-text-primary) !important;
+}
+
+.u-text-secondary {
+  color: var(--color-text-secondary) !important;
+}
+
+.u-text-tertiary {
+  color: var(--color-text-tertiary) !important;
+}
+
+.u-text-inverse {
+  color: var(--color-text-inverse) !important;
+}
+
 /* ============================================
    MEDIA QUERIES - RESPONSIVE UTILITIES
    ============================================ */
 
-/* Hide on mobile */
+/* Hide on mobile (< 768px) */
 @media (max-width: 767px) {
   .u-hide-mobile {
     display: none !important;
   }
 }
 
-/* Hide on tablet and up */
+/* Show only on mobile (< 768px) */
 @media (min-width: 768px) {
-  .u-hide-tablet-up {
+  .u-show-mobile-only {
     display: none !important;
   }
 }
 
-/* Hide on desktop and up */
+/* Hide on tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .u-hide-tablet {
+    display: none !important;
+  }
+}
+
+/* Hide on desktop (>= 1024px) */
 @media (min-width: 1024px) {
-  .u-hide-desktop-up {
+  .u-hide-desktop {
+    display: none !important;
+  }
+}
+
+/* Show only on desktop (>= 1024px) */
+@media (max-width: 1023px) {
+  .u-show-desktop-only {
     display: none !important;
   }
 }
@@ -201,17 +315,42 @@ ol {
    ============================================ */
 
 .btn {
-  display: inline-block;
-  padding: var(--button-primary-padding);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--button-primary-padding-mobile); /* Mobile first */
+  font-family: var(--font-primary);
   font-size: var(--button-primary-font-size);
   font-weight: var(--button-primary-font-weight);
   text-align: center;
   text-decoration: none;
   border: none;
   border-radius: var(--button-primary-radius);
+  background-color: var(--button-primary-bg);
+  color: var(--button-primary-text);
   cursor: pointer;
-  transition: var(--transition-normal);
+  transition: all var(--transition-normal);
   user-select: none;
+  min-height: var(--button-primary-min-height);
+  white-space: nowrap;
+}
+
+/* Desktop padding */
+@media (min-width: 1024px) {
+  .btn {
+    padding: var(--button-primary-padding);
+  }
+}
+
+.btn:hover {
+  background-color: var(--button-primary-bg-hover);
+  transform: var(--button-primary-transform-hover);
+  box-shadow: var(--button-primary-shadow-hover);
+}
+
+.btn:active {
+  background-color: var(--button-primary-bg-active);
+  transform: var(--button-primary-transform-active);
 }
 
 .btn:focus {
@@ -220,8 +359,26 @@ ol {
 }
 
 .btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+  opacity: var(--button-disabled-opacity);
+  cursor: var(--button-disabled-cursor);
+  pointer-events: none;
+}
+
+/* Button Variants */
+.btn--secondary {
+  padding: var(--button-secondary-padding);
+  border-radius: var(--button-secondary-radius);
+}
+
+.btn--outline {
+  background-color: var(--button-outline-bg);
+  color: var(--button-outline-text);
+  border: var(--button-outline-border);
+}
+
+.btn--outline:hover {
+  background-color: var(--button-outline-bg-hover);
+  transform: var(--button-primary-transform-hover);
 }
 
 /* ============================================
@@ -234,14 +391,115 @@ img {
   display: block;
 }
 
+/* Prevent layout shift */
+img[width][height] {
+  height: auto;
+}
+
+/* ============================================
+   FORM ELEMENTS BASE
+   ============================================ */
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: var(--input-font-size);
+  line-height: var(--line-height-normal);
+}
+
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+input[type='password'],
+input[type='url'],
+input[type='search'],
+textarea,
+select {
+  width: 100%;
+  padding: var(--input-padding-mobile); /* Mobile first */
+  background-color: var(--input-bg);
+  border: var(--input-border);
+  border-radius: var(--input-radius);
+  color: var(--color-text-primary);
+  transition: all var(--transition-normal);
+  min-height: var(--input-min-height);
+}
+
+/* Desktop padding */
+@media (min-width: 1024px) {
+  input[type='text'],
+  input[type='email'],
+  input[type='tel'],
+  input[type='password'],
+  input[type='url'],
+  input[type='search'],
+  textarea,
+  select {
+    padding: var(--input-padding);
+  }
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border: var(--input-border-focus);
+  box-shadow: var(--input-shadow-focus);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--input-placeholder-color);
+  opacity: var(--input-placeholder-opacity);
+}
+
+input:disabled,
+textarea:disabled,
+select:disabled {
+  background-color: var(--input-bg-disabled);
+  color: var(--input-text-disabled);
+  cursor: not-allowed;
+}
+
 /* ============================================
    ACCESSIBILITY
    ============================================ */
 
 /* Focus styles for keyboard navigation */
 *:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
+  outline: var(--focus-outline-width) var(--focus-outline-style)
+    var(--focus-outline-color);
+  outline-offset: var(--focus-outline-offset);
+}
+
+/* Skip to main content link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: var(--skip-link-bg);
+  color: var(--skip-link-text);
+  padding: var(--skip-link-padding);
+  text-decoration: none;
+  z-index: 9999;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Screen reader only text */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
 }
 
 /* Reduce motion for users who prefer it */
@@ -254,4 +512,39 @@ img {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ============================================
+   SCROLLBAR STYLING (Optional - Webkit only)
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-neutral-gray);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-neutral-gray-dark);
+}
+
+/* ============================================
+   SELECTION STYLING
+   ============================================ */
+
+::selection {
+  background-color: var(--color-primary-light);
+  color: var(--color-text-primary);
+}
+
+::-moz-selection {
+  background-color: var(--color-primary-light);
+  color: var(--color-text-primary);
 }
