@@ -29,7 +29,7 @@
   }
   
   /* ============================================
-     LOGO
+     LOGO - Interactive
      ============================================ */
   
   .header__logo-link {
@@ -38,6 +38,16 @@
     text-decoration: none;
     flex-shrink: 0;
     z-index: 2; /* Above menu */
+    transition: transform var(--transition-fast), opacity var(--transition-fast);
+  }
+  
+  .header__logo-link:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+  
+  .header__logo-link:active {
+    transform: scale(0.98);
   }
   
   .header__logo {
@@ -91,11 +101,13 @@
     font-weight: var(--nav-link-font-weight);
     color: var(--nav-link-color);
     text-decoration: none;
-    transition: color var(--transition-fast);
+    transition: color var(--transition-fast), transform var(--transition-fast);
+    position: relative; /* For ::after pseudo-element */
   }
   
   .header__nav-link:hover {
     color: var(--nav-link-hover-color);
+    transform: translateX(4px); /* Slight movement on mobile */
   }
   
   /* Active link - orange */
@@ -128,6 +140,11 @@
     cursor: pointer;
     z-index: 2;
     -webkit-tap-highlight-color: transparent;
+    transition: transform var(--transition-fast);
+  }
+  
+  .header__menu-toggle:hover {
+    transform: scale(1.1);
   }
   
   .header__menu-icon {
@@ -234,16 +251,23 @@
       padding: var(--nav-link-padding);
     }
   
-    /* Active indicator - orange underline */
-    .header__nav-link--active::after {
+    /* Reset mobile transform on desktop */
+    .header__nav-link:hover {
+      transform: none;
+      color: var(--nav-link-hover-color);
+    }
+  
+    /* Underline on click (added via JS in Phase 4) */
+    .header__nav-link--clicking::after {
       content: '';
       position: absolute;
       bottom: 0;
       left: 0;
-      right: 0;
+      width: 100%;
       height: var(--nav-link-active-indicator-height);
       background-color: var(--nav-link-active-indicator-color);
       border-radius: 2px;
+      animation: slide-down 0.3s ease-out;
     }
   
     /* CTA Button - show on desktop */
@@ -254,6 +278,23 @@
     /* Hide burger menu on desktop */
     .header__menu-toggle {
       display: none;
+    }
+  }
+  
+  /* ============================================
+     ANIMATIONS
+     ============================================ */
+  
+  /* Underline animation on click - slides down from top */
+  @keyframes slide-down {
+    from {
+      transform: scaleY(0);
+      transform-origin: top;
+    }
+
+    to {
+      transform: scaleY(1);
+      transform-origin: top;
     }
   }
   
@@ -274,8 +315,10 @@
     .header__nav,
     .header__menu-icon,
     .header__menu-icon::before,
-    .header__menu-icon::after {
+    .header__menu-icon::after,
+    .header__logo-link,
+    .header__nav-link {
       transition: none;
+      animation: none;
     }
   }
-  
