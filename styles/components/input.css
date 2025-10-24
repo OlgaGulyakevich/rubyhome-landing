@@ -143,7 +143,7 @@
      line-height: var(--line-height-normal);
    }
    
- /* ============================================
+   /* ============================================
    RADIO BUTTONS (Custom styled)
    ============================================ */
 
@@ -161,46 +161,58 @@
   cursor: pointer;
 }
 
-/* Hide default radio */
+/* Hide default radio - ПОЛНОСТЬЮ */
 .modal__radio-label input[type='radio'] {
   position: absolute;
   opacity: 0;
-  width: 0;
-  height: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 /* Custom radio button */
-.modal__radio-label span {
+.modal__radio-label .modal__radio-text {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+  min-height: 56px;
   padding: var(--radio-button-padding);
   background-color: var(--radio-button-bg);
   border: var(--radio-button-border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radio-button-radius);
   color: var(--radio-button-text);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
   transition: all var(--transition-normal);
   white-space: nowrap;
   text-align: center;
+  user-select: none;
 }
 
 /* Hover state */
-.modal__radio-label:hover span {
+.modal__radio-label:hover .modal__radio-text {
   border-color: var(--color-primary);
 }
 
 /* Checked state */
-.modal__radio-label input[type='radio']:checked + span {
+.modal__radio-label input[type='radio']:checked + .modal__radio-text {
   background-color: var(--radio-button-bg-active);
   border: var(--radio-button-border-active);
   color: var(--radio-button-text-active);
 }
 
 /* Focus visible for keyboard navigation */
-.modal__radio-label input[type='radio']:focus-visible + span {
+.modal__radio-label input[type='radio']:focus-visible + .modal__radio-text {
   outline: var(--focus-outline-width) var(--focus-outline-style)
     var(--focus-outline-color);
   outline-offset: var(--focus-outline-offset);
