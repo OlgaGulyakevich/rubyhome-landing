@@ -1,9 +1,165 @@
 /* ============================================
    BUTTON COMPONENT
    Reusable button styles for CTAs and actions
+   Mobile-first approach
    ============================================ */
 
-.button {
-  /* Base button styles will be added during Phase 3 */
-}
+/* ============================================
+   BASE BUTTON
+   ============================================ */
 
+   .button {
+    /* Display & Box Model */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: var(--button-primary-min-height);
+    padding: var(--button-primary-padding-mobile);
+  
+    /* Typography */
+    font-family: var(--font-primary);
+    font-size: var(--button-primary-font-size);
+    font-weight: var(--button-primary-font-weight);
+    line-height: var(--line-height-tight);
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+  
+    /* Visual */
+    border: none;
+    border-radius: var(--button-primary-radius);
+    background: transparent;
+    cursor: pointer;
+  
+    /* Transitions */
+    transition: all var(--transition-normal);
+  
+    /* Accessibility */
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+  
+  /* Remove default button styles */
+  .button:focus {
+    outline: none;
+  }
+  
+  /* Focus visible for keyboard navigation (accessibility) */
+  .button:focus-visible {
+    outline: var(--focus-outline-width) var(--focus-outline-style)
+      var(--focus-outline-color);
+    outline-offset: var(--focus-outline-offset);
+  }
+  
+  /* ============================================
+     PRIMARY BUTTON - Blue (Main CTA)
+     ============================================ */
+  
+  .button--primary {
+    background-color: var(--button-primary-bg);
+    color: var(--button-primary-text);
+  }
+  
+  /* Hover State */
+  .button--primary:hover {
+    background-color: var(--button-primary-bg-hover);
+    box-shadow: var(--button-primary-shadow-hover);
+    transform: var(--button-primary-transform-hover);
+  }
+  
+  /* Active State */
+  .button--primary:active {
+    background-color: var(--button-primary-bg-active);
+    transform: var(--button-primary-transform-active);
+    box-shadow: none;
+  }
+  
+  /* ============================================
+     SIZE MODIFIERS
+     ============================================ */
+  
+  /* Large Button (Hero section) */
+  .button--lg {
+    padding: calc(var(--button-primary-padding-mobile) * 1.2);
+    font-size: var(--font-size-base-mobile);
+    min-height: 52px;
+  }
+  
+  /* Full Width Button (Modals) */
+  .button--full {
+    width: 100%;
+  }
+  
+  /* ============================================
+     DISABLED STATE
+     ============================================ */
+  
+  .button:disabled,
+  .button--disabled {
+    opacity: var(--button-disabled-opacity);
+    cursor: var(--button-disabled-cursor);
+    pointer-events: none;
+  }
+  
+  /* ============================================
+     RESPONSIVE - Tablet (768px+)
+     ============================================ */
+  
+  @media (min-width: 768px) {
+    .button {
+      padding: calc(var(--button-primary-padding-mobile) * 1.1);
+    }
+  
+    .button--lg {
+      padding: 14px 32px;
+      font-size: var(--font-size-base);
+      min-height: 54px;
+    }
+  }
+  
+  /* ============================================
+     RESPONSIVE - Desktop (1024px+)
+     ============================================ */
+  
+  @media (min-width: 1024px) {
+    .button {
+      padding: var(--button-primary-padding);
+    }
+  
+    .button--lg {
+      padding: 16px 40px;
+      font-size: var(--font-size-base);
+      min-height: 56px;
+    }
+  }
+  
+  /* ============================================
+     LOADING STATE (Optional - for future)
+     ============================================ */
+  
+  .button--loading {
+    position: relative;
+    color: transparent;
+    pointer-events: none;
+  }
+  
+  .button--loading::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
+    border: 2px solid var(--color-text-inverse);
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: button-loading-spinner 0.6s linear infinite;
+  }
+  
+  @keyframes button-loading-spinner {
+    to {
+      transform: rotate(360deg);
+    }
+  }
