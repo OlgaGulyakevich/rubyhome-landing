@@ -1,9 +1,281 @@
 /* ============================================
    HEADER COMPONENT
    Sticky navigation with mobile menu
+   Mobile-first approach
    ============================================ */
 
-.header {
-  /* Header styles will be added during Phase 3 */
-}
+/* ============================================
+   HEADER CONTAINER
+   ============================================ */
 
+   .header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--z-index-sticky);
+    background-color: var(--nav-bg);
+    box-shadow: var(--nav-shadow);
+  }
+  
+  .header__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: var(--container-content-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding-mobile);
+    min-height: var(--nav-height-mobile);
+  }
+  
+  /* ============================================
+     LOGO
+     ============================================ */
+  
+  .header__logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+    z-index: 2; /* Above menu */
+  }
+  
+  .header__logo {
+    display: block;
+    width: auto;
+    height: 32px;
+    object-fit: contain;
+  }
+  
+  /* ============================================
+     NAVIGATION - MOBILE FIRST (Hidden by default)
+     ============================================ */
+  
+  .header__nav {
+    position: fixed;
+    top: var(--nav-height-mobile);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--mobile-menu-bg);
+    box-shadow: var(--mobile-menu-shadow);
+    padding: var(--mobile-menu-padding);
+    transform: translateX(-100%);
+    transition: transform var(--transition-normal);
+    overflow-y: auto;
+    z-index: var(--z-index-dropdown);
+  }
+  
+  /* Open state (toggled by JavaScript) */
+  .header__nav--open {
+    transform: translateX(0);
+  }
+  
+  .header__nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header__nav-item {
+    border-bottom: 1px solid var(--color-border-light);
+  }
+  
+  .header__nav-link {
+    display: block;
+    padding: var(--mobile-menu-item-padding);
+    font-size: var(--nav-link-font-size);
+    font-weight: var(--nav-link-font-weight);
+    color: var(--nav-link-color);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+  
+  .header__nav-link:hover {
+    color: var(--nav-link-hover-color);
+  }
+  
+  /* Active link - orange */
+  .header__nav-link--active {
+    color: var(--nav-link-active-color);
+    font-weight: var(--font-weight-semibold);
+  }
+  
+  /* ============================================
+     CTA BUTTON (Mobile)
+     ============================================ */
+  
+  .header__cta-button {
+    display: none; /* Hidden on mobile, show on desktop */
+  }
+  
+  /* ============================================
+     MOBILE MENU TOGGLE (Burger Icon)
+     ============================================ */
+  
+  .header__menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .header__menu-icon {
+    position: relative;
+    display: block;
+    width: var(--burger-icon-width);
+    height: var(--burger-icon-height);
+    background-color: var(--burger-icon-color);
+    border-radius: 2px;
+    transition: background-color var(--transition-fast);
+  }
+  
+  /* Top and bottom lines */
+  .header__menu-icon::before,
+  .header__menu-icon::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: var(--burger-icon-height);
+    background-color: var(--burger-icon-color);
+    border-radius: 2px;
+    transition: transform var(--transition-normal);
+  }
+  
+  .header__menu-icon::before {
+    top: calc(-1 * (var(--burger-icon-height) + var(--burger-icon-gap)));
+  }
+  
+  .header__menu-icon::after {
+    bottom: calc(-1 * (var(--burger-icon-height) + var(--burger-icon-gap)));
+  }
+  
+  /* Active state - X icon (toggled by JavaScript) */
+  .header__menu-toggle--active .header__menu-icon {
+    background-color: transparent;
+  }
+  
+  .header__menu-toggle--active .header__menu-icon::before {
+    transform: translateY(calc(var(--burger-icon-height) + var(--burger-icon-gap))) rotate(45deg);
+  }
+  
+  .header__menu-toggle--active .header__menu-icon::after {
+    transform: translateY(calc(-1 * (var(--burger-icon-height) + var(--burger-icon-gap)))) rotate(-45deg);
+  }
+  
+  /* ============================================
+     RESPONSIVE - TABLET (768px+)
+     ============================================ */
+  
+  @media (min-width: 768px) {
+    .header__container {
+      padding: 0 var(--container-padding-tablet);
+      min-height: var(--nav-height);
+    }
+  
+    .header__logo {
+      height: 36px;
+    }
+  
+    /* Navigation - still mobile menu on tablet */
+    .header__nav {
+      top: var(--nav-height);
+    }
+  }
+  
+  /* ============================================
+     RESPONSIVE - DESKTOP (1024px+)
+     ============================================ */
+  
+  @media (min-width: 1024px) {
+    .header__container {
+      padding: 0 var(--container-padding-desktop);
+      gap: var(--space-4xl);
+    }
+  
+    .header__logo {
+      height: 40px;
+    }
+  
+    /* Navigation - horizontal layout */
+    .header__nav {
+      position: static;
+      transform: translateX(0);
+      background: transparent;
+      box-shadow: none;
+      padding: 0;
+      overflow: visible;
+      flex: 1;
+    }
+  
+    .header__nav-list {
+      flex-direction: row;
+      align-items: center;
+      gap: var(--nav-link-gap);
+    }
+  
+    .header__nav-item {
+      border-bottom: none;
+    }
+  
+    .header__nav-link {
+      position: relative;
+      padding: var(--nav-link-padding);
+    }
+  
+    /* Active indicator - orange underline */
+    .header__nav-link--active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: var(--nav-link-active-indicator-height);
+      background-color: var(--nav-link-active-indicator-color);
+      border-radius: 2px;
+    }
+  
+    /* CTA Button - show on desktop */
+    .header__cta-button {
+      display: inline-flex;
+    }
+  
+    /* Hide burger menu on desktop */
+    .header__menu-toggle {
+      display: none;
+    }
+  }
+  
+  /* ============================================
+     ACCESSIBILITY
+     ============================================ */
+  
+  /* Focus styles for keyboard navigation */
+  .header__nav-link:focus-visible,
+  .header__menu-toggle:focus-visible {
+    outline: var(--focus-outline-width) var(--focus-outline-style)
+      var(--focus-outline-color);
+    outline-offset: var(--focus-outline-offset);
+  }
+  
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    .header__nav,
+    .header__menu-icon,
+    .header__menu-icon::before,
+    .header__menu-icon::after {
+      transition: none;
+    }
+  }
+  
