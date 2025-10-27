@@ -100,6 +100,23 @@
     cursor: var(--button-disabled-cursor);
     pointer-events: none;
   }
+
+  /* ============================================
+   RESPONSIVE - Small Mobile (375px+)
+   ============================================ */
+
+@media (min-width: 375px) {
+  .button {
+    padding: calc(var(--button-primary-padding-mobile) * 0.9);
+    font-size: calc(var(--button-primary-font-size) * 0.95);
+  }
+
+  .button--lg {
+    padding: 10px 20px;
+    font-size: var(--font-size-sm-mobile);
+    min-height: 48px;
+  }
+}
   
   /* ============================================
      RESPONSIVE - Tablet (768px+)
