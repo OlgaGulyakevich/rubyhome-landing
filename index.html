@@ -27,7 +27,7 @@
     <header class="header" role="banner">
         <div class="header__container">
             <a href="/" class="header__logo-link"><img src="assets/img/rubyhome-logo.svg" alt="RubyHome Logo" class="header__logo" width="120" height="40"></a>
-            <nav class="header__nav" role="navigation">
+            <nav class="header__nav" id="main-navigation" aria-label="Главная навигация">
                 <ul class="header__nav-list">
                     <li class="header__nav-item"><a href="#home" class="header__nav-link header__nav-link--active">Home</a></li>
                     <li class="header__nav-item"><a href="#properties" class="header__nav-link">Properties</a></li>
@@ -36,7 +36,9 @@
                 </ul>
             </nav>
             <button class="header__cta-button button button--primary js-open-modal" type="button" data-modal-trigger>Contact us</button>
-            <button class="header__menu-toggle" type="button" aria-label="Toggle menu"><span class="header__menu-icon"></span></button>
+            <button class="header__menu-toggle" type="button" aria-label="Открыть меню навигации" aria-expanded="false" aria-controls="main-navigation">
+                <span class="header__menu-icon" aria-hidden="true"></span>
+            </button>
         </div>
     </header>
 
@@ -298,12 +300,12 @@
     </footer>
 
     <!-- MODAL -->
-    <div class="modal" id="contact-modal" aria-hidden="true">
-        <div class="modal__overlay js-close-modal"></div>
+    <div class="modal" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal__overlay js-close-modal" aria-hidden="true"></div>
         <div class="modal__content">
-            <button class="modal__close js-close-modal" type="button">&times;</button>
-            <h2 class="modal__title">Leave a request and we will call you soon</h2>
-            <form class="modal__form" id="contact-form">
+            <button class="modal__close js-close-modal" type="button" aria-label="Закрыть модальное окно">&times;</button>
+            <h2 class="modal__title" id="modal-title">Leave a request and we will call you soon</h2>
+            <form class="modal__form" id="contact-form" aria-label="Форма обратной связи">
                 <div class="modal__field">
                     <label for="contact-name" class="modal__label">Enter name</label>
                     <input type="text" class="modal__input" id="contact-name" name="name" placeholder="Example: Mark" required>
@@ -316,9 +318,9 @@
                     <label for="contact-email" class="modal__label">Enter email address</label>
                     <input type="email" class="modal__input" id="contact-email" name="email" placeholder="email@example.com" required>
                 </div>
-                <div class="modal__field">
-                    <label class="modal__label">I want to</label>
-                    <div class="modal__radio-group">
+                <fieldset class="modal__field">
+                    <legend class="modal__label">I want to</legend>
+                    <div class="modal__radio-group" role="radiogroup" aria-label="Выберите тип действия">
                         <label class="modal__radio-label">
                             <input type="radio" name="type" value="buy" checked>
                             <span class="button button--primary">Buy</span>
@@ -332,7 +334,7 @@
                             <span class="button">Sell</span>
                         </label>
                     </div>
-                </div>
+                </fieldset>
                 <div class="modal__field">
                     <label class="modal__checkbox-label"><input type="checkbox" name="privacy" required><span>I agree to <a href="privacy-policy.html" target="_blank">Privacy Policy</a></span></label>
                 </div>
@@ -342,11 +344,12 @@
     </div>
 
     <!-- SUCCESS MODAL -->
-    <div class="modal-success" id="success-modal" aria-hidden="true">
-        <div class="modal-success__overlay js-close-success"></div>
+    <div class="modal-success" id="success-modal" role="alertdialog" aria-modal="true" aria-labelledby="success-title" aria-live="polite" aria-hidden="true">
+        <div class="modal-success__overlay js-close-success" aria-hidden="true"></div>
         <div class="modal-success__content">
-            <button class="modal-success__close js-close-success" type="button">&times;</button>
-            <h2 class="modal-success__title">Your request has been sent</h2>
+            <button class="modal-success__close js-close-success" type="button" aria-label="Закрыть сообщение об успешной отправке">&times;</button>
+            <h2 class="modal-success__title" id="success-title">Your request has been sent</h2>
+            <p class="sr-only">Ваш запрос успешно отправлен. Мы свяжемся с вами в ближайшее время.</p>
         </div>
     </div>
 

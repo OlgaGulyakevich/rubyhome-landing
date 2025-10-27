@@ -1,6 +1,6 @@
 /* ============================================
    INPUT COMPONENT
-   Form inputs, textarea, radio, checkbox
+   Form inputs, radio, checkbox
    Mobile-first approach
    ============================================ */
 
@@ -14,8 +14,7 @@
    input[type='email'],
    input[type='tel'],
    input[type='number'],
-   input[type='url'],
-   textarea {
+   input[type='url'] {
      /* Display & Box Model */
      display: block;
      width: 100%;
@@ -46,8 +45,7 @@
    /* Placeholder Styles */
    .cta__input::placeholder,
    .modal__input::placeholder,
-   input::placeholder,
-   textarea::placeholder {
+   input::placeholder {
      color: var(--input-placeholder-color);
      opacity: var(--input-placeholder-opacity);
    }
@@ -55,8 +53,7 @@
    /* Focus State */
    .cta__input:focus,
    .modal__input:focus,
-   input:focus,
-   textarea:focus {
+   input:focus {
      outline: none;
      background-color: var(--input-bg-focus);
      border: var(--input-border-focus);
@@ -66,16 +63,14 @@
    /* Hover State */
    .cta__input:hover,
    .modal__input:hover,
-   input:hover,
-   textarea:hover {
+   input:hover {
      border-color: var(--color-border-muted);
    }
    
    /* Disabled State */
    .cta__input:disabled,
    .modal__input:disabled,
-   input:disabled,
-   textarea:disabled {
+   input:disabled {
      background-color: var(--input-bg-disabled);
      color: var(--input-text-disabled);
      cursor: not-allowed;
@@ -85,28 +80,15 @@
    /* Error State */
    .cta__input--error,
    .modal__input--error,
-   input.error,
-   textarea.error {
+   input.error {
      border: var(--input-border-error);
      background-color: var(--input-bg-error);
    }
    
    .cta__input--error:focus,
    .modal__input--error:focus,
-   input.error:focus,
-   textarea.error:focus {
+   input.error:focus {
      box-shadow: var(--input-shadow-error);
-   }
-   
-   /* ============================================
-      TEXTAREA
-      ============================================ */
-   
-   textarea {
-     min-height: 120px;
-     resize: vertical;
-     padding-top: 12px;
-     padding-bottom: 12px;
    }
    
    /* ============================================
@@ -128,6 +110,24 @@
    
    .modal__field {
      margin-bottom: var(--modal-input-margin-bottom);
+   }
+
+   /* Fieldset styling (for radio groups) */
+   fieldset.modal__field {
+     border: none;
+     padding: 0;
+     margin-bottom: var(--modal-input-margin-bottom);
+   }
+
+   /* Legend styling (same as label) */
+   legend.modal__label {
+     display: block;
+     margin-bottom: var(--modal-label-margin-bottom);
+     padding: 0;
+     font-size: var(--modal-label-font-size);
+     font-weight: var(--modal-label-font-weight);
+     color: var(--modal-label-color);
+     line-height: var(--line-height-normal);
    }
    
    /* ============================================
@@ -287,8 +287,7 @@
    @media (min-width: 768px) {
      .cta__input,
      .modal__input,
-     input,
-     textarea {
+     input {
        padding: var(--input-padding);
      }
    
@@ -312,15 +311,13 @@
       ============================================ */
    
    /* Ensure focus is visible for keyboard users */
-   input:focus-visible,
-   textarea:focus-visible {
+   input:focus-visible {
      outline: var(--focus-outline-width) var(--focus-outline-style)
        var(--focus-outline-color);
      outline-offset: var(--focus-outline-offset);
    }
    
    /* Remove outline for mouse users */
-   input:focus:not(:focus-visible),
-   textarea:focus:not(:focus-visible) {
+   input:focus:not(:focus-visible) {
      outline: none;
    }
