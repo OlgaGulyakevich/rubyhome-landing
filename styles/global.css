@@ -391,11 +391,6 @@ img {
   display: block;
 }
 
-/* Prevent layout shift */
-img[width][height] {
-  height: auto;
-}
-
 /* ============================================
    FORM ELEMENTS BASE
    ============================================ */
