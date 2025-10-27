@@ -9,7 +9,6 @@
    ============================================ */
 
    .partners {
-    padding: var(--section-spacing-sm-mobile) 0;
     background-color: var(--color-bg-white);
     margin-bottom: var(--section-spacing-lg-mobile); /* Mobile: 80px */
   }
@@ -119,8 +118,7 @@
   
   @media (min-width: 1024px) {
     .partners {
-      padding: var(--section-spacing-sm) 0;
-      margin-bottom: var(--section-spacing-lg); /* Desktop: 140px - как требовалось! */
+      margin-bottom: var(--section-spacing-sm); /* Desktop: 140px - как требовалось! */
     }
   
     .partners__container {
