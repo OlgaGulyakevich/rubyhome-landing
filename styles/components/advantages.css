@@ -187,7 +187,8 @@
     }
   
     .advantages__container {
-      padding: 0 var(--container-padding-desktop);
+      /* padding: 0 var(--container-padding-desktop); */
+      padding: 0;
     }
   
     .advantages__title {
@@ -203,7 +204,7 @@
       flex-direction: row;
       align-items: flex-end; /* Align to bottom */
       gap: 30px;
-      justify-content: space-between;
+      justify-content: center;
     }
   
     .advantages__column {
@@ -227,8 +228,8 @@
   
     /* Card fixed size on desktop */
     .advantage-card {
-      max-width: 360px;
-      max-height: 202px;
+      width: 360px;
+      min-height: 202px;
     }
   }
   
