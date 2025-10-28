@@ -141,7 +141,7 @@
       justify-content: center;
       gap: 40px;
       min-height: var(--hero-min-height-desktop);
-      padding: 0 100px;
+      padding: var(--container-padding-desktop);
       background-color: var(--color-bg-white);
       margin-bottom: 100px;
       overflow: visible;
@@ -167,7 +167,7 @@
     .hero__title {
       font-size: var(--font-size-2xl);
       color: var(--color-text-primary); 
-      min-width: var(--hero-title-max-width);
+      max-width: var(--hero-title-max-width);
     }
   
     .hero__description {
@@ -202,7 +202,7 @@
 
    @media (min-width: 1440px) {
     .hero {
-      padding: 0 226px;
+      padding: 0 var(--container-padding-desktop);
     }
   
     .hero__container {

@@ -227,7 +227,7 @@
   
     /* Card fixed size on desktop */
     .advantage-card {
-      width: 360px;
+      max-width: 360px;
       max-height: 202px;
     }
   }
