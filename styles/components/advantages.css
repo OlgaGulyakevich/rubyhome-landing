@@ -1,9 +1,248 @@
 /* ============================================
    ADVANTAGES COMPONENT
-   Three-column advantages section
+   Property features with 3-column layout
+   Mobile-first approach
    ============================================ */
 
-.advantages {
-  /* Advantages styles will be added during Phase 3 */
-}
+/* ============================================
+   ADVANTAGES SECTION
+   ============================================ */
 
+   .advantages {
+    padding: var(--section-spacing-md-mobile) 0;
+    background-color: #F9F9F9; /* Specific gray background */
+    margin-bottom: var(--section-spacing-lg-mobile); /* Mobile: 80px */
+  }
+  
+  .advantages__container {
+    max-width: 1146px; /* Specific container width */
+    margin: 0 auto;
+    padding: 0 var(--container-padding-mobile);
+  }
+  
+  /* ============================================
+     HEADER
+     ============================================ */
+  
+  .advantages__header {
+    text-align: center;
+    margin-bottom: var(--space-5xl);
+  }
+  
+  .advantages__title {
+    font-size: var(--font-size-xl-mobile);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
+    color: var(--color-text-primary);
+    margin: 0 0 var(--space-lg) 0;
+  }
+  
+  .advantages__subtitle {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-normal);
+    color: var(--color-text-secondary);
+    margin: 0 auto;
+    max-width: 600px;
+  }
+  
+  /* ============================================
+     LAYOUT - Mobile First (Stacked)
+     ============================================ */
+  
+  .advantages__layout {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4xl);
+  }
+  
+  .advantages__column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--grid-gap-mobile);
+  }
+  
+  /* Center column - image */
+  .advantages__column--center {
+    order: -1; /* Show image first on mobile */
+    align-items: center;
+  }
+  
+  .advantages__image {
+    width: 100%;
+    max-width: 362px;
+    height: auto;
+    border-radius: var(--radius-lg);
+    object-fit: cover;
+  }
+  
+  /* ============================================
+     ADVANTAGE CARD
+     ============================================ */
+  
+  .advantage-card {
+    background-color: var(--color-bg-white);
+    border-radius: 10px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  }
+  
+  .advantage-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card);
+  }
+  
+  /* Icon через CSS ::before */
+  .advantage-card::before {
+    content: '';
+    width: 48px;
+    height: 48px;
+    background-color: rgba(254, 117, 63, 0.1); /* Orange light bg */
+    border-radius: var(--radius-sm);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px;
+    flex-shrink: 0;
+  }
+  
+  /* Иконки для каждого типа карточки */
+  .advantage-card[data-icon="security"]::before {
+    background-image: url('../../assets/icons/security-icon.svg');
+  }
+  
+  .advantage-card[data-icon="ac"]::before {
+    background-image: url('../../assets/icons/ac-icon.svg');
+  }
+  
+  .advantage-card[data-icon="garden"]::before {
+    background-image: url('../../assets/icons/garden-icon.svg');
+  }
+  
+  .advantage-card[data-icon="movers"]::before {
+    background-image: url('../../assets/icons/movers-icon.svg');
+  }
+  
+  .advantage-card[data-icon="furniture"]::before {
+    background-image: url('../../assets/icons/furniture-icon.svg');
+  }
+  
+  .advantage-card[data-icon="pool"]::before {
+    background-image: url('../../assets/icons/pool-icon.svg');
+  }
+  
+  .advantage-card__title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
+    color: var(--color-text-primary);
+    margin: 0;
+  }
+  
+  .advantage-card__description {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-normal);
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+  
+  /* ============================================
+     RESPONSIVE - TABLET (768px+)
+     ============================================ */
+  
+  @media (min-width: 768px) {
+    .advantages {
+      padding: var(--section-spacing-md-tablet) 0;
+      margin-bottom: var(--section-spacing-lg-tablet); /* Tablet: 110px */
+    }
+  
+    .advantages__container {
+      padding: 0 var(--container-padding-tablet);
+    }
+  
+    .advantages__title {
+      font-size: var(--font-size-xl-tablet);
+    }
+  
+    .advantages__layout {
+      gap: var(--space-5xl);
+    }
+  
+    .advantages__column {
+      gap: var(--grid-gap-tablet);
+    }
+  }
+  
+  /* ============================================
+     RESPONSIVE - DESKTOP (1024px+)
+     ============================================ */
+  
+  @media (min-width: 1024px) {
+    .advantages {
+      padding: var(--section-spacing-md) 0;
+      margin-bottom: var(--section-spacing-lg); /* Desktop: 140px */
+    }
+  
+    .advantages__container {
+      padding: 0 var(--container-padding-desktop);
+    }
+  
+    .advantages__title {
+      font-size: var(--font-size-xl);
+    }
+  
+    .advantages__header {
+      margin-bottom: var(--space-6xl);
+    }
+  
+    /* 3-column layout on desktop */
+    .advantages__layout {
+      flex-direction: row;
+      align-items: flex-end; /* Align to bottom */
+      gap: 30px;
+      justify-content: space-between;
+    }
+  
+    .advantages__column {
+      flex: 0 0 360px; /* Fixed width for side columns */
+      gap: 30px;
+    }
+  
+    .advantages__column--center {
+      order: 0; /* Reset order - show in center */
+      flex: 0 0 362px; /* Fixed width for image */
+      align-self: flex-end; /* Align image to bottom */
+    }
+  
+    .advantages__image {
+      width: 362px;
+      height: 548px;
+      max-width: none;
+      object-fit: cover;
+      align-self: flex-end; /* Align to bottom */
+    }
+  
+    /* Card fixed size on desktop */
+    .advantage-card {
+      width: 360px;
+      max-height: 202px;
+    }
+  }
+  
+  /* ============================================
+     ACCESSIBILITY
+     ============================================ */
+  
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    .advantage-card {
+      transition: none;
+    }
+  
+    .advantage-card:hover {
+      transform: none;
+    }
+  }
