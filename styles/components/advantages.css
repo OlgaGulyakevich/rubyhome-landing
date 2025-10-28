@@ -9,51 +9,79 @@
    ============================================ */
 
    .advantages {
-    padding: var(--section-spacing-md-mobile) 0;
-    background-color: #F9F9F9; /* Specific gray background */
+    padding: 0;
+    background-color: #F9F9F9;
     margin-bottom: var(--section-spacing-lg-mobile); /* Mobile: 80px */
   }
   
   .advantages__container {
     max-width: 1146px; /* Specific container width */
     margin: 0 auto;
-    padding: 0 var(--container-padding-mobile);
+    padding: 0;
   }
   
   /* ============================================
-     HEADER
+     HEADER - Mobile: Background image style
      ============================================ */
   
   .advantages__header {
+    position: relative;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    margin-bottom: var(--space-5xl);
+    padding: var(--section-spacing-md-mobile) var(--container-padding-mobile);
+    overflow: hidden;
+    background-image: url('../../assets/img/bg-advantages.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  /* Dark overlay for text readability */
+  .advantages__header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(3, 10, 27, 0.7) 0%, rgba(3, 10, 27, 0.6) 100%);
+    z-index: 1;
   }
   
   .advantages__title {
+    position: relative;
+    z-index: 2;
     font-size: var(--font-size-xl-mobile);
     font-weight: var(--font-weight-semibold);
     line-height: var(--line-height-tight);
-    color: var(--color-text-primary);
+    color: var(--color-bg-white); /* White text on dark overlay */
     margin: 0 0 var(--space-lg) 0;
   }
   
   .advantages__subtitle {
+    position: relative;
+    z-index: 2;
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-regular);
     line-height: var(--line-height-normal);
-    color: var(--color-text-secondary);
+    color: rgba(255, 255, 255, 0.9); /* White text with slight transparency */
     margin: 0 auto;
     max-width: 600px;
   }
   
   /* ============================================
-     LAYOUT - Mobile First (Stacked)
+     LAYOUT - Mobile First (Stacked cards)
      ============================================ */
   
   .advantages__layout {
     display: flex;
     flex-direction: column;
     gap: var(--space-4xl);
+    padding: var(--section-spacing-md-mobile) var(--container-padding-mobile);
   }
   
   .advantages__column {
@@ -62,18 +90,9 @@
     gap: var(--grid-gap-mobile);
   }
   
-  /* Center column - image */
+  /* Hide center column (image) on mobile - it's used as background */
   .advantages__column--center {
-    order: -1; /* Show image first on mobile */
-    align-items: center;
-  }
-  
-  .advantages__image {
-    width: 100%;
-    max-width: 362px;
-    height: auto;
-    border-radius: var(--radius-lg);
-    object-fit: cover;
+    display: none;
   }
   
   /* ============================================
@@ -108,7 +127,7 @@
     flex-shrink: 0;
   }
   
-  /* Иконки для каждого типа карточки */
+  /* Icons for each type of card */
   .advantage-card[data-icon="security"]::before {
     background-image: url('../../assets/icons/security-icon.svg');
   }
@@ -155,12 +174,12 @@
   
   @media (min-width: 768px) {
     .advantages {
-      padding: var(--section-spacing-md-tablet) 0;
       margin-bottom: var(--section-spacing-lg-tablet); /* Tablet: 110px */
     }
   
-    .advantages__container {
-      padding: 0 var(--container-padding-tablet);
+    .advantages__header {
+      min-height: 500px;
+      padding: var(--section-spacing-md-tablet) var(--container-padding-tablet);
     }
   
     .advantages__title {
@@ -168,6 +187,7 @@
     }
   
     .advantages__layout {
+      padding: var(--section-spacing-md-tablet) var(--container-padding-tablet);
       gap: var(--space-5xl);
     }
   
@@ -187,33 +207,35 @@
     }
   
     .advantages__container {
-      /* padding: 0 var(--container-padding-desktop); */
-      padding: 0;
+      padding: 0; /* Remove padding - fixed widths need full container */
+    }
+  
+    /* Header returns to normal (no background image) */
+    .advantages__header {
+      position: static;
+      min-height: auto;
+      padding: 0 0 var(--space-6xl) 0;
+      text-align: center;
+      background-image: none; /* Remove background image on desktop */
+    }
+  
+    .advantages__header::before {
+      display: none; /* Remove overlay on desktop */
     }
   
     .advantages__title {
       font-size: var(--font-size-xl);
+      color: var(--color-text-primary); /* Back to dark text */
     }
   
-    .advantages__header {
-      margin-bottom: var(--space-6xl);
+    .advantages__subtitle {
+      color: var(--color-text-secondary); /* Back to regular secondary color */
     }
   
-    /* 3-column layout on desktop */
-    .advantages__layout {
-      flex-direction: row;
-      align-items: flex-end; /* Align to bottom */
-      gap: 30px;
-      justify-content: center;
-    }
-  
-    .advantages__column {
-      flex: 0 0 360px; /* Fixed width for side columns */
-      gap: 30px;
-    }
-  
+    /* Show center column (image) on desktop */
     .advantages__column--center {
-      order: 0; /* Reset order - show in center */
+      display: flex;
+      order: 0; /* Show in center */
       flex: 0 0 362px; /* Fixed width for image */
       align-self: flex-end; /* Align image to bottom */
     }
@@ -221,9 +243,22 @@
     .advantages__image {
       width: 362px;
       height: 548px;
-      max-width: none;
       object-fit: cover;
-      align-self: flex-end; /* Align to bottom */
+      border-radius: var(--radius-lg);
+    }
+  
+    /* 3-column layout on desktop */
+    .advantages__layout {
+      padding: 0; /* Remove padding on desktop */
+      flex-direction: row;
+      align-items: flex-end; /* Align to bottom */
+      gap: 30px;
+      justify-content: center; /* Center the layout */
+    }
+  
+    .advantages__column {
+      flex: 0 0 360px; /* Fixed width for side columns */
+      gap: 30px;
     }
   
     /* Card fixed size on desktop */
