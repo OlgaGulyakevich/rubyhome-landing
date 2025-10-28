@@ -93,21 +93,20 @@
   
   @media (min-width: 768px) {
     .partners {
-      padding: var(--section-spacing-sm-tablet) 0;
       margin-bottom: var(--section-spacing-lg-tablet); /* Tablet: 110px */
-    }
-  
-    .partners__container {
-      padding: 0 var(--container-padding-tablet);
     }
   
     .partners__title {
       font-size: var(--font-size-xl-tablet);
       margin-bottom: var(--space-5xl);
     }
+
+    .partners__list {
+      gap: 90px;
+    }
   
     .partners__logo {
-      height: 36px;
+      height: 50px;
       max-width: 110px;
     }
   }
@@ -121,22 +120,18 @@
       margin-bottom: var(--section-spacing-sm); /* Desktop: 140px - как требовалось! */
     }
   
-    .partners__container {
-      padding: 0 var(--container-padding-desktop);
-    }
-  
     .partners__title {
       font-size: var(--font-size-xl);
       margin-bottom: var(--space-6xl);
     }
   
     .partners__list {
-      gap: var(--space-4xl) var(--space-5xl);
+      gap: 100px;
     }
   
     .partners__logo {
-      height: 40px;
-      max-width: 120px;
+      height: 70px;
+      max-width: 130px;
     }
   }
   

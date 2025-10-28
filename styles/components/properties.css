@@ -229,7 +229,7 @@
     }
   
     .properties__container {
-      padding: 0 var(--container-padding-tablet);
+      padding: 0 20px;
     }
   
     .properties__title {
@@ -249,10 +249,7 @@
     .property-card__content {
       padding: var(--card-padding);
     }
-  
-    /* .property-card__image { */
-      /* height: var(--card-image-height); */
-    /* } */
+
   }
   
   /* ============================================
