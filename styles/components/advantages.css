@@ -59,7 +59,7 @@
     font-weight: var(--font-weight-semibold);
     line-height: var(--line-height-tight);
     color: var(--color-bg-white); /* White text on dark overlay */
-    margin: 0 0 var(--space-lg) 0;
+    margin: 0 0 var(--space-3xl) 0;
   }
   
   .advantages__subtitle {
@@ -103,8 +103,9 @@
     background-color: var(--color-bg-white);
     border-radius: 10px;
     padding: 25px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    grid-template-rows: auto auto;
     gap: var(--space-lg);
     transition: transform var(--transition-normal), box-shadow var(--transition-normal);
   }
@@ -125,6 +126,8 @@
     background-position: center;
     background-size: 24px;
     flex-shrink: 0;
+    grid-column: 1;
+    grid-row: 1;
   }
   
   /* Icons for each type of card */
@@ -158,6 +161,9 @@
     line-height: var(--line-height-tight);
     color: var(--color-text-primary);
     margin: 0;
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
   }
   
   .advantage-card__description {
@@ -166,6 +172,8 @@
     line-height: var(--line-height-normal);
     color: var(--color-text-secondary);
     margin: 0;
+    grid-column: 1 / -1;
+    grid-row: 2;
   }
   
   /* ============================================
@@ -265,6 +273,26 @@
     .advantage-card {
       width: 360px;
       min-height: 202px;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+    
+    /* Reset grid positioning for desktop */
+    .advantage-card::before {
+      grid-column: unset;
+      grid-row: unset;
+    }
+    
+    .advantage-card__title {
+      grid-column: unset;
+      grid-row: unset;
+      align-self: unset;
+    }
+    
+    .advantage-card__description {
+      grid-column: unset;
+      grid-row: unset;
     }
   }
   
