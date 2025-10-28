@@ -11,7 +11,7 @@
    .advantages {
     padding: 0;
     background-color: #F9F9F9;
-    margin-bottom: var(--section-spacing-sm-mobile); /* Mobile: 80px */
+    margin-bottom: 0;
   }
   
   .advantages__container {
@@ -203,7 +203,7 @@
   @media (min-width: 1024px) {
     .advantages {
       padding: var(--section-spacing-md) 0;
-      margin-bottom: var(--section-spacing-lg); /* Desktop: 140px */
+      margin-bottom: 0;
     }
   
     .advantages__container {

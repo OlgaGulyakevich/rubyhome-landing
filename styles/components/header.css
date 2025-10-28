@@ -219,7 +219,6 @@
     .header__container {
       padding: 0 var(--container-padding-desktop);
       gap: var(--space-4xl);
-      margin-bottom: 70px;
     }
   
     .header__logo {

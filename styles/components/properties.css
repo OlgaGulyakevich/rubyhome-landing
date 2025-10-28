@@ -10,7 +10,8 @@
 
    .properties {
     background-color: var(--color-bg-white);
-    margin-bottom: var(--section-spacing-md-mobile); /* Mobile: 60px */
+    padding: var(--section-spacing-md-mobile) 0;
+    margin-bottom: 0;
   }
   
   .properties__container {
@@ -224,8 +225,7 @@
   
   @media (min-width: 768px) {
     .properties {
-      /* padding: var(--section-spacing-md-tablet) 0; */
-      margin-bottom: var(--section-spacing-lg-tablet); /* Tablet: 110px */
+      padding: var(--section-spacing-md-tablet) 0;
     }
   
     .properties__container {
@@ -258,7 +258,7 @@
   
   @media (min-width: 1024px) {
     .properties {
-      margin-bottom: var(--section-spacing-lg); /* Desktop: 140px - как требовалось! */
+      padding: var(--section-spacing-lg) 0;
     }
   
     .properties__container {

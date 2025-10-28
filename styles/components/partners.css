@@ -10,7 +10,8 @@
 
    .partners {
     background-color: var(--color-bg-white);
-    margin-bottom: var(--section-spacing-lg-mobile); /* Mobile: 80px */
+    padding: var(--section-spacing-md-mobile) 0;
+    margin-bottom: 0;
   }
   
   .partners__container {
@@ -93,7 +94,7 @@
   
   @media (min-width: 768px) {
     .partners {
-      margin-bottom: var(--section-spacing-lg-tablet); /* Tablet: 110px */
+      padding: var(--section-spacing-md-tablet) 0;
     }
   
     .partners__title {
@@ -117,7 +118,7 @@
   
   @media (min-width: 1024px) {
     .partners {
-      margin-bottom: var(--section-spacing-sm); /* Desktop: 140px - как требовалось! */
+      padding: var(--section-spacing-sm) 0;
     }
   
     .partners__title {

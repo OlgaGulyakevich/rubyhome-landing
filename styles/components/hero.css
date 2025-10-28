@@ -141,9 +141,9 @@
       justify-content: center;
       gap: 40px;
       min-height: var(--hero-min-height-desktop);
-      padding: var(--container-padding-desktop);
+      padding: var(--section-spacing-md) var(--container-padding-desktop);
       background-color: var(--color-bg-white);
-      margin-bottom: 100px;
+      margin-bottom: 0;
       overflow: visible;
     }
   
