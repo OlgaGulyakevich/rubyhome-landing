@@ -357,7 +357,7 @@
   --input-shadow-error: var(--shadow-focus-error);
 
   /* ============================================
-     COMPONENTS - MODAL (NEW - Critical)
+     COMPONENTS - MODAL 
      ============================================ */
 
   /* Modal Backdrop */
@@ -467,12 +467,15 @@
      COMPONENTS - HERO SECTION (NEW)
      ============================================ */
 
-  --hero-min-height: 600px;
+  --hero-min-height: 615px;
   --hero-min-height-mobile: 480px;
   --hero-min-height-tablet: 560px;
   --hero-padding-vertical: 80px;
   --hero-padding-vertical-mobile: 40px;
   --hero-padding-vertical-tablet: 60px;
+  --hero-gap-horizontal-desktop: 100px;
+  --hero-gap-horizontal-mobile: 20px;
+  --hero-gap-horizontal-tablet: 40px;
 
   /* Hero Overlay Gradient (for readability over background image) */
   --hero-overlay-gradient: linear-gradient(
@@ -483,11 +486,11 @@
   );
 
   /* Hero Content */
-  --hero-title-max-width: 600px;
-  --hero-title-margin-bottom: 24px;
-  --hero-description-max-width: 520px;
+  --hero-title-max-width: 560px;
+  --hero-title-margin-bottom: 30px;
+  --hero-description-max-width: 560px;
   --hero-description-margin-bottom: 32px;
-  --hero-content-gap: 24px;
+  --hero-content-gap: 30px;
 
   /* ============================================
      COMPONENTS - CARD (Extended)

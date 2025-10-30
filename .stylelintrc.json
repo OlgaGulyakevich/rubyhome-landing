@@ -5,7 +5,8 @@
     "color-hex-length": "long",
     "declaration-block-no-redundant-longhand-properties": null,
     "no-descending-specificity": null,
-    "font-family-no-missing-generic-family-keyword": null
+    "font-family-no-missing-generic-family-keyword": null,
+    "media-feature-range-notation": null
   }
 }
 

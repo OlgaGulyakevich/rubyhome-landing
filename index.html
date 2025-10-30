@@ -27,7 +27,7 @@
     <header class="header" role="banner">
         <div class="header__container">
             <a href="/" class="header__logo-link"><img src="assets/img/rubyhome-logo.svg" alt="RubyHome Logo" class="header__logo" width="120" height="40"></a>
-            <nav class="header__nav" role="navigation">
+            <nav class="header__nav" id="main-navigation" aria-label="Главная навигация">
                 <ul class="header__nav-list">
                     <li class="header__nav-item"><a href="#home" class="header__nav-link header__nav-link--active">Home</a></li>
                     <li class="header__nav-item"><a href="#properties" class="header__nav-link">Properties</a></li>
@@ -36,7 +36,9 @@
                 </ul>
             </nav>
             <button class="header__cta-button button button--primary js-open-modal" type="button" data-modal-trigger>Contact us</button>
-            <button class="header__menu-toggle" type="button" aria-label="Toggle menu"><span class="header__menu-icon"></span></button>
+            <button class="header__menu-toggle" type="button" aria-label="Открыть меню навигации" aria-expanded="false" aria-controls="main-navigation">
+                <span class="header__menu-icon" aria-hidden="true"></span>
+            </button>
         </div>
     </header>
 
@@ -85,13 +87,13 @@
                             <h3 class="property-card__title">Capital Hill Residence</h3>
                             <p class="property-card__location">New Lincoln</p>
                             <ul class="property-card__features">
-                                <li class="property-card__feature"><span>6 Beds</span></li>
-                                <li class="property-card__feature"><span>2 Baths</span></li>
-                                <li class="property-card__feature"><span>3,000 sqft</span></li>
+                                <li class="property-card__feature"><span>6</span></li>
+                                <li class="property-card__feature"><span>2</span></li>
+                                <li class="property-card__feature"><span>3</span></li>
                             </ul>
                             <div class="property-card__footer">
                                 <span class="property-card__price">$5,527.00</span>
-                                <button class="property-card__button button button--primary js-open-modal" type="button" data-modal-trigger>Leave request</button>
+                                <button class="property-card__button button button--primary button--lg js-open-modal" type="button" data-modal-trigger>Leave request</button>
                             </div>
                         </div>
                     </article>
@@ -106,13 +108,13 @@
                             <h3 class="property-card__title">Corsair Real Estate</h3>
                             <p class="property-card__location">New Lincoln</p>
                             <ul class="property-card__features">
-                                <li class="property-card__feature"><span>6 Beds</span></li>
-                                <li class="property-card__feature"><span>2 Baths</span></li>
-                                <li class="property-card__feature"><span>3,200 sqft</span></li>
+                                <li class="property-card__feature"><span>6</span></li>
+                                <li class="property-card__feature"><span>2</span></li>
+                                <li class="property-card__feature"><span>3</span></li>
                             </ul>
                             <div class="property-card__footer">
                                 <span class="property-card__price">$4,427.00</span>
-                                <button class="property-card__button button button--primary js-open-modal" type="button" data-modal-trigger>Leave request</button>
+                                <button class="property-card__button button button--primary button--lg js-open-modal" type="button" data-modal-trigger>Leave request</button>
                             </div>
                         </div>
                     </article>
@@ -127,13 +129,13 @@
                             <h3 class="property-card__title">Picket Fence Realty</h3>
                             <p class="property-card__location">New Lincoln</p>
                             <ul class="property-card__features">
-                                <li class="property-card__feature"><span>6 Beds</span></li>
-                                <li class="property-card__feature"><span>2 Baths</span></li>
-                                <li class="property-card__feature"><span>2,800 sqft</span></li>
+                                <li class="property-card__feature"><span>5</span></li>
+                                <li class="property-card__feature"><span>3</span></li>
+                                <li class="property-card__feature"><span>2</span></li>
                             </ul>
                             <div class="property-card__footer">
                                 <span class="property-card__price">$6,727.00</span>
-                                <button class="property-card__button button button--primary js-open-modal" type="button" data-modal-trigger>Leave request</button>
+                                <button class="property-card__button button button--primary button--lg js-open-modal" type="button" data-modal-trigger>Leave request</button>
                             </div>
                         </div>
                     </article>
@@ -148,13 +150,13 @@
                             <h3 class="property-card__title">Strive Partners Realty</h3>
                             <p class="property-card__location">New Lincoln</p>
                             <ul class="property-card__features">
-                                <li class="property-card__feature"><span>6 Beds</span></li>
-                                <li class="property-card__feature"><span>2 Baths</span></li>
-                                <li class="property-card__feature"><span>3,100 sqft</span></li>
+                                <li class="property-card__feature"><span>7</span></li>
+                                <li class="property-card__feature"><span>3</span></li>
+                                <li class="property-card__feature"><span>1</span></li>
                             </ul>
                             <div class="property-card__footer">
                                 <span class="property-card__price">$5,527.00</span>
-                                <button class="property-card__button button button--primary js-open-modal" type="button" data-modal-trigger>Leave request</button>
+                                <button class="property-card__button button button--primary button--lg js-open-modal" type="button" data-modal-trigger>Leave request</button>
                             </div>
                         </div>
                     </article>
@@ -169,13 +171,13 @@
                             <h3 class="property-card__title">Banyon Tree Realty</h3>
                             <p class="property-card__location">New Lincoln</p>
                             <ul class="property-card__features">
-                                <li class="property-card__feature"><span>6 Beds</span></li>
-                                <li class="property-card__feature"><span>2 Baths</span></li>
-                                <li class="property-card__feature"><span>2,900 sqft</span></li>
+                                <li class="property-card__feature"><span>4</span></li>
+                                <li class="property-card__feature"><span>2</span></li>
+                                <li class="property-card__feature"><span>2</span></li>
                             </ul>
                             <div class="property-card__footer">
                                 <span class="property-card__price">$4,327.00</span>
-                                <button class="property-card__button button button--primary js-open-modal" type="button" data-modal-trigger>Leave request</button>
+                                <button class="property-card__button button button--primary button--lg js-open-modal" type="button" data-modal-trigger>Leave request</button>
                             </div>
                         </div>
                     </article>
@@ -190,13 +192,13 @@
                             <h3 class="property-card__title">Sequoia Real Estate</h3>
                             <p class="property-card__location">New Lincoln</p>
                             <ul class="property-card__features">
-                                <li class="property-card__feature"><span>6 Beds</span></li>
-                                <li class="property-card__feature"><span>2 Baths</span></li>
-                                <li class="property-card__feature"><span>3,500 sqft</span></li>
+                                <li class="property-card__feature"><span>6</span></li>
+                                <li class="property-card__feature"><span>2</span></li>
+                                <li class="property-card__feature"><span>4</span></li>
                             </ul>
                             <div class="property-card__footer">
                                 <span class="property-card__price">$4,527.00</span>
-                                <button class="property-card__button button button--primary js-open-modal" type="button" data-modal-trigger>Leave request</button>
+                                <button class="property-card__button button button--primary button--lg js-open-modal" type="button" data-modal-trigger>Leave request</button>
                             </div>
                         </div>
                     </article>
@@ -212,18 +214,15 @@
                 </div>
                 <div class="advantages__layout">
                     <div class="advantages__column advantages__column--left">
-                        <article class="advantage-card">
-                            <div class="advantage-card__icon-wrapper"><img src="assets/icons/security-icon.svg" alt="" class="advantage-card__icon" width="40" height="40"></div>
+                        <article class="advantage-card" data-icon="security">
                             <h3 class="advantage-card__title">100% Security</h3>
-                            <p class="advantage-card__description">Your home is your most valuable asset. We protect it with the same level of care and attention as our own.</p>
+                            <p class="advantage-card__description">We protect your home with the same level of care and attention as our own.</p>
                         </article>
-                        <article class="advantage-card">
-                            <div class="advantage-card__icon-wrapper"><img src="assets/icons/ac-icon.svg" alt="" class="advantage-card__icon" width="40" height="40"></div>
+                        <article class="advantage-card" data-icon="ac">
                             <h3 class="advantage-card__title">Free air conditioner</h3>
                             <p class="advantage-card__description">We keep your home cool and comfortable, so you can enjoy your time in it.</p>
                         </article>
-                        <article class="advantage-card">
-                            <div class="advantage-card__icon-wrapper"><img src="assets/icons/garden-icon.svg" alt="" class="advantage-card__icon" width="40" height="40"></div>
+                        <article class="advantage-card" data-icon="garden">
                             <h3 class="advantage-card__title">Flower garden</h3>
                             <p class="advantage-card__description">We create a warm and inviting atmosphere with beautiful flowers and plants.</p>
                         </article>
@@ -235,20 +234,17 @@
                         </picture>
                     </div>
                     <div class="advantages__column advantages__column--right">
-                        <article class="advantage-card">
-                            <div class="advantage-card__icon-wrapper"><img src="assets/icons/pool-icon.svg" alt="" class="advantage-card__icon" width="40" height="40"></div>
-                            <h3 class="advantage-card__title">Swimming pool</h3>
-                            <p class="advantage-card__description">We provide a relaxing and refreshing space for you to enjoy.</p>
-                        </article>
-                        <article class="advantage-card">
-                            <div class="advantage-card__icon-wrapper"><img src="assets/icons/furniture-icon.svg" alt="" class="advantage-card__icon" width="40" height="40"></div>
-                            <h3 class="advantage-card__title">Rental furniture</h3>
-                            <p class="advantage-card__description">We offer a wide range of furniture to suit your needs and style.</p>
-                        </article>
-                        <article class="advantage-card">
-                            <div class="advantage-card__icon-wrapper"><img src="assets/icons/movers-icon.svg" alt="" class="advantage-card__icon" width="40" height="40"></div>
+                        <article class="advantage-card" data-icon="movers">
                             <h3 class="advantage-card__title">Parkers & movers</h3>
-                            <p class="advantage-card__description">We offer professional parking and moving services to help you with your home.</p>
+                            <p class="advantage-card__description">For many of us, buying a home is a dream and one not easily attainable.</p>
+                        </article>
+                        <article class="advantage-card" data-icon="furniture">
+                            <h3 class="advantage-card__title">Rental furniture</h3>
+                            <p class="advantage-card__description">For many of us, buying a home is a dream and one not easily attainable.</p>
+                        </article>
+                        <article class="advantage-card" data-icon="pool">
+                            <h3 class="advantage-card__title">Swimming pool</h3>
+                            <p class="advantage-card__description">For many of us, buying a home is a dream and one not easily attainable.</p>
                         </article>
                     </div>
                 </div>
@@ -257,21 +253,144 @@
 
         <section class="reviews" id="reviews">
             <div class="reviews__container">
-                <div class="reviews__header">
+                <header class="reviews__header">
                     <p class="reviews__subtitle">Reviews</p>
                     <h2 class="reviews__title">Our valuable customer says</h2>
-                </div>
-                <div class="reviews__slider swiper">
+                </header>
+                <div class="reviews__swiper swiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><article class="review-card"><div class="review-card__avatar-wrapper"><img src="assets/img/avatar-1.jpg?format=webp&w=80&h=80&fit=cover" alt="Justin Lee" class="review-card__avatar" width="80" height="80" loading="lazy"></div><h3 class="review-card__name">Justin Lee</h3><p class="review-card__position">Products Designer at Ito</p><p class="review-card__text">A good real estate agent doesn’t disappear once the closing IN signed.Buying a bigger home doesn’t necessarily mean spendi more money.Been there. Done that. Sold. Bought Bringing It All Together.</p></article></div>
-                        <div class="swiper-slide"><article class="review-card"><div class="review-card__avatar-wrapper"><img src="assets/img/avatar-2.jpg?format=webp&w=80&h=80&fit=cover" alt="Angel Cathe" class="review-card__avatar" width="80" height="80" loading="lazy"></div><h3 class="review-card__name">Angel Cathe</h3><p class="review-card__position">CEO at StartupHub</p><p class="review-card__text">It good real estate agent doesn't disappear once the closing it good buying a higher home it own inertamente viario it own dope hac Duis bought bringing it all together there.</p></article></div>
-                        <div class="swiper-slide"><article class="review-card"><div class="review-card__avatar-wrapper"><img src="assets/img/avatar-3.jpg" alt="Sarah Johnson" class="review-card__avatar" width="80" height="80"></div><h3 class="review-card__name">Sarah Johnson</h3><p class="review-card__position">Marketing Director at Creative Agency</p><p class="review-card__text">RubyHome made our home buying experience effortless. Their team was professional, knowledgeable, and always available to answer our questions. Highly recommended!</p></article></div>
-                        <div class="swiper-slide"><article class="review-card"><div class="review-card__avatar-wrapper"><img src="assets/img/avatar-4.jpg" alt="Michael Chen" class="review-card__avatar" width="80" height="80"></div><h3 class="review-card__name">Michael Chen</h3><p class="review-card__position">Entrepreneur at Tech Startup</p><p class="review-card__text">The best real estate experience I've ever had. RubyHome found us the perfect property and guided us through every step. Couldn't be happier with our new home!</p></article></div>
-                        <div class="swiper-slide"><article class="review-card"><div class="review-card__avatar-wrapper"><img src="assets/img/avatar-5.jpg" alt="Emily Rodriguez" class="review-card__avatar" width="80" height="80"></div><h3 class="review-card__name">Emily Rodriguez</h3><p class="review-card__position">Designer at Design Studio</p><p class="review-card__text">Exceptional service from start to finish. The RubyHome team understood exactly what we were looking for and delivered beyond our expectations. Five stars!</p></article></div>
-                        <div class="swiper-slide"><article class="review-card"><div class="review-card__avatar-wrapper"><img src="assets/img/avatar-6.jpg" alt="David Thompson" class="review-card__avatar" width="80" height="80"></div><h3 class="review-card__name">David Thompson</h3><p class="review-card__position">Business Owner at Local Business</p><p class="review-card__text">Professional, efficient, and genuinely caring. RubyHome helped us navigate the complex process with ease. We found our dream home thanks to their expertise!</p></article></div>
-                        <div class="swiper-slide"><article class="review-card"><div class="review-card__avatar-wrapper"><img src="assets/img/avatar-7.jpg" alt="Jessica Martinez" class="review-card__avatar" width="80" height="80"></div><h3 class="review-card__name">Jessica Martinez</h3><p class="review-card__position">Architect at Architecture Firm</p><p class="review-card__text">Outstanding attention to detail and customer service. The team at RubyHome made what could have been a stressful process completely seamless. Absolutely recommend!</p></article></div>
-                        <div class="swiper-slide"><article class="review-card"><div class="review-card__avatar-wrapper"><img src="assets/img/avatar-8.jpg" alt="Robert Kim" class="review-card__avatar" width="80" height="80"></div><h3 class="review-card__name">Robert Kim</h3><p class="review-card__position">Software Engineer at Tech Company</p><p class="review-card__text">Truly impressed by the level of professionalism and market knowledge. RubyHome helped us find the perfect investment property. Will definitely work with them again!</p></article></div>
+                        <!-- Review 1 -->
+                        <div class="swiper-slide">
+                            <article class="review-card">
+                                <header class="review-card__header">
+                                    <img src="assets/img/avatar-1.jpg" alt="Justin Lee" class="review-card__avatar" width="74" height="74" loading="lazy">
+                                    <div class="review-card__info">
+                                        <p class="review-card__name"><strong>Justin Lee</strong></p>
+                                        <p class="review-card__position">Products Designer at Ito</p>
+                                    </div>
+                                </header>
+                                <blockquote class="review-card__text">
+                                    <p>A good real estate agent doesn't disappear once the closing is signed. Buying a bigger home doesn't necessarily mean spending more money. Been there. Done that. Sold. Bought. Bringing it all together.</p>
+                                </blockquote>
+                            </article>
+                        </div>
+                        
+                        <!-- Review 2 -->
+                        <div class="swiper-slide">
+                            <article class="review-card">
+                                <header class="review-card__header">
+                                    <img src="assets/img/avatar-2.jpg" alt="Angel Cathe" class="review-card__avatar" width="74" height="74" loading="lazy">
+                                    <div class="review-card__info">
+                                        <p class="review-card__name"><strong>Angel Cathe</strong></p>
+                                        <p class="review-card__position">CEO at StartupHub</p>
+                                    </div>
+                                </header>
+                                <blockquote class="review-card__text">
+                                    <p>A good real estate agent doesn't disappear once the closing is signed. Buying a bigger home doesn't necessarily mean spending more money. Been there. Done that. Sold. Bought bringing it all together.</p>
+                                </blockquote>
+                            </article>
+                        </div>
+                        
+                        <!-- Review 3 -->
+                        <div class="swiper-slide">
+                            <article class="review-card">
+                                <header class="review-card__header">
+                                    <img src="assets/img/avatar-3.jpg" alt="Sarah Johnson" class="review-card__avatar" width="74" height="74" loading="lazy">
+                                    <div class="review-card__info">
+                                        <p class="review-card__name"><strong>Sarah Johnson</strong></p>
+                                        <p class="review-card__position">Marketing Director at Creative Agency</p>
+                                    </div>
+                                </header>
+                                <blockquote class="review-card__text">
+                                    <p>RubyHome made our home buying experience effortless. Their team was professional, knowledgeable, and always available to answer our questions. Highly recommended!</p>
+                                </blockquote>
+                            </article>
+                        </div>
+                        
+                        <!-- Review 4 -->
+                        <div class="swiper-slide">
+                            <article class="review-card">
+                                <header class="review-card__header">
+                                    <img src="assets/img/avatar-4.jpg" alt="Michael Chen" class="review-card__avatar" width="74" height="74" loading="lazy">
+                                    <div class="review-card__info">
+                                        <p class="review-card__name"><strong>Michael Chen</strong></p>
+                                        <p class="review-card__position">Entrepreneur at Tech Startup</p>
+                                    </div>
+                                </header>
+                                <blockquote class="review-card__text">
+                                    <p>The best real estate experience I've ever had. RubyHome found us the perfect property and guided us through every step. Couldn't be happier with our new home!</p>
+                                </blockquote>
+                            </article>
+                        </div>
+                        
+                        <!-- Review 5 -->
+                        <div class="swiper-slide">
+                            <article class="review-card">
+                                <header class="review-card__header">
+                                    <img src="assets/img/avatar-5.jpg" alt="Emily Rodriguez" class="review-card__avatar" width="74" height="74" loading="lazy">
+                                    <div class="review-card__info">
+                                        <p class="review-card__name"><strong>Emily Rodriguez</strong></p>
+                                        <p class="review-card__position">Designer at Design Studio</p>
+                                    </div>
+                                </header>
+                                <blockquote class="review-card__text">
+                                    <p>Exceptional service from start to finish. The RubyHome team understood exactly what we were looking for and delivered beyond our expectations. Five stars!</p>
+                                </blockquote>
+                            </article>
+                        </div>
+                        
+                        <!-- Review 6 -->
+                        <div class="swiper-slide">
+                            <article class="review-card">
+                                <header class="review-card__header">
+                                    <img src="assets/img/avatar-6.jpg" alt="David Thompson" class="review-card__avatar" width="74" height="74" loading="lazy">
+                                    <div class="review-card__info">
+                                        <p class="review-card__name"><strong>David Thompson</strong></p>
+                                        <p class="review-card__position">Business Owner at Local Business</p>
+                                    </div>
+                                </header>
+                                <blockquote class="review-card__text">
+                                    <p>Professional, efficient, and genuinely caring. RubyHome helped us navigate the complex process with ease. We found our dream home thanks to their expertise!</p>
+                                </blockquote>
+                            </article>
+                        </div>
+                        
+                        <!-- Review 7 -->
+                        <div class="swiper-slide">
+                            <article class="review-card">
+                                <header class="review-card__header">
+                                    <img src="assets/img/avatar-7.jpg" alt="Jessica Martinez" class="review-card__avatar" width="74" height="74" loading="lazy">
+                                    <div class="review-card__info">
+                                        <p class="review-card__name"><strong>Jessica Martinez</strong></p>
+                                        <p class="review-card__position">Architect at Architecture Firm</p>
+                                    </div>
+                                </header>
+                                <blockquote class="review-card__text">
+                                    <p>Outstanding attention to detail and customer service. The team at RubyHome made what could have been a stressful process completely seamless. Absolutely recommend!</p>
+                                </blockquote>
+                            </article>
+                        </div>
+                        
+                        <!-- Review 8 -->
+                        <div class="swiper-slide">
+                            <article class="review-card">
+                                <header class="review-card__header">
+                                    <img src="assets/img/avatar-8.jpg" alt="Robert Kim" class="review-card__avatar" width="74" height="74" loading="lazy">
+                                    <div class="review-card__info">
+                                        <p class="review-card__name"><strong>Robert Kim</strong></p>
+                                        <p class="review-card__position">Software Engineer at Tech Company</p>
+                                    </div>
+                                </header>
+                                <blockquote class="review-card__text">
+                                    <p>Truly impressed by the level of professionalism and market knowledge. RubyHome helped us find the perfect investment property. Will definitely work with them again!</p>
+                                </blockquote>
+                            </article>
+                        </div>
                     </div>
+                    
+                    <!-- Navigation -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                     <div class="swiper-pagination"></div>
                 </div>
             </div>
@@ -280,11 +399,18 @@
         <section class="cta">
             <div class="cta__container">
                 <h2 class="cta__title">Get listed your home as a owner</h2>
-                <p class="cta__subtitle">Here it is set of our current and passed customers your must the agency experience</p>
-                <form class="cta__form" id="newsletter-form">
+                <p class="cta__subtitle">Here is a list of the greatest real estate company slogans of all-time. These catchy slogans are followed by the Greatest Real Estate.</p>
+                <form class="cta__form" id="newsletter-form" aria-label="Newsletter subscription form">
                     <div class="cta__form-group">
-                        <input type="email" class="cta__input" id="newsletter-email" placeholder="Your email address" required>
-                        <button type="submit" class="cta__button button button--primary">Subscribe</button>
+                        <input 
+                            type="email" 
+                            class="cta__input" 
+                            id="newsletter-email" 
+                            placeholder="Enter email address" 
+                            required 
+                            aria-label="Email address"
+                            autocomplete="email">
+                        <button type="submit" class="cta__button button button--primary" aria-label="Subscribe to newsletter">Subscribe</button>
                     </div>
                 </form>
             </div>
@@ -298,48 +424,74 @@
     </footer>
 
     <!-- MODAL -->
-    <div class="modal" id="contact-modal" aria-hidden="true">
-        <div class="modal__overlay js-close-modal"></div>
-        <div class="modal__content">
-            <button class="modal__close js-close-modal" type="button">&times;</button>
-            <h2 class="modal__title">Leave a request and we will call you soon</h2>
-            <form class="modal__form" id="contact-form">
-                <div class="modal__field">
-                    <label for="contact-name" class="modal__label">Enter name</label>
-                    <input type="text" class="modal__input" id="contact-name" name="name" placeholder="Example: Mark" required>
+<div class="modal" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal__overlay js-close-modal" aria-hidden="true"></div>
+    <div class="modal__content">
+        <button class="modal__close js-close-modal" type="button" aria-label="Close modal window">
+            <img src="assets/icons/close.svg" alt="" class="modal__close-icon" width="24" height="24">
+        </button>
+        <h2 class="modal__title" id="modal-title">Leave a request and we will call you soon</h2>
+        <form class="modal__form" id="contact-form" aria-label="Contact form">
+            <div class="modal__field">
+                <label for="contact-name" class="modal__label">Enter name</label>
+                <input type="text" class="modal__input" id="contact-name" name="name" placeholder="Example: Mark" required>
+            </div>
+            <div class="modal__field">
+                <label for="contact-phone" class="modal__label">Enter phone</label>
+                <input type="tel" class="modal__input" id="contact-phone" name="phone" placeholder="+1" required>
+                <span class="modal__error" id="phone-error" role="alert" aria-live="polite"></span>
+            </div>
+            <div class="modal__field">
+                <label for="contact-email" class="modal__label">Enter email address</label>
+                <input type="email" class="modal__input" id="contact-email" name="email" placeholder="email@example.com" required>
+            </div>
+            <fieldset class="modal__field modal__field--radio">
+                <legend class="modal__label">I want to</legend>
+                <div class="modal__radio-group" role="radiogroup" aria-label="Choose action type">
+                    <label class="modal__radio-label">
+                        <input type="radio" name="type" value="buy" checked>
+                        <span class="button">Buy</span>
+                    </label>
+                    <label class="modal__radio-label">
+                        <input type="radio" name="type" value="rent">
+                        <span class="button">Rent</span>
+                    </label>
+                    <label class="modal__radio-label">
+                        <input type="radio" name="type" value="sell">
+                        <span class="button">Sell</span>
+                    </label>
                 </div>
-                <div class="modal__field">
-                    <label for="contact-phone" class="modal__label">Enter phone</label>
-                    <input type="tel" class="modal__input" id="contact-phone" name="phone" placeholder="+1" required>
-                </div>
-                <div class="modal__field">
-                    <label for="contact-email" class="modal__label">Enter email address</label>
-                    <input type="email" class="modal__input" id="contact-email" name="email" placeholder="email@example.com" required>
-                </div>
-                <div class="modal__field">
-                    <label class="modal__label">I want to</label>
-                    <div class="modal__radio-group">
-                        <label class="modal__radio-label"><input type="radio" name="type" value="buy" checked><span>Buy</span></label>
-                        <label class="modal__radio-label"><input type="radio" name="type" value="rent"><span>Rent</span></label>
-                        <label class="modal__radio-label"><input type="radio" name="type" value="sell"><span>Sell</span></label>
-                    </div>
-                </div>
-                <div class="modal__field">
-                    <label class="modal__checkbox-label"><input type="checkbox" name="privacy" required><span>I agree to <a href="privacy-policy.html" target="_blank">Privacy Policy</a></span></label>
-                </div>
-                <button type="submit" class="modal__submit button button--primary button--full">Submit</button>
-            </form>
-        </div>
+            </fieldset>
+            <div class="modal__field modal__field--checkbox">
+                <label class="modal__checkbox-label">
+                    <input type="checkbox" name="privacy" required>
+                    <span class="modal__checkbox-text">I agree to <a href="privacy-policy.html" target="_blank" class="modal__link">Privacy Policy</a></span>
+                </label>
+            </div>
+            <button type="submit" class="modal__submit button button--primary button--full">Submit</button>
+        </form>
     </div>
+</div>
 
-    <!-- SUCCESS MODAL -->
-    <div class="modal-success" id="success-modal" aria-hidden="true">
-        <div class="modal-success__overlay js-close-success"></div>
-        <div class="modal-success__content">
-            <button class="modal-success__close js-close-success" type="button">&times;</button>
-            <h2 class="modal-success__title">Your request has been sent</h2>
+<!-- SUCCESS MODAL -->
+<div class="modal-success" id="success-modal" role="alertdialog" aria-modal="true" aria-labelledby="success-title" aria-live="polite" aria-hidden="true">
+    <div class="modal-success__overlay js-close-success" aria-hidden="true"></div>
+    <div class="modal-success__content">
+        <button class="modal-success__close js-close-success" type="button" aria-label="Close success message">
+            <img src="assets/icons/close.svg" alt="" class="modal-success__close-icon" width="24" height="24">
+        </button>
+        <div class="modal-success__icon-wrapper">
+            <!-- Success checkmark icon  -->
+            <svg class="modal-success__icon" width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="40" r="40" fill="#2E6EFF" fill-opacity="0.1"/>
+                <circle cx="40" cy="40" r="32" fill="#2E6EFF"/>
+                <path d="M28 40L36 48L52 32" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
         </div>
+        <h2 class="modal-success__title" id="success-title">Your request has been sent</h2>
+        <p class="modal-success__message">We will contact you shortly. Thank you for choosing RubyHome!</p>
     </div>
+</div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="scripts/main.js"></script>

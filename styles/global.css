@@ -391,17 +391,11 @@ img {
   display: block;
 }
 
-/* Prevent layout shift */
-img[width][height] {
-  height: auto;
-}
-
 /* ============================================
    FORM ELEMENTS BASE
    ============================================ */
 
 input,
-textarea,
 select {
   font-family: inherit;
   font-size: var(--input-font-size);
@@ -414,7 +408,6 @@ input[type='tel'],
 input[type='password'],
 input[type='url'],
 input[type='search'],
-textarea,
 select {
   width: 100%;
   padding: var(--input-padding-mobile); /* Mobile first */
@@ -434,28 +427,24 @@ select {
   input[type='password'],
   input[type='url'],
   input[type='search'],
-  textarea,
   select {
     padding: var(--input-padding);
   }
 }
 
 input:focus,
-textarea:focus,
 select:focus {
   outline: none;
   border: var(--input-border-focus);
   box-shadow: var(--input-shadow-focus);
 }
 
-input::placeholder,
-textarea::placeholder {
+input::placeholder {
   color: var(--input-placeholder-color);
   opacity: var(--input-placeholder-opacity);
 }
 
 input:disabled,
-textarea:disabled,
 select:disabled {
   background-color: var(--input-bg-disabled);
   color: var(--input-text-disabled);

@@ -1,9 +1,255 @@
 /* ============================================
    HERO COMPONENT
    Main hero section with background image
+   Mobile-first approach
    ============================================ */
 
-.hero {
-  /* Hero styles will be added during Phase 3 */
-}
+/* ============================================
+   HERO SECTION
+   ============================================ */
 
+   .hero {
+    position: relative;
+    min-height: 476px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: var(--color-bg-dark);
+    margin-bottom: var(--section-spacing-md-mobile);
+  }
+  
+  /* ============================================
+     BACKGROUND IMAGE
+     ============================================ */
+  
+  .hero__picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  
+  .hero__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  /* Dark overlay for text readability */
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(3, 10, 27, 0.7) 0%,
+      rgba(3, 10, 27, 0.5) 100%
+    );
+    z-index: 1;
+  }
+  
+  /* ============================================
+     CONTENT CONTAINER
+     ============================================ */
+  
+  .hero__container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: var(--container-content-width);
+    margin: 0 auto;
+    padding: var(--hero-padding-vertical-mobile) var(--container-padding-mobile);
+  }
+  
+  .hero__content {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--hero-content-gap);
+  }
+  
+  /* ============================================
+     TYPOGRAPHY
+     ============================================ */
+  
+  .hero__title {
+    font-size: var(--font-size-2xl-mobile);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
+    color: var(--color-text-inverse);
+    margin: 0;
+    max-width: var(--hero-title-max-width);
+    word-wrap: break-word; 
+  }
+  
+  .hero__description {
+    font-size: var(--font-size-base-mobile);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-normal);
+    color: var(--color-text-inverse);
+    margin: 0;
+    max-width: var(--hero-description-max-width);
+    opacity: 0.95;
+  }
+  
+  /* ============================================
+     CTA BUTTON
+     ============================================ */
+  
+  .hero__cta-button {
+    align-self: flex-start;
+  }
+  
+  /* ============================================
+     RESPONSIVE - TABLET (768px+)
+     ============================================ */
+  
+  @media (min-width: 768px) {
+    .hero {
+      min-height: var(--hero-min-height-tablet);
+      margin-bottom: 50px;
+    }
+  
+    .hero__container {
+      padding: var(--hero-padding-vertical-tablet) var(--container-padding-tablet);
+    }
+  
+    .hero__title {
+      font-size: var(--font-size-2xl-tablet);
+    }
+  
+    .hero__description {
+      font-size: var(--font-size-base);
+    }
+  }
+  
+  /* ============================================
+     RESPONSIVE - DESKTOP (1024px+)
+     Side-by-side layout
+     ============================================ */
+  
+  @media (min-width: 1024px) {
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      min-height: var(--hero-min-height-desktop);
+      padding: var(--container-padding-desktop);
+      background-color: var(--color-bg-white);
+      margin-bottom: 0;
+      overflow: visible;
+    }
+  
+    /* Hide gradient overlay */
+    .hero::before {
+     display: none;
+    }
+  
+    .hero__container {
+      order: -1;
+      padding: 0;
+      max-width: 50%;
+      margin: 0;
+    }
+
+    .hero__content {
+      flex: 1;
+      max-width: 100%;
+    }
+  
+    .hero__title {
+      font-size: var(--font-size-2xl);
+      color: var(--color-text-primary); 
+      max-width: var(--hero-title-max-width);
+    }
+  
+    .hero__description {
+      font-size: var(--font-size-base);
+      color: var(--color-text-secondary);
+      max-width: 500px;
+    }
+  
+    /* Image positioning */
+    .hero__picture {
+      position: relative;
+      top: auto;
+      left: auto;
+      width: 484px;
+      height: 600px;
+      min-height: var(--hero-min-height-desktop);
+      flex-shrink: 0;
+      z-index: 1;
+    }
+  
+    .hero__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  
+/* ============================================
+   RESPONSIVE - LARGE DESKTOP (1440px+)
+   ============================================ */
+
+   @media (min-width: 1440px) {
+    .hero__container {
+      max-width: 640px; 
+    }
+  }
+  
+
+  /* ============================================
+     ANIMATIONS
+     ============================================ */
+  
+  /* Fade in animation on page load (optional - can be triggered by JS) */
+  @keyframes heroFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .hero__content {
+    animation: heroFadeIn 0.8s ease-out;
+  }
+  
+  /* Stagger animation for child elements */
+  .hero__title {
+    animation: heroFadeIn 0.8s ease-out 0.1s both;
+  }
+  
+  .hero__description {
+    animation: heroFadeIn 0.8s ease-out 0.2s both;
+  }
+  
+  .hero__cta-button {
+    animation: heroFadeIn 0.8s ease-out 0.3s both;
+  }
+  
+  /* ============================================
+     ACCESSIBILITY
+     ============================================ */
+  
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    .hero__content,
+    .hero__title,
+    .hero__description,
+    .hero__cta-button {
+      animation: none;
+    }
+  }

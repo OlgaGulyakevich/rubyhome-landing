@@ -1,9 +1,279 @@
 /* ============================================
    SUCCESS MODAL COMPONENT
    Success message modal window
+   Mobile-first approach
    ============================================ */
 
-.modal-success {
-  /* Success modal styles will be added during Phase 3 */
-}
+/* ============================================
+   SUCCESS MODAL BASE
+   ============================================ */
 
+   .modal-success {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: var(--z-index-modal);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+  }
+  
+  /* Show success modal */
+  .modal-success[aria-hidden="false"] {
+    display: flex;
+    opacity: 1;
+  }
+  
+  /* ============================================
+     SUCCESS MODAL OVERLAY
+     ============================================ */
+  
+  .modal-success__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(3, 10, 27, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 1;
+    cursor: pointer;
+  }
+  
+  /* ============================================
+     SUCCESS MODAL CONTENT
+     ============================================ */
+  
+  .modal-success__content {
+    position: relative;
+    z-index: 2;
+    background-color: var(--color-bg-white);
+    border-radius: 10px;
+    width: calc(100% - 32px);
+    max-width: 325px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    padding: 48px 24px 40px;
+    box-shadow: var(--shadow-modal);
+    animation: modalSlideIn var(--transition-normal) ease-out;
+    text-align: center;
+  }
+  
+  @keyframes modalSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  /* ============================================
+     CLOSE BUTTON
+     ============================================ */
+  
+  .modal-success__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 64px;
+    height: 64px; 
+    padding: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity var(--transition-fast);
+    z-index: 3;
+  }
+  
+  .modal-success__close:hover {
+    opacity: 0.7;
+  }
+  
+  .modal-success__close:focus-visible {
+    outline: 2px solid var(--color-brand-primary);
+    outline-offset: 2px;
+  }
+  
+  .modal-success__close-icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+  }
+  
+  /* ============================================
+     SUCCESS ICON
+     ============================================ */
+  
+  .modal-success__icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-4xl);
+  }
+  
+  .modal-success__icon {
+    width: 80px;
+    height: 80px;
+    animation: successIconScale 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  @keyframes successIconScale {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* ============================================
+     SUCCESS MODAL CONTENT
+     ============================================ */
+  
+  .modal-success__title {
+    font-size: var(--font-size-lg-mobile);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
+    color: var(--color-text-primary);
+    margin: 0 0 var(--space-lg) 0;
+  }
+  
+  .modal-success__message {
+    font-size: var(--font-size-sm-mobile);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-normal);
+    color: var(--color-text-secondary);
+    margin: 0;
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Screen reader only content */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  
+  /* ============================================
+     RESPONSIVE - TABLET (768px+)
+     ============================================ */
+  
+  @media (min-width: 768px) {
+    .modal-success__content {
+      padding: 56px 40px 48px;
+      max-width: 500px;
+    }
+  
+    .modal-success__icon-wrapper {
+      margin-bottom: var(--space-5xl);
+    }
+  
+    .modal-success__icon {
+      width: 96px;
+      height: 96px;
+    }
+
+    .modal-success__close {
+      padding: 20px;
+    }
+  
+    .modal-success__title {
+      font-size: var(--font-size-xl-mobile);
+      margin-bottom: var(--space-xl);
+    }
+  
+    .modal-success__message {
+      font-size: var(--font-size-sm);
+    }
+  }
+  
+  /* ============================================
+     RESPONSIVE - DESKTOP (1024px+)
+     ============================================ */
+  
+  @media (min-width: 1024px) {
+    .modal-success__content {
+      max-width: 520px;
+      padding: 64px 48px 56px;
+    }
+  
+    .modal-success__icon-wrapper {
+      margin-bottom: var(--space-6xl);
+    }
+  
+    .modal-success__icon {
+      width: 120px;
+      height: 120px;
+    }
+  
+    .modal-success__title {
+      font-size: var(--font-size-xl); /* 44px */
+      margin-bottom: var(--space-2xl);
+    }
+  
+    .modal-success__message {
+      font-size: var(--font-size-base); /* 18px */
+      max-width: 400px;
+    }
+  }
+  
+  /* ============================================
+     ACCESSIBILITY
+     ============================================ */
+  
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    .modal-success {
+      transition: none;
+    }
+  
+    .modal-success__content {
+      animation: none;
+    }
+  
+    .modal-success__icon {
+      animation: none;
+    }
+  
+    .modal-success__close {
+      transition: none;
+    }
+  }
+  
+  /* Focus trap styling */
+  .modal-success[aria-hidden="false"] .modal-success__content {
+    outline: none;
+  }
+  
+  /* Auto-close animation (optional - можно использовать через JS) */
+  .modal-success.is-closing {
+    opacity: 0;
+  }
+  
+  .modal-success.is-closing .modal-success__content {
+    transform: translateY(-20px) scale(0.95);
+  }

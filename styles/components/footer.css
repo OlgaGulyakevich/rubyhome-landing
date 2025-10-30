@@ -1,9 +1,102 @@
 /* ============================================
    FOOTER COMPONENT
-   Site footer with copyright
+   Simple footer with copyright information
+   Mobile-first responsive design
+   ============================================ */
+
+/* ============================================
+   FOOTER SECTION
    ============================================ */
 
 .footer {
-  /* Footer styles will be added during Phase 3 */
+  background-color: #f9f9f9;
+  padding: 40px 0;
 }
 
+.footer__container {
+  max-width: var(--container-content-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding-mobile);
+  text-align: center;
+}
+
+/* ============================================
+   FOOTER CONTENT
+   ============================================ */
+
+.footer__copyright {
+  font-size: 12px;
+  font-weight: var(--font-weight-regular);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.footer__link {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-normal);
+}
+
+.footer__link:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.footer__link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ============================================
+   RESPONSIVE - TABLET (768px+)
+   ============================================ */
+
+@media (min-width: 768px) {
+  .footer {
+    padding: 50px 0;
+  }
+
+  .footer__container {
+    padding: 0 var(--container-padding-tablet);
+  }
+
+  .footer__copyright {
+    font-size: 15px;
+  }
+}
+
+/* ============================================
+   RESPONSIVE - DESKTOP (1024px+)
+   ============================================ */
+
+@media (min-width: 1024px) {
+  .footer {
+    padding: 70px 0;
+  }
+
+  .footer__container {
+    max-width: 1146px;
+    padding: 0 var(--container-padding-desktop);
+  }
+
+  .footer__copyright {
+    font-size: 16px;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .footer {
+    border-top: 2px solid rgba(0, 0, 0, 0.3);
+  }
+
+  .footer__copyright {
+    color: var(--color-text-dark);
+  }
+}

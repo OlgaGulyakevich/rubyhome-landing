@@ -1,0 +1,323 @@
+/* ============================================
+   INPUT COMPONENT
+   Form inputs, radio, checkbox
+   Mobile-first approach
+   ============================================ */
+
+/* ============================================
+   BASE INPUT STYLES
+   ============================================ */
+
+   .cta__input,
+   .modal__input,
+   input[type='text'],
+   input[type='email'],
+   input[type='tel'],
+   input[type='number'],
+   input[type='url'] {
+     /* Display & Box Model */
+     display: block;
+     width: 100%;
+     min-height: var(--input-min-height);
+     padding: var(--input-padding-mobile);
+   
+     /* Typography */
+     font-family: var(--font-primary);
+     font-size: var(--input-font-size);
+     font-weight: var(--font-weight-regular);
+     line-height: var(--line-height-normal);
+     color: var(--color-text-primary);
+   
+     /* Visual */
+     background-color: var(--input-bg);
+     border: var(--input-border);
+     border-radius: var(--input-radius);
+   
+     /* Transitions */
+     transition: all var(--transition-normal);
+   
+     /* Remove default styles */
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance: none;
+   }
+   
+   /* Placeholder Styles */
+   .cta__input::placeholder,
+   .modal__input::placeholder,
+   input::placeholder {
+     color: var(--input-placeholder-color);
+     opacity: var(--input-placeholder-opacity);
+   }
+   
+   /* Focus State */
+   .cta__input:focus,
+   .modal__input:focus,
+   input:focus {
+     outline: none;
+     background-color: var(--input-bg-focus);
+     border: var(--input-border-focus);
+     box-shadow: var(--input-shadow-focus);
+   }
+   
+   /* Hover State */
+   .cta__input:hover,
+   .modal__input:hover,
+   input:hover {
+     border-color: var(--color-border-muted);
+   }
+   
+   /* Disabled State */
+   .cta__input:disabled,
+   .modal__input:disabled,
+   input:disabled {
+     background-color: var(--input-bg-disabled);
+     color: var(--input-text-disabled);
+     cursor: not-allowed;
+     opacity: var(--opacity-disabled);
+   }
+   
+   /* Error State */
+   .cta__input--error,
+   .modal__input--error,
+   input.error {
+     border: var(--input-border-error);
+     background-color: var(--input-bg-error);
+   }
+   
+   .cta__input--error:focus,
+   .modal__input--error:focus,
+   input.error:focus {
+     box-shadow: var(--input-shadow-error);
+   }
+   
+   /* ============================================
+      LABELS
+      ============================================ */
+   
+   .modal__label {
+     display: block;
+     margin-bottom: var(--modal-label-margin-bottom);
+     font-size: var(--modal-label-font-size);
+     font-weight: var(--modal-label-font-weight);
+     color: var(--modal-label-color);
+     line-height: var(--line-height-normal);
+   }
+   
+   /* ============================================
+      FIELD WRAPPER
+      ============================================ */
+   
+   .modal__field {
+     margin-bottom: var(--modal-input-margin-bottom);
+   }
+
+   /* Fieldset styling (for radio groups) */
+   fieldset.modal__field {
+     border: none;
+     padding: 0;
+     margin-bottom: var(--modal-input-margin-bottom);
+   }
+
+   /* Legend styling (same as label) */
+   legend.modal__label {
+     display: block;
+     margin-bottom: var(--modal-label-margin-bottom);
+     padding: 0;
+     font-size: var(--modal-label-font-size);
+     font-weight: var(--modal-label-font-weight);
+     color: var(--modal-label-color);
+     line-height: var(--line-height-normal);
+   }
+   
+   /* ============================================
+      ERROR MESSAGE
+      ============================================ */
+   
+   .input-error,
+   .modal__error {
+     display: block;
+     margin-top: var(--error-message-margin-top);
+     font-size: var(--error-message-font-size);
+     color: var(--error-message-color);
+     line-height: var(--line-height-normal);
+   }
+   
+   /* ============================================
+   RADIO BUTTONS (Use button styles)
+   ============================================ */
+
+.modal__radio-group {
+  display: flex;
+  gap: var(--radio-group-gap);
+  flex-wrap: wrap;
+}
+
+.modal__radio-label {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+}
+
+/* Hide default radio completely */
+.modal__radio-label input[type='radio'] {
+  position: absolute;
+  opacity: 0 ;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+}
+
+/* Button inside radio label takes full width */
+.modal__radio-label .button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Toggle button--primary class on checked */
+.modal__radio-label input[type='radio']:checked + span {
+  background-color: var(--button-primary-bg);
+  color: var(--button-primary-text);
+  border-color: var(--button-primary-bg);
+}
+
+/* Unchecked state - white with border */
+.modal__radio-label input[type='radio']:not(:checked) + span {
+  background-color: var(--color-bg-white);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-default);
+}
+
+/* Hover on unchecked */
+.modal__radio-label input[type='radio']:not(:checked) + span:hover {
+  border-color: var(--color-primary);
+}
+
+   
+   /* ============================================
+      CHECKBOX (Custom styled)
+      ============================================ */
+   
+   .modal__checkbox-label {
+     position: relative;
+     display: inline-flex;
+     align-items: flex-start;
+     cursor: pointer;
+     font-size: var(--font-size-xs);
+     line-height: var(--line-height-normal);
+     gap: 10px;
+   }
+   
+   /* Hide default checkbox */
+   .modal__checkbox-label input[type='checkbox'] {
+     position: absolute;
+     opacity: 0;
+     width: 0;
+     height: 0;
+   }
+   
+   /* Custom checkbox */
+   .modal__checkbox-label input[type='checkbox'] + span::before {
+     content: '';
+     display: inline-block;
+     width: var(--checkbox-size);
+     height: var(--checkbox-size);
+     margin-right: 10px;
+     vertical-align: middle;
+     background-color: var(--color-bg-white);
+     border: var(--checkbox-border);
+     border-radius: var(--checkbox-radius);
+     transition: all var(--transition-normal);
+     flex-shrink: 0;
+   }
+   
+   /* Hover state */
+   .modal__checkbox-label:hover input[type='checkbox'] + span::before {
+     border-color: var(--color-primary);
+   }
+   
+   /* Checked state */
+   .modal__checkbox-label input[type='checkbox']:checked + span::before {
+     background-color: var(--checkbox-bg-checked);
+     border: var(--checkbox-border-checked);
+     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='white' d='M13.5 3.5L6 11 2.5 7.5l1-1L6 9l6.5-6.5z'/%3E%3C/svg%3E");
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: 12px;
+   }
+   
+   /* Focus visible for keyboard navigation */
+   .modal__checkbox-label input[type='checkbox']:focus-visible + span::before {
+     outline: var(--focus-outline-width) var(--focus-outline-style)
+       var(--focus-outline-color);
+     outline-offset: var(--focus-outline-offset);
+   }
+   
+   /* Link inside checkbox label */
+   .modal__checkbox-label a {
+     color: var(--color-primary);
+     text-decoration: underline;
+   }
+   
+   .modal__checkbox-label a:hover {
+     color: var(--color-primary-hover);
+   }
+   
+   /* ============================================
+      CTA FORM GROUP (Horizontal layout)
+      ============================================ */
+   
+   .cta__form-group {
+     display: flex;
+     gap: 12px;
+     align-items: stretch;
+   }
+   
+   .cta__input {
+     flex: 1;
+     min-width: 0; /* Allow flex item to shrink */
+   }
+   
+   /* ============================================
+      RESPONSIVE - Tablet (768px+)
+      ============================================ */
+   
+   @media (min-width: 768px) {
+     .cta__input,
+     .modal__input,
+     input {
+       padding: var(--input-padding);
+     }
+   
+     .cta__form-group {
+       gap: 15px;
+     }
+   }
+   
+   /* ============================================
+      RESPONSIVE - Desktop (1024px+)
+      ============================================ */
+   
+   @media (min-width: 1024px) {
+     .cta__form-group {
+       gap: 20px;
+     }
+   }
+   
+   /* ============================================
+      ACCESSIBILITY IMPROVEMENTS
+      ============================================ */
+   
+   /* Ensure focus is visible for keyboard users */
+   input:focus-visible {
+     outline: var(--focus-outline-width) var(--focus-outline-style)
+       var(--focus-outline-color);
+     outline-offset: var(--focus-outline-offset);
+   }
+   
+   /* Remove outline for mouse users */
+   input:focus:not(:focus-visible) {
+     outline: none;
+   }
