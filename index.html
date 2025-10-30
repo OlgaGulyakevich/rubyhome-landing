@@ -424,48 +424,54 @@
     </footer>
 
     <!-- MODAL -->
-    <div class="modal" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
-        <div class="modal__overlay js-close-modal" aria-hidden="true"></div>
-        <div class="modal__content">
-            <button class="modal__close js-close-modal" type="button" aria-label="Закрыть модальное окно">&times;</button>
-            <h2 class="modal__title" id="modal-title">Leave a request and we will call you soon</h2>
-            <form class="modal__form" id="contact-form" aria-label="Форма обратной связи">
-                <div class="modal__field">
-                    <label for="contact-name" class="modal__label">Enter name</label>
-                    <input type="text" class="modal__input" id="contact-name" name="name" placeholder="Example: Mark" required>
+<div class="modal" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal__overlay js-close-modal" aria-hidden="true"></div>
+    <div class="modal__content">
+        <button class="modal__close js-close-modal" type="button" aria-label="Close modal window">
+            <img src="assets/icons/close.svg" alt="" class="modal__close-icon" width="24" height="24">
+        </button>
+        <h2 class="modal__title" id="modal-title">Leave a request and we will call you soon</h2>
+        <form class="modal__form" id="contact-form" aria-label="Contact form">
+            <div class="modal__field">
+                <label for="contact-name" class="modal__label">Enter name</label>
+                <input type="text" class="modal__input" id="contact-name" name="name" placeholder="Example: Mark" required>
+            </div>
+            <div class="modal__field">
+                <label for="contact-phone" class="modal__label">Enter phone</label>
+                <input type="tel" class="modal__input" id="contact-phone" name="phone" placeholder="+1" required>
+                <span class="modal__error" id="phone-error" role="alert" aria-live="polite"></span>
+            </div>
+            <div class="modal__field">
+                <label for="contact-email" class="modal__label">Enter email address</label>
+                <input type="email" class="modal__input" id="contact-email" name="email" placeholder="email@example.com" required>
+            </div>
+            <fieldset class="modal__field modal__field--radio">
+                <legend class="modal__label">I want to</legend>
+                <div class="modal__radio-group" role="radiogroup" aria-label="Choose action type">
+                    <label class="modal__radio-label">
+                        <input type="radio" name="type" value="buy" checked>
+                        <span class="button">Buy</span>
+                    </label>
+                    <label class="modal__radio-label">
+                        <input type="radio" name="type" value="rent">
+                        <span class="button">Rent</span>
+                    </label>
+                    <label class="modal__radio-label">
+                        <input type="radio" name="type" value="sell">
+                        <span class="button">Sell</span>
+                    </label>
                 </div>
-                <div class="modal__field">
-                    <label for="contact-phone" class="modal__label">Enter phone</label>
-                    <input type="tel" class="modal__input" id="contact-phone" name="phone" placeholder="+1" required>
-                </div>
-                <div class="modal__field">
-                    <label for="contact-email" class="modal__label">Enter email address</label>
-                    <input type="email" class="modal__input" id="contact-email" name="email" placeholder="email@example.com" required>
-                </div>
-                <fieldset class="modal__field">
-                    <legend class="modal__label">I want to</legend>
-                    <div class="modal__radio-group" role="radiogroup" aria-label="Выберите тип действия">
-                        <label class="modal__radio-label">
-                            <input type="radio" name="type" value="buy" checked>
-                            <span class="button button--primary">Buy</span>
-                        </label>
-                        <label class="modal__radio-label">
-                            <input type="radio" name="type" value="rent">
-                            <span class="button">Rent</span>
-                        </label>
-                        <label class="modal__radio-label">
-                            <input type="radio" name="type" value="sell">
-                            <span class="button">Sell</span>
-                        </label>
-                    </div>
-                </fieldset>
-                <div class="modal__field">
-                    <label class="modal__checkbox-label"><input type="checkbox" name="privacy" required><span>I agree to <a href="privacy-policy.html" target="_blank">Privacy Policy</a></span></label>
-                </div>
-                <button type="submit" class="modal__submit button button--primary button--full">Submit</button>
-            </form>
-        </div>
+            </fieldset>
+            <div class="modal__field modal__field--checkbox">
+                <label class="modal__checkbox-label">
+                    <input type="checkbox" name="privacy" required>
+                    <span class="modal__checkbox-text">I agree to <a href="privacy-policy.html" target="_blank" class="modal__link">Privacy Policy</a></span>
+                </label>
+            </div>
+            <button type="submit" class="modal__submit button button--primary button--full">Submit</button>
+        </form>
     </div>
+</div>
 
     <!-- SUCCESS MODAL -->
     <div class="modal-success" id="success-modal" role="alertdialog" aria-modal="true" aria-labelledby="success-title" aria-live="polite" aria-hidden="true">
