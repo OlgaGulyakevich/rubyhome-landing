@@ -25,7 +25,7 @@
    ============================================ */
 
 .footer__copyright {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: var(--font-weight-regular);
   line-height: 1.6;
   color: var(--color-text-secondary);

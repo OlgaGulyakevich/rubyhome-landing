@@ -19,7 +19,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  border-radius: 16px;
+  border-radius: 10px;
 }
   
 .cta__container {
@@ -28,6 +28,33 @@
   margin: 0 auto;
   padding: 0 var(--container-padding-mobile);
   text-align: center;
+  z-index: 1;
+}
+
+/* Decorative circle left top */
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -160px;
+  width: 208px;
+  height: 208px;
+  background: rgb(255 255 255 / 8%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/* Decorative circle right bottom */
+.cta::after {
+  content: '';
+  position: absolute;
+  bottom: -165px;
+  right: 0;
+  width:208px;
+  height: 208px;
+  background: rgb(255 255 255 / 6%);
+  border-radius: 50%;
+  z-index: 0;
 }
   
   /* ============================================
@@ -144,6 +171,19 @@
     padding: 0 var(--container-padding-tablet);
   }
 
+  /* Hide left circle on tablet */
+  .cta::before {
+    top: 0;
+    left: -160px;
+    width: 208px;
+    height: 208px;
+  }
+
+  /* Hide right circle on tablet */
+  .cta::after {
+    display: none;
+  }
+
   .cta__title {
     font-size: 36px;
     margin-bottom: 14px;
@@ -196,6 +236,12 @@
 
   .cta__container {
     padding: 0 var(--container-padding-desktop);
+  }
+
+  /* Hide all decorative elements on desktop */
+  .cta::before,
+  .cta::after {
+    display: none;
   }
 
   .cta__title {
