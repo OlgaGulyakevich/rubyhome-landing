@@ -141,7 +141,7 @@
       justify-content: center;
       gap: 40px;
       min-height: var(--hero-min-height-desktop);
-      padding: var(--section-spacing-md) var(--container-padding-desktop);
+      padding: var(--container-padding-desktop);
       background-color: var(--color-bg-white);
       margin-bottom: 0;
       overflow: visible;
@@ -201,10 +201,6 @@
    ============================================ */
 
    @media (min-width: 1440px) {
-    .hero {
-      padding: 0 var(--container-padding-desktop);
-    }
-  
     .hero__container {
       max-width: 640px; 
     }

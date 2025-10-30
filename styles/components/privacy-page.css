@@ -1,12 +1,345 @@
 /* ============================================
    PRIVACY PAGE COMPONENT
    Privacy policy page content styles
+   Mobile-first approach with focus on readability
    ============================================ */
 
-.privacy-page {
-  /* Privacy page styles will be added during Phase 3 */
-}
+/* ============================================
+   PRIVACY PAGE CONTAINER
+   ============================================ */
 
-.privacy-section {
-  /* Privacy section styles will be added during Phase 3 */
-}
+   .privacy-page {
+    background-color: var(--color-bg-white);
+    padding: var(--section-spacing-md-mobile) 0;
+    min-height: calc(100vh - var(--nav-height-mobile) - 60px); /* Full height minus header and footer */
+  }
+  
+  .privacy-page__container {
+    max-width: var(--container-narrow); /* 860px for better readability */
+    margin: 0 auto;
+    padding: 0 var(--container-padding-mobile);
+  }
+  
+  /* ============================================
+     PAGE TITLE
+     ============================================ */
+  
+  .privacy-page__title {
+    font-size: var(--font-size-xl-mobile);
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.5;
+    color: var(--color-text-primary);
+    margin: 0 0 var(--space-4xl) 0;
+    text-align: start
+  }
+  
+  /* ============================================
+     CONTENT WRAPPER
+     ============================================ */
+  
+  .privacy-page__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4xl);
+  }
+  
+  /* ============================================
+     PRIVACY SECTIONS
+     ============================================ */
+  
+  .privacy-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+  
+  .privacy-section:last-child {
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--color-border-light);
+    text-align: center;
+  }
+  
+  /* ============================================
+     SECTION TITLES
+     ============================================ */
+  
+  .privacy-section__title {
+    font-size: var(--font-size-lg-mobile);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
+    color: var(--color-text-primary);
+    margin: 0;
+  }
+  
+  .privacy-section__subtitle {
+    font-size: var(--font-size-base-mobile);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
+    color: var(--color-text-primary);
+    margin: var(--space-lg) 0 var(--space-md);
+  }
+  
+  .privacy-section__list-title {
+    font-size: var(--font-size-sm-mobile);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-normal);
+    color: var(--color-text-primary);
+    margin: var(--space-md) 0;
+  }
+  
+  /* ============================================
+     SECTION TEXT
+     ============================================ */
+  
+  .privacy-section__text {
+    font-size: var(--font-size-sm-mobile);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-relaxed); /* Better readability for long text */
+    color: var(--color-text-secondary);
+    margin: 0;
+    text-align: justify;
+  }
+  
+  .privacy-section__text + .privacy-section__text {
+    margin-top: var(--space-lg); /* Space between consecutive paragraphs */
+  }
+  
+  .privacy-section__text strong {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+  }
+  
+  /* Small text variant */
+  .privacy-section__text--small {
+    font-size: var(--font-size-xs-mobile);
+    color: var(--color-text-tertiary);
+    font-style: italic;
+  }
+  
+  /* ============================================
+     LISTS
+     ============================================ */
+  
+  .privacy-section__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+  
+  .privacy-section__list-item {
+    font-size: var(--font-size-sm-mobile);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-text-secondary);
+    padding-left: var(--space-xl);
+    position: relative;
+  }
+  
+  /* Custom bullet point */
+  .privacy-section__list-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    background-color: var(--color-brand-primary);
+    border-radius: 50%;
+  }
+  
+  .privacy-section__list-item strong {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+  }
+  
+  /* ============================================
+     RESPONSIVE - TABLET (768px+)
+     ============================================ */
+  
+  @media (min-width: 768px) {
+    .privacy-page {
+      padding: var(--section-spacing-md-tablet) 0;
+      min-height: calc(100vh - var(--nav-height) - 80px);
+    }
+  
+    .privacy-page__container {
+      padding: 0 var(--container-padding-tablet);
+    }
+  
+    .privacy-page__title {
+      font-size: var(--font-size-xl-tablet);
+      margin-bottom: var(--space-5xl);
+    }
+  
+    .privacy-page__content {
+      gap: var(--space-5xl);
+    }
+  
+    .privacy-section {
+      gap: var(--space-xl);
+    }
+  
+    .privacy-section__title {
+      font-size: var(--font-size-lg);
+    }
+    
+    .privacy-section__subtitle {
+      font-size: var(--font-size-base);
+      margin: var(--space-xl) 0 var(--space-lg);
+    }
+    
+    .privacy-section__list-title {
+      font-size: var(--font-size-sm);
+    }
+  
+    .privacy-section__text {
+      font-size: var(--font-size-sm);
+    }
+  
+    .privacy-section__text--small {
+      font-size: var(--font-size-xs);
+    }
+  
+    .privacy-section__list {
+      gap: var(--space-lg);
+    }
+  
+    .privacy-section__list-item {
+      font-size: var(--font-size-sm);
+      padding-left: var(--space-2xl);
+    }
+  
+    .privacy-section__list-item::before {
+      top: 11px;
+    }
+  }
+  
+  /* ============================================
+     RESPONSIVE - DESKTOP (1024px+)
+     ============================================ */
+  
+  @media (min-width: 1024px) {
+    .privacy-page {
+      padding: var(--section-spacing-lg) 0;
+    }
+  
+    .privacy-page__container {
+      max-width: 1146px;
+      padding: 0 var(--container-padding-desktop);
+    }
+  
+    .privacy-page__title {
+      font-size: var(--font-size-xl); /* 44px */
+      margin-bottom: var(--space-6xl);
+    }
+  
+    .privacy-page__content {
+      gap: var(--space-6xl);
+    }
+  
+    .privacy-section {
+      gap: var(--space-2xl);
+    }
+  
+    .privacy-section__title {
+      font-size: var(--font-size-lg); /* 22px */
+    }
+    
+    .privacy-section__subtitle {
+      font-size: var(--font-size-base); /* 18px */
+      margin: var(--space-2xl) 0 var(--space-xl);
+    }
+    
+    .privacy-section__list-title {
+      font-size: var(--font-size-base); /* 18px */
+    }
+  
+    .privacy-section__text {
+      font-size: var(--font-size-base); /* 18px */
+      line-height: 1.75; /* Increased line-height for better desktop readability */
+    }
+  
+    .privacy-section__text--small {
+      font-size: var(--font-size-sm); /* 16px */
+    }
+  
+    .privacy-section__list {
+      gap: var(--space-xl);
+    }
+  
+    .privacy-section__list-item {
+      font-size: var(--font-size-base); /* 18px */
+      padding-left: 32px;
+      line-height: 1.75;
+    }
+  
+    .privacy-section__list-item::before {
+      width: 8px;
+      height: 8px;
+      top: 13px;
+    }
+  }
+  
+  /* ============================================
+     LINKS IN CONTENT
+     ============================================ */
+  
+  .privacy-section__text a,
+  .privacy-section__list-item a {
+    color: var(--color-brand-primary);
+    text-decoration: underline;
+    transition: opacity var(--transition-fast);
+  }
+  
+  .privacy-section__text a:hover,
+  .privacy-section__list-item a:hover {
+    opacity: 0.8;
+  }
+  
+  .privacy-section__text a:focus-visible,
+  .privacy-section__list-item a:focus-visible {
+    outline: 2px solid var(--color-brand-primary);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  
+  /* ============================================
+     ACCESSIBILITY
+     ============================================ */
+  
+  /* Improve focus visibility */
+  .privacy-page__content :focus-visible {
+    outline: 2px solid var(--color-brand-primary);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+  
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    .privacy-section__text a,
+    .privacy-section__list-item a {
+      transition: none;
+    }
+  }
+  
+  /* Print styles */
+  @media print {
+    .privacy-page {
+      padding: 0;
+    }
+  
+    .privacy-page__title {
+      page-break-after: avoid;
+    }
+  
+    .privacy-section {
+      page-break-inside: avoid;
+    }
+  
+    .privacy-section__title {
+      page-break-after: avoid;
+    }
+  }
