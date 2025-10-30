@@ -82,8 +82,8 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 64px; /* 24px icon + 20px padding on each side */
-    height: 64px; /* 24px icon + 20px padding on each side */
+    width: 64px; 
+    height: 64px; 
     padding: 24px;
     background: transparent;
     border: none;

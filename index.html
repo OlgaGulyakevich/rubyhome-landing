@@ -473,15 +473,25 @@
     </div>
 </div>
 
-    <!-- SUCCESS MODAL -->
-    <div class="modal-success" id="success-modal" role="alertdialog" aria-modal="true" aria-labelledby="success-title" aria-live="polite" aria-hidden="true">
-        <div class="modal-success__overlay js-close-success" aria-hidden="true"></div>
-        <div class="modal-success__content">
-            <button class="modal-success__close js-close-success" type="button" aria-label="Закрыть сообщение об успешной отправке">&times;</button>
-            <h2 class="modal-success__title" id="success-title">Your request has been sent</h2>
-            <p class="sr-only">Ваш запрос успешно отправлен. Мы свяжемся с вами в ближайшее время.</p>
+<!-- SUCCESS MODAL -->
+<div class="modal-success" id="success-modal" role="alertdialog" aria-modal="true" aria-labelledby="success-title" aria-live="polite" aria-hidden="true">
+    <div class="modal-success__overlay js-close-success" aria-hidden="true"></div>
+    <div class="modal-success__content">
+        <button class="modal-success__close js-close-success" type="button" aria-label="Close success message">
+            <img src="assets/icons/close.svg" alt="" class="modal-success__close-icon" width="24" height="24">
+        </button>
+        <div class="modal-success__icon-wrapper">
+            <!-- Success checkmark icon  -->
+            <svg class="modal-success__icon" width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="40" r="40" fill="#2E6EFF" fill-opacity="0.1"/>
+                <circle cx="40" cy="40" r="32" fill="#2E6EFF"/>
+                <path d="M28 40L36 48L52 32" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
         </div>
+        <h2 class="modal-success__title" id="success-title">Your request has been sent</h2>
+        <p class="modal-success__message">We will contact you shortly. Thank you for choosing RubyHome!</p>
     </div>
+</div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="scripts/main.js"></script>

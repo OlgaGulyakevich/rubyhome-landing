@@ -90,7 +90,7 @@
   .review-card::before {
     content: '';
     position: absolute;
-    top: 40px;
+    top: 25px;
     right: 25px;
     width: 32px;
     height: 28px;
