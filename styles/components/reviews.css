@@ -181,9 +181,9 @@
   
   .reviews__swiper .swiper-button-prev:hover,
   .reviews__swiper .swiper-button-next:hover {
-    background-color: #FE753F;
+    background-color: #D84315; /* Darker orange for WCAG AA compliance (4.53:1 contrast) */
     color: var(--color-bg-white);
-    border-color: #FE753F;
+    border-color: #D84315;
     transform: scale(1.05);
   }
   
