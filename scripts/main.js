@@ -1,12 +1,29 @@
 /**
  * Main JavaScript Entry Point
- * Imports and initializes all application modules
+ * RubyHome Landing Page
+ *
+ * Модульная архитектура:
+ * - Phase A: Базовый функционал (modal, slider, forms, smooth scroll, navigation)
+ * - Phase B: Scroll анимации (reveal, stagger, text animations)
+ * - Phase C: Продвинутые эффекты (parallax, magnetic buttons, 3D tilt, marquee)
  */
 
-// Import modules
+// ============================================
+// PHASE A: Base Functionality
+// ============================================
 import { initModals } from './modal.js';
 import { initReviewsSlider } from './slider.js';
-import { handleFormSubmit } from './form-validation.js';
+import { initFormValidation } from './form-validation.js';
+import { initNavigation } from './header.js';
+
+// ============================================
+// PHASE B & C: Animations (будут подключаться позже)
+// ============================================
+// import { initSmoothScroll } from './animations/smooth-scroll.js';
+// import { initRevealAnimations } from './animations/scroll-reveal.js';
+// import { initCardsStagger } from './animations/cards-stagger.js';
+// import { initHeroParallax } from './animations/hero-parallax.js';
+// import { initMagneticButtons } from './animations/magnetic-buttons.js';
 
 /**
  * Initializes mobile menu toggle functionality
@@ -15,7 +32,7 @@ import { handleFormSubmit } from './form-validation.js';
 const initMobileMenu = () => {
   const menuToggle = document.querySelector('.header__menu-toggle');
   const nav = document.querySelector('.header__nav');
-  
+
   if (!menuToggle || !nav) return;
 
   /**
@@ -24,17 +41,20 @@ const initMobileMenu = () => {
    */
   const handleToggleMenu = (event) => {
     event.preventDefault();
-    
+
     const isOpen = nav.classList.contains('header__nav--open');
-    
+
     // Toggle menu visibility
     nav.classList.toggle('header__nav--open');
     menuToggle.classList.toggle('header__menu-toggle--active');
-    
+
+    // Block body scroll when menu is open
+    document.body.style.overflow = isOpen ? '' : 'hidden';
+
     // Update ARIA attributes for accessibility
     menuToggle.setAttribute('aria-expanded', !isOpen);
-    menuToggle.setAttribute('aria-label', 
-      isOpen ? 'Открыть меню навигации' : 'Закрыть меню навигации'
+    menuToggle.setAttribute('aria-label',
+      isOpen ? 'Open navigation menu' : 'Close navigation menu'
     );
   };
 
@@ -44,12 +64,13 @@ const initMobileMenu = () => {
   document.addEventListener('click', (event) => {
     const isClickInsideMenu = nav.contains(event.target);
     const isClickOnToggle = menuToggle.contains(event.target);
-    
+
     if (!isClickInsideMenu && !isClickOnToggle && nav.classList.contains('header__nav--open')) {
       nav.classList.remove('header__nav--open');
       menuToggle.classList.remove('header__menu-toggle--active');
       menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.setAttribute('aria-label', 'Открыть меню навигации');
+      menuToggle.setAttribute('aria-label', 'Open navigation menu');
+      document.body.style.overflow = '';
     }
   });
 
@@ -59,9 +80,24 @@ const initMobileMenu = () => {
       nav.classList.remove('header__nav--open');
       menuToggle.classList.remove('header__menu-toggle--active');
       menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.setAttribute('aria-label', 'Открыть меню навигации');
+      menuToggle.setAttribute('aria-label', 'Open navigation menu');
       menuToggle.focus(); // Return focus to toggle button
+      document.body.style.overflow = '';
     }
+  });
+
+  // Close menu when clicking on nav link
+  const navLinks = nav.querySelectorAll('.header__nav-link');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (nav.classList.contains('header__nav--open')) {
+        nav.classList.remove('header__nav--open');
+        menuToggle.classList.remove('header__menu-toggle--active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Open navigation menu');
+        document.body.style.overflow = '';
+      }
+    });
   });
 };
 
@@ -72,22 +108,45 @@ const initMobileMenu = () => {
 const init = () => {
   console.log('🚀 RubyHome Application Initialized');
 
-  // Initialize mobile menu
+  // ============================================
+  // PHASE A: Base Functionality
+  // ============================================
+
+  // 1. Mobile menu
   initMobileMenu();
 
-  // Initialize modals
+  // 2. Navigation (smooth scroll + active states)
+  initNavigation();
+
+  // 3. Modals (contact form modal)
   initModals();
 
-  // Initialize slider
-  initReviewsSlider('.reviews__slider');
+  // 4. Slider (Swiper for reviews)
+  initReviewsSlider();
 
-  // Setup form handlers
-  const forms = document.querySelectorAll('form');
-  forms.forEach((form) => {
-    form.addEventListener('submit', handleFormSubmit);
-  });
+  // 5. Form validation (all forms)
+  initFormValidation();
 
-  // TODO: Phase 4 - Add more initialization logic
+  // ============================================
+  // PHASE B & C: Animations (будут добавлены позже)
+  // ============================================
+
+  // Smooth scroll (Lenis)
+  // initSmoothScroll();
+
+  // Scroll reveal animations
+  // initRevealAnimations();
+
+  // Cards stagger
+  // initCardsStagger();
+
+  // Hero parallax
+  // initHeroParallax();
+
+  // Magnetic buttons
+  // initMagneticButtons();
+
+  console.log('✅ Phase A: Base functionality loaded');
 };
 
 // Initialize app when DOM is ready
@@ -96,4 +155,3 @@ if (document.readyState === 'loading') {
 } else {
   init();
 }
-
