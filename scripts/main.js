@@ -3,9 +3,9 @@
  * RubyHome Landing Page
  *
  * Модульная архитектура:
- * - Phase A: Базовый функционал (modal, slider, forms, smooth scroll, navigation)
- * - Phase B: Scroll анимации (reveal, stagger, text animations)
- * - Phase C: Продвинутые эффекты (parallax, magnetic buttons, 3D tilt, marquee)
+ * - Phase A: Базовый функционал (modal, slider, forms, navigation)
+ * - Phase B: Scroll анимации (GSAP + Lenis, reveal, stagger, text split)
+ * - Phase C: Продвинутые эффекты (parallax, magnetic buttons, 3D tilt, marquee, scroll progress)
  */
 
 // ============================================
@@ -23,11 +23,13 @@ import { initSmoothScroll } from './animations/smooth-scroll.js';
 import { initAllScrollReveals } from './animations/scroll-reveal.js';
 
 // ============================================
-// PHASE C: Advanced Effects (будут добавлены позже)
+// PHASE C: Advanced Effects
 // ============================================
-// import { initCardsStagger } from './animations/cards-stagger.js';
-// import { initHeroParallax } from './animations/hero-parallax.js';
-// import { initMagneticButtons } from './animations/magnetic-buttons.js';
+import { initHeroParallax } from './animations/parallax.js';
+import { initMagneticButtons } from './animations/magnetic.js';
+import { init3DTilt } from './animations/tilt.js';
+import { initPartnersMarquee } from './animations/marquee.js';
+import { initScrollProgress, addScrollProgressStyles } from './animations/scroll-progress.js';
 
 /**
  * Initializes mobile menu toggle functionality
@@ -145,17 +147,28 @@ const init = () => {
   console.log('🎬 Phase B: Scroll animations loaded');
 
   // ============================================
-  // PHASE C: Advanced Effects (будут добавлены позже)
+  // PHASE C: Advanced Effects
   // ============================================
 
-  // Cards 3D tilt
-  // init3DTilt();
+  // Add scroll progress styles
+  addScrollProgressStyles();
 
-  // Hero parallax
-  // initHeroParallax();
+  // Initialize scroll progress indicator
+  initScrollProgress();
 
-  // Magnetic buttons
-  // initMagneticButtons();
+  // Hero parallax effect
+  initHeroParallax();
+
+  // Magnetic buttons for hero CTA
+  initMagneticButtons();
+
+  // 3D tilt effect for property cards
+  init3DTilt();
+
+  // Partners marquee animation
+  initPartnersMarquee();
+
+  console.log('✨ Phase C: Advanced effects loaded');
 };
 
 // Initialize app when DOM is ready
