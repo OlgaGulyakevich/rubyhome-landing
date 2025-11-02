@@ -51,7 +51,7 @@
   
   .reviews__swiper {
     width: 100%;
-    padding-bottom: 60px; /* Space for navigation */
+    padding-bottom: 80px; /* Space for navigation below cards */
     position: relative;
     overflow: visible;
   }
@@ -175,7 +175,7 @@
     color: #FE753F;
     transition: all var(--transition-normal);
     top: auto;
-    bottom: 0;
+    bottom: -50px; /* Position below the cards */
     margin-top: 0;
   }
 
@@ -299,12 +299,13 @@
     /* Show pagination dots on desktop */
     .reviews__swiper .swiper-pagination {
       display: block;
-      position: absolute;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
+      position: absolute !important;
+      bottom: 40px !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
       text-align: center;
       width: 100%;
+      --swiper-pagination-bottom: 40px;
     }
   
     .reviews__swiper .swiper-pagination-bullet {
