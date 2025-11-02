@@ -39,7 +39,6 @@ export const initHeroParallax = () => {
       scrub: true,
     },
     y: 200,
-    opacity: 0.3,
     ease: 'none',
   });
 
