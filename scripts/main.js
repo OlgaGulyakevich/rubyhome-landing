@@ -17,10 +17,14 @@ import { initFormValidation } from './form-validation.js';
 import { initNavigation } from './header.js';
 
 // ============================================
-// PHASE B & C: Animations (будут подключаться позже)
+// PHASE B: Scroll Animations (GSAP + Lenis)
 // ============================================
-// import { initSmoothScroll } from './animations/smooth-scroll.js';
-// import { initRevealAnimations } from './animations/scroll-reveal.js';
+import { initSmoothScroll } from './animations/smooth-scroll.js';
+import { initAllScrollReveals } from './animations/scroll-reveal.js';
+
+// ============================================
+// PHASE C: Advanced Effects (будут добавлены позже)
+// ============================================
 // import { initCardsStagger } from './animations/cards-stagger.js';
 // import { initHeroParallax } from './animations/hero-parallax.js';
 // import { initMagneticButtons } from './animations/magnetic-buttons.js';
@@ -128,25 +132,30 @@ const init = () => {
   initFormValidation();
 
   // ============================================
-  // PHASE B & C: Animations (будут добавлены позже)
+  // PHASE B: Scroll Animations (GSAP + Lenis)
   // ============================================
 
-  // Smooth scroll (Lenis)
-  // initSmoothScroll();
+  // Initialize smooth scroll
+  initSmoothScroll();
 
-  // Scroll reveal animations
-  // initRevealAnimations();
+  // Initialize all scroll reveal animations
+  initAllScrollReveals();
 
-  // Cards stagger
-  // initCardsStagger();
+  console.log('✅ Phase A: Base functionality loaded');
+  console.log('🎬 Phase B: Scroll animations loaded');
+
+  // ============================================
+  // PHASE C: Advanced Effects (будут добавлены позже)
+  // ============================================
+
+  // Cards 3D tilt
+  // init3DTilt();
 
   // Hero parallax
   // initHeroParallax();
 
   // Magnetic buttons
   // initMagneticButtons();
-
-  console.log('✅ Phase A: Base functionality loaded');
 };
 
 // Initialize app when DOM is ready
