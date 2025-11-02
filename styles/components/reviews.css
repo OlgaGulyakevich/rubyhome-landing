@@ -167,8 +167,8 @@
   
   .reviews__swiper .swiper-button-prev,
   .reviews__swiper .swiper-button-next {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
     background-color: var(--color-bg-white);
     border: 1px solid rgba(254, 117, 63, 0.2);
     border-radius: 50%;
@@ -189,7 +189,7 @@
   
   .reviews__swiper .swiper-button-prev::after,
   .reviews__swiper .swiper-button-next::after {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
   }
   
@@ -299,7 +299,7 @@
     /* Show pagination dots on desktop */
     .reviews__swiper .swiper-pagination {
       display: block;
-      bottom: 20px;
+      bottom: 40px;
       left: 50%;
       transform: translateX(-50%);
     }

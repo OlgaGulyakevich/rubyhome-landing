@@ -202,7 +202,7 @@ export const initReviewsReveal = () => {
  */
 export const initTextSplitReveal = () => {
   const titles = document.querySelectorAll(
-    '.properties__title, .advantages__title, .cta__title'
+    '.partners__title, .properties__title, .advantages__title, .cta__title'
   );
 
   if (titles.length === 0) return;
