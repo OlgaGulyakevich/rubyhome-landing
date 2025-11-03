@@ -7,16 +7,25 @@ import { gsap } from 'gsap';
 
 /**
  * Initialize magnetic effect for hero CTA button
+ * Only works on desktop (non-touch devices)
  */
 export const initMagneticButtons = () => {
+  // Only enable on desktop (non-touch devices)
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+  if (isTouchDevice) {
+    console.log('⚠️ Magnetic buttons disabled on touch devices');
+    return;
+  }
+
   const magneticButtons = document.querySelectorAll('.hero__cta-button');
 
-  if (magneticButtons.length === 0) return;
+  if (magneticButtons.length === 0) {
+    console.log('⚠️ No .hero__cta-button elements found');
+    return;
+  }
 
   magneticButtons.forEach((button) => {
-    // Store initial position
-    const buttonRect = button.getBoundingClientRect();
-
     button.addEventListener('mouseenter', () => {
       gsap.to(button, {
         scale: 1.05,

@@ -285,16 +285,16 @@
      ANIMATIONS
      ============================================ */
   
-  /* Underline animation on click - slides down from top */
+  /* Underline animation on click - expands from center */
   @keyframes slide-down {
     from {
-      transform: scaleY(0);
-      transform-origin: top;
+      transform: scaleX(0);
+      transform-origin: center;
     }
 
     to {
-      transform: scaleY(1);
-      transform-origin: top;
+      transform: scaleX(1);
+      transform-origin: center;
     }
   }
   
@@ -303,7 +303,10 @@
      ============================================ */
   
   /* Focus styles for keyboard navigation */
-  .header__nav-link:focus-visible,
+  .header__nav-link:focus-visible {
+    outline: none;
+  }
+
   .header__menu-toggle:focus-visible {
     outline: var(--focus-outline-width) var(--focus-outline-style)
       var(--focus-outline-color);
