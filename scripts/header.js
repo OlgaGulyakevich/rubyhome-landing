@@ -1,8 +1,17 @@
 /**
  * Header/Navigation module
  * Handles smooth scroll, active state, and nav link interactions
- * Features: Smooth scroll to sections, URL hash update, active link highlighting
+ * Features: Smooth scroll to sections, URL hash update, active link highlighting, cross-page navigation
  */
+
+/**
+ * Checks if we are on the main page (index.html or root)
+ * @returns {boolean} True if on main page
+ */
+const isMainPage = () => {
+  const path = window.location.pathname;
+  return path === '/' || path.endsWith('index.html') || path.endsWith('/');
+};
 
 /**
  * Smoothly scrolls to a section
@@ -77,7 +86,8 @@ const addClickAnimation = (link) => {
 
 /**
  * Initializes navigation functionality
- * - Smooth scroll to sections
+ * - Smooth scroll to sections (on main page)
+ * - Cross-page navigation (from other pages)
  * - Active state on scroll
  * - URL hash update
  * - Click animation
@@ -93,50 +103,64 @@ export const initNavigation = () => {
   // Add click handlers to nav links
   navLinks.forEach((link) => {
     link.addEventListener('click', (event) => {
-      event.preventDefault();
-
-      // Get section ID from href
       const href = link.getAttribute('href');
-      const sectionId = href.replace(/.*#/, ''); // Extract ID from href
+      const hasHash = href.includes('#');
 
-      // Add click animation
-      addClickAnimation(link);
+      // If link has hash
+      if (hasHash) {
+        const sectionId = href.replace(/.*#/, ''); // Extract ID from href
 
-      // Scroll to section
-      scrollToSection(sectionId);
+        // If we're on main page - smooth scroll
+        if (isMainPage()) {
+          event.preventDefault();
 
-      // Update URL hash (without jumping)
-      if (history.pushState) {
-        history.pushState(null, null, `#${sectionId}`);
-      } else {
-        window.location.hash = sectionId;
+          // Add click animation
+          addClickAnimation(link);
+
+          // Scroll to section
+          scrollToSection(sectionId);
+
+          // Update URL hash (without jumping)
+          if (history.pushState) {
+            history.pushState(null, null, `#${sectionId}`);
+          } else {
+            window.location.hash = sectionId;
+          }
+        } else {
+          // If we're on another page (like privacy-policy) - navigate to main page with hash
+          // Let the default behavior work (will go to index.html#section)
+          // The smooth scroll will happen after page load
+        }
       }
     });
   });
 
-  // Update active state on scroll (throttled)
-  let ticking = false;
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        updateActiveNavLink();
-        ticking = false;
-      });
-      ticking = true;
+  // Only setup scroll listener on main page (where sections exist)
+  if (isMainPage()) {
+    // Update active state on scroll (throttled)
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updateActiveNavLink();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    // Set initial active state
+    updateActiveNavLink();
+
+    // Handle direct URL hash navigation
+    if (window.location.hash) {
+      const sectionId = window.location.hash.substring(1);
+      // Small delay to ensure page is loaded
+      setTimeout(() => {
+        scrollToSection(sectionId);
+      }, 100);
     }
-  });
-
-  // Set initial active state
-  updateActiveNavLink();
-
-  // Handle direct URL hash navigation
-  if (window.location.hash) {
-    const sectionId = window.location.hash.substring(1);
-    // Small delay to ensure page is loaded
-    setTimeout(() => {
-      scrollToSection(sectionId);
-    }, 100);
   }
 
-  console.log(' Navigation initialized');
+  console.log('✅ Navigation initialized');
 };

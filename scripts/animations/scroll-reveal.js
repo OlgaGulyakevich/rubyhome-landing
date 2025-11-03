@@ -198,18 +198,26 @@ export const initReviewsReveal = () => {
 
 /**
  * Text split reveal animation
- * Reveals text line by line
+ * Reveals text line by line for titles and subtitles
  */
 export const initTextSplitReveal = () => {
+  // Animate titles
   const titles = document.querySelectorAll(
-    '.partners__title, .properties__title, .advantages__title, .cta__title'
+    '.partners__title, .properties__title, .advantages__title, .reviews__title, .cta__title'
   );
 
-  if (titles.length === 0) return;
+  // Animate subtitles
+  const subtitles = document.querySelectorAll(
+    '.advantages__subtitle, .reviews__subtitle, .cta__subtitle'
+  );
 
-  titles.forEach((title) => {
+  const allElements = [...titles, ...subtitles];
+
+  if (allElements.length === 0) return;
+
+  allElements.forEach((element) => {
     // Split text into lines
-    const split = new SplitType(title, {
+    const split = new SplitType(element, {
       types: 'lines',
       lineClass: 'line',
     });
@@ -231,7 +239,7 @@ export const initTextSplitReveal = () => {
 
     // Create scroll trigger for reveal
     ScrollTrigger.create({
-      trigger: title,
+      trigger: element,
       start: 'top 80%',
       once: true,
       onEnter: () => {
@@ -246,7 +254,7 @@ export const initTextSplitReveal = () => {
     });
   });
 
-  console.log(`✅ Text split reveal initialized (${titles.length} titles)`);
+  console.log(`✅ Text split reveal initialized (${titles.length} titles, ${subtitles.length} subtitles)`);
 };
 
 /**

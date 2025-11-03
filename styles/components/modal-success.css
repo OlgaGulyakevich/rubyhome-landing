@@ -164,6 +164,11 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+  /* Newsletter modal specific title size */
+  #newsletter-success-modal .modal-success__title {
+    font-size: 39px;
+  }
   
   /* Screen reader only content */
   .sr-only {

@@ -4,7 +4,7 @@
  * Features: Email validation, phone validation, required fields, checkbox validation
  */
 
-import { openSuccessModal } from './modal.js';
+import { openSuccessModal, openNewsletterSuccessModal } from './modal.js';
 
 /**
  * Validates an email address format
@@ -219,12 +219,13 @@ const handleNewsletterFormSubmit = (form) => {
   console.log('📧 Newsletter subscription:', data);
 
   // TODO: Send data to backend
-  // For now, just show alert
-
-  alert('Thank you for subscribing!');
+  // For now, just show success modal
 
   // Reset form
   form.reset();
+
+  // Show newsletter success modal
+  openNewsletterSuccessModal();
 };
 
 /**

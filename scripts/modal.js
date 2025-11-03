@@ -162,6 +162,13 @@ export const openSuccessModal = () => {
 };
 
 /**
+ * Opens newsletter success modal after subscription
+ */
+export const openNewsletterSuccessModal = () => {
+  openModal('newsletter-success-modal');
+};
+
+/**
  * Initializes modal functionality
  * Sets up event listeners for modal triggers and close buttons
  */

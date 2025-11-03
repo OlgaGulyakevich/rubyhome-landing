@@ -1,15 +1,12 @@
 /**
  * Scroll Progress Indicator
  * Visual indicator showing page scroll progress
+ * Works on all pages without GSAP dependency
  */
 
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
-
 /**
- * Create and animate scroll progress bar
+ * Create and animate scroll progress bar using native JavaScript
+ * Updates progress bar width based on scroll position
  */
 export const initScrollProgress = () => {
   // Create progress bar element
@@ -29,20 +26,35 @@ export const initScrollProgress = () => {
   // Add to document
   document.body.appendChild(progressBar);
 
-  // Animate progress fill
-  gsap.to(progressFill, {
-    scrollTrigger: {
-      trigger: document.body,
-      start: 'top top',
-      end: 'bottom bottom',
-      scrub: 0.3,
-      onUpdate: (self) => {
-        const progress = Math.round(self.progress * 100);
-        progressBar.setAttribute('aria-valuenow', progress);
-      },
-    },
-    width: '100%',
-    ease: 'none',
+  /**
+   * Updates progress bar on scroll
+   * Calculates scroll percentage and updates width
+   */
+  const updateProgress = () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+
+    // Update width
+    progressFill.style.width = `${progress}%`;
+
+    // Update ARIA attribute for accessibility
+    progressBar.setAttribute('aria-valuenow', Math.round(progress));
+  };
+
+  // Initial update
+  updateProgress();
+
+  // Update on scroll (throttled with requestAnimationFrame)
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        updateProgress();
+        ticking = false;
+      });
+      ticking = true;
+    }
   });
 
   console.log('✅ Scroll progress indicator initialized');
@@ -50,6 +62,7 @@ export const initScrollProgress = () => {
 
 /**
  * Add CSS for scroll progress bar
+ * Injects styles dynamically to support all pages
  */
 export const addScrollProgressStyles = () => {
   const style = document.createElement('style');
@@ -59,8 +72,8 @@ export const addScrollProgressStyles = () => {
       top: 0;
       left: 0;
       width: 100%;
-      height: 4px;
-      background-color: rgba(46, 110, 255, 0.1);
+      height: 3px;
+      background-color: transparent;
       z-index: 9999;
       pointer-events: none;
     }
@@ -70,6 +83,22 @@ export const addScrollProgressStyles = () => {
       width: 0%;
       background: linear-gradient(90deg, #2e6eff 0%, #fe753f 100%);
       transform-origin: left;
+      transition: width 0.1s ease-out;
+      box-shadow: 0 0 10px rgba(254, 117, 63, 0.5);
+    }
+
+    /* Make progress bar more visible when scrolling */
+    @media (prefers-reduced-motion: no-preference) {
+      .scroll-progress__fill {
+        transition: width 0.1s ease-out;
+      }
+    }
+
+    /* Respect reduced motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      .scroll-progress__fill {
+        transition: none;
+      }
     }
   `;
   document.head.appendChild(style);

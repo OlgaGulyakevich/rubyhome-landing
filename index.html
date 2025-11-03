@@ -395,8 +395,8 @@
 
         <section class="cta">
             <div class="cta__container">
-                <h2 class="cta__title">Get listed your home as a owner</h2>
-                <p class="cta__subtitle">Here is a list of the greatest real estate company slogans of all-time. These catchy slogans are followed by the Greatest Real Estate.</p>
+                <h2 class="cta__title">The Best of Real Estate. In Your Inbox.</h2>
+                <p class="cta__subtitle">Join our exclusive mailing list to gain an insider's advantage with early access to off-market properties and expert analysis that helps you stay ahead of the curve.</p>
                 <form class="cta__form" id="newsletter-form" aria-label="Newsletter subscription form">
                     <div class="cta__form-group">
                         <input 
@@ -472,9 +472,9 @@
 
 <!-- SUCCESS MODAL -->
 <div class="modal-success" id="success-modal" role="alertdialog" aria-modal="true" aria-labelledby="success-title" aria-live="polite" aria-hidden="true">
-    <div class="modal-success__overlay js-close-success" aria-hidden="true"></div>
+    <div class="modal-success__overlay js-close-success-modal" aria-hidden="true"></div>
     <div class="modal-success__content">
-        <button class="modal-success__close js-close-success" type="button" aria-label="Close success message">
+        <button class="modal-success__close js-close-success-modal" type="button" aria-label="Close success message">
             <img src="assets/icons/close.svg" alt="" class="modal-success__close-icon" width="24" height="24">
         </button>
         <div class="modal-success__icon-wrapper">
@@ -487,6 +487,26 @@
         </div>
         <h2 class="modal-success__title" id="success-title">Your request has been sent</h2>
         <p class="modal-success__message">We will contact you shortly. Thank you for choosing RubyHome!</p>
+    </div>
+</div>
+
+<!-- SUCCESS MODAL - Newsletter Subscription -->
+<div class="modal-success" id="newsletter-success-modal" role="alertdialog" aria-modal="true" aria-labelledby="newsletter-success-title" aria-live="polite" aria-hidden="true">
+    <div class="modal-success__overlay js-close-success-modal" aria-hidden="true"></div>
+    <div class="modal-success__content">
+        <button class="modal-success__close js-close-success-modal" type="button" aria-label="Close success message">
+            <img src="assets/icons/close.svg" alt="" class="modal-success__close-icon" width="24" height="24">
+        </button>
+        <div class="modal-success__icon-wrapper">
+            <!-- Success checkmark icon  -->
+            <svg class="modal-success__icon" width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="40" r="40" fill="#2E6EFF" fill-opacity="0.1"/>
+                <circle cx="40" cy="40" r="32" fill="#2E6EFF"/>
+                <path d="M28 40L36 48L52 32" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <h2 class="modal-success__title" id="newsletter-success-title">Welcome to RubyHome!</h2>
+        <p class="modal-success__message">Thank you for subscribing. You'll receive exclusive real estate insights and off-market opportunities.</p>
     </div>
 </div>
 

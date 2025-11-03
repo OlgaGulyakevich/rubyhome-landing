@@ -41,7 +41,7 @@
                 </ul>
             </nav>
 
-            <button class="header__cta-button button button--primary">Contact us</button>
+            <button class="header__cta-button button button--primary js-open-modal" type="button" data-modal-trigger>Contact us</button>
 
             <button class="header__menu-toggle" type="button" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
                 <span class="header__menu-icon"></span>
@@ -293,6 +293,78 @@
             </p>
         </div>
     </footer>
+
+    <!-- ============================================
+         MODAL - Contact Form
+         ============================================ -->
+    <div class="modal" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal__overlay js-close-modal" aria-hidden="true"></div>
+        <div class="modal__content">
+            <button class="modal__close js-close-modal" type="button" aria-label="Close modal window">
+                <img src="assets/icons/close.svg" alt="" class="modal__close-icon" width="24" height="24">
+            </button>
+            <h2 class="modal__title" id="modal-title">Leave a request and we will call you soon</h2>
+            <form class="modal__form" id="contact-form" aria-label="Contact form">
+                <div class="modal__field">
+                    <label for="contact-name" class="modal__label">Enter name</label>
+                    <input type="text" class="modal__input" id="contact-name" name="name" placeholder="Example: Mark" required>
+                </div>
+                <div class="modal__field">
+                    <label for="contact-phone" class="modal__label">Enter phone</label>
+                    <input type="tel" class="modal__input" id="contact-phone" name="phone" placeholder="+1" required>
+                    <span class="modal__error" id="phone-error" role="alert" aria-live="polite"></span>
+                </div>
+                <div class="modal__field">
+                    <label for="contact-email" class="modal__label">Enter email address</label>
+                    <input type="email" class="modal__input" id="contact-email" name="email" placeholder="email@example.com" required>
+                </div>
+                <fieldset class="modal__field modal__field--radio">
+                    <legend class="modal__label">I want to</legend>
+                    <div class="modal__radio-group" role="radiogroup" aria-label="Choose action type">
+                        <label class="modal__radio-label">
+                            <input type="radio" name="type" value="buy" checked>
+                            <span class="button">Buy</span>
+                        </label>
+                        <label class="modal__radio-label">
+                            <input type="radio" name="type" value="rent">
+                            <span class="button">Rent</span>
+                        </label>
+                        <label class="modal__radio-label">
+                            <input type="radio" name="type" value="sell">
+                            <span class="button">Sell</span>
+                        </label>
+                    </div>
+                </fieldset>
+                <div class="modal__field modal__field--checkbox">
+                    <label class="modal__checkbox-label">
+                        <input type="checkbox" name="privacy" required>
+                        <span class="modal__checkbox-text">I agree to <a href="privacy-policy.html" target="_blank" class="modal__link">Privacy Policy</a></span>
+                    </label>
+                </div>
+                <button type="submit" class="modal__submit button button--primary button--full">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- SUCCESS MODAL -->
+    <div class="modal-success" id="success-modal" role="alertdialog" aria-modal="true" aria-labelledby="success-title" aria-live="polite" aria-hidden="true">
+        <div class="modal-success__overlay js-close-success-modal" aria-hidden="true"></div>
+        <div class="modal-success__content">
+            <button class="modal-success__close js-close-success-modal" type="button" aria-label="Close success message">
+                <img src="assets/icons/close.svg" alt="" class="modal-success__close-icon" width="24" height="24">
+            </button>
+            <div class="modal-success__icon-wrapper">
+                <!-- Success checkmark icon  -->
+                <svg class="modal-success__icon" width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="40" cy="40" r="40" fill="#2E6EFF" fill-opacity="0.1"/>
+                    <circle cx="40" cy="40" r="32" fill="#2E6EFF"/>
+                    <path d="M28 40L36 48L52 32" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <h2 class="modal-success__title" id="success-title">Your request has been sent</h2>
+            <p class="modal-success__message">We will contact you shortly. Thank you for choosing RubyHome!</p>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script type="module" src="scripts/main.js"></script>

@@ -304,13 +304,32 @@
   
   /* Focus styles for keyboard navigation */
   .header__nav-link:focus-visible {
-    outline: none;
+    outline: var(--focus-outline-width) var(--focus-outline-style)
+      var(--focus-outline-color);
+    outline-offset: var(--focus-outline-offset);
   }
 
   .header__menu-toggle:focus-visible {
     outline: var(--focus-outline-width) var(--focus-outline-style)
       var(--focus-outline-color);
     outline-offset: var(--focus-outline-offset);
+  }
+
+  /* Remove outline on click (but keep for keyboard navigation) */
+  .header__nav-link:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  .header__logo-link:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  .header__menu-toggle:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  .header__cta-button:focus:not(:focus-visible) {
+    outline: none;
   }
   
   /* Reduce motion for users who prefer it */
