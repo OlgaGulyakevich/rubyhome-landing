@@ -25,7 +25,7 @@ import { initAllScrollReveals } from './animations/scroll-reveal.js';
 // ============================================
 // PHASE C: Advanced Effects
 // ============================================
-import { initHeroParallax } from './animations/parallax.js';
+import { initHeroParallax, initAdvantagesParallax } from './animations/parallax.js';
 import { initMagneticButtons } from './animations/magnetic.js';
 import { init3DTilt } from './animations/tilt.js';
 import { initPartnersMarquee } from './animations/marquee.js';
@@ -158,6 +158,9 @@ const init = () => {
 
   // Hero parallax effect
   initHeroParallax();
+
+  // Advantages parallax effect (mobile)
+  initAdvantagesParallax();
 
   // Magnetic buttons for hero CTA
   initMagneticButtons();

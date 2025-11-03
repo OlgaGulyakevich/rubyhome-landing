@@ -22,11 +22,14 @@ export const initHeroReveal = () => {
 
   if (!hero || !heroContent) return;
 
-  // Set initial states
-  gsap.set([heroTitle, heroDescription, heroButton], {
+  // Set initial states (БЕЗ кнопки - у неё своя магнитная анимация)
+  gsap.set([heroTitle, heroDescription], {
     opacity: 0,
     y: 50,
   });
+
+  // Кнопка анимируется через CSS (heroFadeIn в hero.css)
+  // Не трогаем её в GSAP, чтобы не конфликтовать с магнитным эффектом
 
   // Create timeline
   const tl = gsap.timeline({
@@ -36,31 +39,21 @@ export const initHeroReveal = () => {
     },
   });
 
-  // Animate on page load
+  // Animate on page load (БЕЗ кнопки)
   tl.to(heroTitle, {
     opacity: 1,
     y: 0,
     duration: 1.2,
-  })
-    .to(
-      heroDescription,
-      {
-        opacity: 1,
-        y: 0,
-      },
-      '-=0.8'
-    )
-    .to(
-      heroButton,
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-      },
-      '-=0.6'
-    );
+  }).to(
+    heroDescription,
+    {
+      opacity: 1,
+      y: 0,
+    },
+    '-=0.8'
+  );
 
-  console.log('✅ Hero reveal animation initialized');
+  console.log('✅ Hero reveal animation initialized (button excluded for magnetic effect)');
 };
 
 /**
