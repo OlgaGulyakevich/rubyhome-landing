@@ -1,6 +1,11 @@
-# RubyHome Landing Page
+# 🏠 RubyHome Landing Page
 
 > A modern, high-performance real estate landing page featuring advanced GSAP animations, smooth scroll effects, and comprehensive accessibility. Built with vanilla JavaScript ES6 modules and Vite.
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 
 **[Live Demo](#)** | **[View Code](https://github.com/OlgaGulyakevich/rubyhome-landing)**
 
@@ -62,7 +67,7 @@ npm run dev
 npm run build
 ```
 
-Open `http://localhost:3000` to view the project.
+[View Live Demo](#) to view the project.
 
 ---
 
@@ -99,30 +104,18 @@ rubyhome-landing/
 
 ---
 
-## 🎨 Animation Phases
+## 📱 Responsive Breakpoints
 
-**Phase A: Base Functionality**
-Mobile menu, modals, form validation, smooth navigation
+- Mobile: < 768px
+- Tablet: 768px - 1023px
+- Desktop: ≥ 1024px
 
-**Phase B: Scroll Animations**
-GSAP + Lenis integration, reveal effects, stagger animations
+## 🎨 Design Principles
 
-**Phase C: Advanced Effects**
-Parallax, magnetic buttons, 3D tilt, infinite marquee, scroll progress
-
----
-
-## 📦 Dependencies
-
-```json
-{
-  "gsap": "^3.12.5",
-  "lenis": "^1.1.13",
-  "split-type": "^0.3.4",
-  "swiper": "^11.1.14",
-  "vanilla-tilt": "^1.8.1"
-}
-```
+- Mobile-first approach
+- BEM naming convention
+- Semantic HTML5
+- Accessibility-first design
 
 ---
 
@@ -139,7 +132,7 @@ Parallax, magnetic buttons, 3D tilt, infinite marquee, scroll progress
 
 ## 👤 Author
 
-**Olga Gulyakevich**
+[**Olga Gulyakevich**](https://github.com/OlgaGulyakevich)
 
 Portfolio project demonstrating modern front-end development skills with focus on animations, performance, and accessibility.
 
